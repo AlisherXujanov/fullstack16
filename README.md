@@ -27,3 +27,10 @@ npm uninstall create-react-app
 # During development
 1. if i do `git push`, you must get it by `git pull`
 2. if i installed smth, so you must do it too by `npm install`
+
+<!-- ------------------------------ -->
+<!-- ------------------------------ -->
+<!-- ------------------------------ -->
+If `git pull` does not work, delete every change you made and repeat `git pull` again
+
+or, if still does not work, make `git stash` and repeat `git pull`
