@@ -1,8 +1,15 @@
 function App() {
   return (
-    <>
-     <h1>Hello world</h1>
-    </>
+    <div className="main">
+      <h1>
+        Hello <span>world</span>
+      </h1>
+
+      <button>
+        📡
+        Button
+      </button>
+    </div>
   )
 }
 

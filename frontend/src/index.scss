@@ -1,0 +1,47 @@
+@mixin flex($direction: row, $align: center, $justify: center) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: 10px;
+}
+
+.main {
+  @include flex();
+
+  h1 {
+    line-height: 100px;
+    background-color: #333;
+    color: snow;
+    @include flex();
+  
+    span {
+      color: red;
+    }
+  
+    &:hover {
+      color: green;
+  
+      span {
+        color: yellow;
+      }
+    }
+  }
+
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: 1px solid green;
+    @include flex();
+
+    &:hover {
+      background-color: green;
+      color: snow;
+    }
+    &:active {
+      background-color: red;
+    }
+  }
+}
