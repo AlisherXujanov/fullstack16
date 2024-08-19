@@ -4,11 +4,11 @@
 3. cd ...  &  code .
 4. Create react project
 ```bash
-npm create-vite ... --template react
+npx create-vite frontend --template react
 ```
 - - if does not work use the code below and repeat install
 ```bash
-npm uninstall create-react-app
+npm uninstall -g create-react-app
 ```
 5. cd app-name 
 6. npm install (creates node modules)
