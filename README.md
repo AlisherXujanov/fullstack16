@@ -15,7 +15,15 @@ npm uninstall -g create-react-app
 <!-- ------------------------------ -->
 <!-- ------------------------------ -->
 <!-- ------------------------------ -->
-# First steps
+- When you changed something in your code you will need to upload it to you github profile
+1. `git add .`
+2. `git commit -m 'message'`
+3. `git push`
+
+<!-- ------------------------------ -->
+<!-- ------------------------------ -->
+<!-- ------------------------------ -->
+# When you work with Fullstack16
 1. git clone ...
 2. cd fullstack16
 3. code .
