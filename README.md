@@ -21,12 +21,16 @@ npm uninstall -g create-react-app
 3. `git push`
 
 
-- If it asks for your information, then it means that you have not configured your git-info
+- NOTE: If it asks for your information, then it means that you have not configured your git-info
 
 set your name and email
 ```bash
 git config --global user.name "..."
 git config --global user.email "..."
+```
+then write push again
+```bash
+git push
 ```
 
 <!-- ------------------------------ -->
