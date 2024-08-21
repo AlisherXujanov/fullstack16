@@ -4,8 +4,9 @@ function Heading(props) {
     return (
         <div className="heading-wrapper">
             <h1>{props.title}</h1>
-            {/* lorem 10 */}
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusantium, qui!</p>
+            <p>
+                Home . Pages <span className="path">.{props.path}</span>
+            </p>
         </div>
     );
 }

@@ -1,4 +1,20 @@
+@import "../../../assets/styles/setting";
+
 .heading-wrapper {
-    background-color: lightcyan;
-    padding: 50px 100px;
+    background-color: $violet-light;
+    padding: 80px 100px;
+
+    h1 {
+        color: $darkest-blue;
+    }
+
+    p {
+        margin-top: 20px;
+        color: $black;
+        span {
+            color: $red;
+            display: inline-block;
+            margin-left: 5px;
+        }
+    }
 }
