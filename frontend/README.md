@@ -14,3 +14,11 @@ npm install sass
 npm install react-router-dom@latest
 ```
 
+# Icons
+<!-- https://react-icons.github.io/react-icons/ -->
+```bash
+npm install react-icons --save
+```
+
+
+

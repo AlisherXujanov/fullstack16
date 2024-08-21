@@ -1,12 +1,12 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import { FcAbout } from "react-icons/fc";
+import { BsPatchQuestionFill } from "react-icons/bs";
 
 function About() {
     return (
         <div className="about-page-wrapper">
             <Heading title="About" path="About">
-                <FcAbout />
+                <BsPatchQuestionFill />
             </Heading>
         </div>
     );
