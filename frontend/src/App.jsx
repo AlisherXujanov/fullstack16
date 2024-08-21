@@ -1,11 +1,15 @@
-import Heading from "./components/common/Heading"
+import AllComponents from "./components/AllComponents.jsx"
+import { BrowserRouter } from "react-router-dom"
 
 
 function App() {
   return (
-    <>
-      <Heading title="Home" path="Home" />
-    </>
+    // http://localhost:5173/
+    // http://localhost:5173/about
+    // http://localhost:5173/contact
+    <BrowserRouter>
+      <AllComponents />
+    </BrowserRouter>
   )
 }
 
