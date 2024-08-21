@@ -6,6 +6,12 @@
 
     h1 {
         color: $darkest-blue;
+
+        svg {
+            position: relative;
+            top: 4px;
+            right: 5px;
+        }
     }
 
     p {

@@ -9,6 +9,7 @@ function AllComponents(props) {
     return (
         <Routes location={location} key={location.pathname}>
             <Route path="/" element={<Navigation />}>
+                {/* http://localhost:5173/ */}
                 <Route index element={<Home />} />
 
                 {/* http://localhost:5173/about */}
