@@ -1,10 +1,11 @@
 import "./style.scss"
+import Heading from "../common/Heading"
 
 function Home() {
     return (
-        <>
-            <h1>Home</h1>
-        </>
+        <div className="home-page-wrapper">
+            <Heading  title="Home"  path="Home" />
+        </div>
     );
 }
 

@@ -5,7 +5,7 @@ function Heading(props) {
         <div className="heading-wrapper">
             <h1>{props.title}</h1>
             <p>
-                Home . Pages <span className="path">.{props.path}</span>
+                Home.Pages<span className="path">.{props.path}</span>
             </p>
         </div>
     );

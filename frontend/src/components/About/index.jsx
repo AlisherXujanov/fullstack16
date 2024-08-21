@@ -1,9 +1,11 @@
 import "./style.scss"
+import Heading from "../common/Heading"
+
 
 function About() {
     return (
         <>
-            <h1>About</h1>
+            <Heading title="About" path="About" />
         </>
     );
 }
