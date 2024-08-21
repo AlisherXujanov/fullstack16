@@ -1,6 +1,7 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Home from "./Home"
-import Navigation from "./Navigation"
+import About from './About'
+import Navigation from './Navigation'
 
 function AllComponents(props) {
     const location = useLocation()
@@ -10,10 +11,8 @@ function AllComponents(props) {
             <Route path="/" element={<Navigation />}>
                 <Route index element={<Home />} />
 
-
                 {/* http://localhost:5173/about */}
-                {/* <Route path="about" element={<About />} /> */}
-
+                <Route path="about" element={<About />} />
 
                 {/* http://localhost:5173/contact */}
                 {/* <Route path="contacts" element={<Contacts />} /> */}

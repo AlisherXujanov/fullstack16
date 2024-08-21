@@ -1,9 +1,19 @@
+import { Outlet, Link } from 'react-router-dom'
 import "./style.scss"
 
 function Navigation() {
     return (
         <>
-            <h1>Navigation</h1>
+            <header>
+                <Link to="/">Home</Link>
+                <Link to="about">About</Link>
+            </header>
+
+            <main>
+                <Outlet />
+            </main>
+
+            <footer></footer>
         </>
     );
 }
