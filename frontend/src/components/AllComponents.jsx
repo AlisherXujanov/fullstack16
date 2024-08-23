@@ -4,7 +4,6 @@ import About from './About'
 import Navigation from './Navigation'
 import PageNotFound from './PageNotFound'
 
-
 function AllComponents(props) {
     const location = useLocation()
 
