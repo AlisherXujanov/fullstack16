@@ -7,6 +7,7 @@ function Navigation() {
             <header>
                 <Link to="/">Home</Link>
                 <Link to="about">About</Link>
+                <Link to="bemiyya">Bemiyya</Link>
             </header>
 
             <main>

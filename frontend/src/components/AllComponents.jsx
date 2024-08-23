@@ -3,6 +3,7 @@ import Home from "./Home"
 import About from './About'
 import Navigation from './Navigation'
 import PageNotFound from './PageNotFound'
+import Bemiyya from "./Bemiyya.jsx"
 
 function AllComponents(props) {
     const location = useLocation()
@@ -15,6 +16,9 @@ function AllComponents(props) {
 
                 {/* http://localhost:5173/about */}
                 <Route path="about" element={<About />} />
+
+                {/* http://localhost:5173/bemiyya */}
+                <Route path="bemiyya" element={<Bemiyya />} />
 
                 {/* http://localhost:5173/contact */}
                 {/* <Route path="contacts" element={<Contacts />} /> */}
