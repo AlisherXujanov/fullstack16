@@ -70,6 +70,31 @@ export default AllComponents;
 
 - Navigation is the main component of all others that wraps up all components. This means that when you need any page, that page appears inside of Navigation. By doing so, we can make sure that every page has navbar and footer. The <Outlet> compoent identifies where we want to show other parts of our page rather that nav and footer.
 
+```jsx
+import { Outlet, Link } from 'react-router-dom'
+import "./style.scss"
+
+function Navigation() {
+    return (
+        <>
+            <header>
+                <Link to="/">Home</Link>
+                <Link to="about">About</Link>
+            </header>
+
+            <main>
+                <Outlet />
+            </main>
+
+            <footer></footer>
+        </>
+    );
+}
+
+export default Navigation;
+```
+- The <Link to=""> component is used instead of tag <a href="">
+
 <!-- ==================================================== -->
 
 
