@@ -2,7 +2,6 @@ import "./style.scss"
 import Heading from "../common/Heading"
 import { BsPatchQuestionFill } from "react-icons/bs";
 import Test from "../Test.jsx"
-import Bemiyya from "../Bemiyya.jsx"
 
 function About(props) {
     // props = props ? props : "..."
@@ -13,7 +12,7 @@ function About(props) {
                 <BsPatchQuestionFill />
             </Heading>
 
-            <Bemiyya />
+            <Test />
             {/* plus || minus || division || multiply */}
         </div>
     );
