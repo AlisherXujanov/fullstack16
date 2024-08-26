@@ -4,12 +4,14 @@ import "./test.scss"
 function Test(props) {
     const [theme, setTheme] = useState(true)
     const [counter, setCounter] = useState(0)
+    const [position, setPosition] = useState(0)
+
     // const theme = false
 
     function callToggler(e) {
         setTheme(!theme)
     }
-    
+
     function changeCounter(e) {
         const name = e.target.name
         if (name == 'inc') {
@@ -17,6 +19,10 @@ function Test(props) {
         } else {
             setCounter(counter-1)
         }
+    }
+
+    function moveCounter(e) {
+        setPosition(e.target.value)
     }
 
     return (
@@ -35,9 +41,24 @@ function Test(props) {
                 </div>
 
                 <div className="container">
-                    <h2>{counter}</h2>
+                    <h2 style={{transform: `translateX(${position}px)`}}>
+                        {counter}
+                    </h2>
                     <button onClick={changeCounter} name='dec'>Decrement</button>
                     <button onClick={changeCounter} name='inc'>Increment</button>
+                </div>
+
+                <div className="container">
+                    <input 
+                        type="range" 
+                        min={-90} 
+                        max={90} 
+                        onChange={moveCounter} 
+                    />
+                </div>
+
+                <div className="container">
+                    
                 </div>
             </div>
         </div>
