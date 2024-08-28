@@ -48,6 +48,7 @@ nav {
 
             .searchbar {
                 padding: 2px;
+                @include flex(row, center, center, 0);
 
                 input {
                     width: 300px;
@@ -61,7 +62,7 @@ nav {
                 button {
                     padding: 20px 25px;
                     position: relative;
-                    top: 1.6px;
+                    top: 0.6px;
                     background-color: $red;
 
                     svg {
