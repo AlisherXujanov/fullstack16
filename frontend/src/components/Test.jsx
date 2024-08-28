@@ -7,12 +7,11 @@ function Test(props) {
     const [position, setPosition] = useState(0)
 
     // const theme = false
-
     function callToggler(e) {
         setTheme(!theme)
     }
-
     function changeCounter(e) {
+        // e.target  === та кнопка которыая была нажата
         const name = e.target.name
         if (name == 'inc') {
             setCounter(counter+1)
@@ -20,7 +19,6 @@ function Test(props) {
             setCounter(counter-1)
         }
     }
-
     function moveCounter(e) {
         setPosition(e.target.value)
     }
