@@ -3,7 +3,7 @@
 
 nav {
     .top {
-        padding: 10px 200px;
+        padding: 0 200px;
         background-color: $violet;
         @include flex(row, center, space-between, 20px);
 
@@ -11,6 +11,7 @@ nav {
             color: $light;
             display: inline-block;
             margin-right: 15px;
+            padding: 10px 0;
         }
     }
 

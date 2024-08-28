@@ -24,8 +24,27 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    <Link to="#">English <RiArrowDropDownLine /></Link>
-                    <Link to="#">USD <RiArrowDropDownLine /></Link>
+                    <Link to="#" className="dropdown">
+                        English <RiArrowDropDownLine />
+                        <div className="drp-content">
+                            <p>English</p>
+                            <p>Russian</p>
+                            <p>Turkish</p>
+                            <p>Italian</p>
+                            <p>Deutsch</p>
+                            <p>French</p>
+                        </div>
+                    </Link>
+                    <Link to="#" className="dropdown">
+                        USD <RiArrowDropDownLine />
+                        <div className="drp-content">
+                            <p>USD</p>
+                            <p>UZS</p>
+                            <p>RUB</p>
+                            <p>JPY</p>
+                            <p>GBP</p>
+                        </div>
+                    </Link>
                     <Link to="#">Login <CgProfile /></Link>
                     <Link to="#">Wishlist <CiHeart /></Link>
                     <Link to="#"><MdOutlineShoppingCart /></Link>
