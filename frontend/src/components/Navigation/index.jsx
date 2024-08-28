@@ -1,13 +1,12 @@
 import { Outlet, Link } from 'react-router-dom'
+import Nav from "./Nav"
 import "./style.scss"
 
 function Navigation() {
     return (
         <>
             <header>
-                
-                <Link to="/">Home</Link>
-                <Link to="about">About</Link>
+                <Nav />
             </header>
 
             <main>
