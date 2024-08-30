@@ -11,22 +11,32 @@ $darkest-blue: #0D0E43;
 $light: #FFFFFF;
 $black: #111;
 
+
+// ------------------ @media sizes ------------------
+$phone: 600px;
+$tablet: 900px;
+$sm-desktop: 1200px;
+$md-desktop: 1520px;
+
+
 // ======================================================================
 // ======================= FLEX =========================================
 // ======================================================================
-@mixin flex($direction: row, $align: center, $justify: center, $gap:10px) {
+@mixin flex($direction: row, $align: center, $justify: center, $gap: 10px) {
     display: flex;
     flex-direction: $direction;
     justify-content: $justify;
     align-items: $align;
     gap: $gap;
 }
+
 // ======================================================================
 // ======================= GRID =========================================
 // ======================================================================
-@mixin grid($columns:12, $size:1fr, $gap:10px) {
+@mixin grid($columns: 12, $size: 1fr, $gap: 10px) {
     display: grid;
     grid-template-columns: repeat($columns, $size);
     gap: $gap;
 }
+
 // ======================================================================

@@ -2,7 +2,7 @@
 
 .heading-wrapper {
     background-color: $violet-light;
-    padding: 80px 100px;
+    padding: 80px 200px;
 
     h1 {
         color: $darkest-blue;
@@ -17,6 +17,7 @@
     p {
         margin-top: 20px;
         color: $black;
+
         span {
             color: $red;
             display: inline-block;

@@ -1,6 +1,6 @@
 import "./style.scss"
 import Heading from "../common/Heading"
-import { BsPatchQuestionFill } from "react-icons/bs";
+import { BsInfoSquareFill } from "react-icons/bs";
 
 function About(props) {
     // props = props ? props : "..."
@@ -8,7 +8,7 @@ function About(props) {
     return (
         <div className="about-page-wrapper">
             <Heading title="About" path="About">
-                <BsPatchQuestionFill />
+                <BsInfoSquareFill />
             </Heading>
             {/* plus || minus || division || multiply */}
         </div>

@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { CiSearch } from "react-icons/ci";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 
 function Nav(props) {
@@ -18,7 +18,7 @@ function Nav(props) {
                         <AiOutlineMail />
                         WebMaster@gmail.com
                     </a>
-                    <a href="#">
+                    <a href="tel:+998334747477">
                         <BsTelephoneOutbound />
                         +99833 4747477
                     </a>
@@ -45,9 +45,9 @@ function Nav(props) {
                             <p>GBP</p>
                         </div>
                     </Link>
-                    <Link to="#">Login <CgProfile /></Link>
-                    <Link to="#">Wishlist <CiHeart /></Link>
-                    <Link to="#"><MdOutlineShoppingCart /></Link>
+                    <Link to="login">Login <CgProfile /></Link>
+                    <Link to="wishlist">Wishlist <CiHeart /></Link>
+                    <Link to="cart"><MdOutlineShoppingCart /></Link>
                 </div>
             </div>
             <div className="bottom">
@@ -58,12 +58,12 @@ function Nav(props) {
                 </div>
                 <div className="right">
                     <div className="links">
-                        <Link to="/">Home</Link>
-                        <Link to="about">About</Link>
-                        <Link to="#">Products</Link>
-                        <Link to="#">Blog</Link>
-                        <Link to="#">Shop</Link>
-                        <Link to="#">Contact</Link>
+                        <NavLink to="/" activeClassName="active">Home</NavLink>
+                        <NavLink to="about" activeClassName="active">About</NavLink>
+                        <NavLink to="products" activeClassName="active">Products</NavLink>
+                        <NavLink to="blog" activeClassName="active">Blog</NavLink>
+                        <NavLink to="shop" activeClassName="active">Shop</NavLink>
+                        <NavLink to="contact" activeClassName="active">Contact</NavLink>
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" />

@@ -1,12 +1,17 @@
 import "./style.scss"
-import NotFoundImg from "../../assets/images/404_page.jpg"
-import { Link } from "react-router-dom";
+import NotFoundImg from "../../assets/images/404_page.png"
+import { BsPatchQuestionFill } from "react-icons/bs";
+import Heading from "../common/Heading"
 
 function PageNotFound() {
     return (
         <div className="page-not-found-wrapper">
-            <img src={NotFoundImg} alt="" />
-            <Link className="go-home" to={"/"}>Go Home</Link>
+            <Heading title="Ooops... 404 Not Found" path="404 Not Found">
+                <BsPatchQuestionFill />
+            </Heading>
+            <div className="content">
+                <img src={NotFoundImg} alt="" />
+            </div>
         </div>
     )
 }

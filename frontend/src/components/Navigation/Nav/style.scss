@@ -41,6 +41,11 @@ nav {
                     color: $darkest-blue;
                     padding: 0 15px;
 
+                    &.active {
+                        color: $red;
+                        font-weight: bold;
+                    }
+
                     &:hover {
                         color: $red;
                     }
