@@ -10,8 +10,19 @@ nav {
         a {
             color: $light;
             display: inline-block;
-            margin-right: 15px;
-            padding: 10px 0;
+            padding: 10px;
+
+            svg {
+                margin-right: 5px;
+                position: relative;
+                top: 2px;
+            }
+        }
+
+        .right {
+            a {
+                @include darken_bg_on_hover($violet);
+            }
         }
     }
 
@@ -70,6 +81,7 @@ nav {
                     position: relative;
                     top: 0.6px;
                     background-color: $red;
+                    @include darken_bg_on_hover($red);
 
                     svg {
                         transform: scale(2);

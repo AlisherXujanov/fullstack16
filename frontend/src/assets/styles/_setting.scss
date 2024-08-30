@@ -40,3 +40,25 @@ $md-desktop: 1520px;
 }
 
 // ======================================================================
+@mixin darken_bg_on_hover($color) {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        content: "";
+        transition: 0.4s;
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 100%;
+        z-index: 0;
+        background: darken($color, 20%);
+    }
+
+    &:hover::before {
+        z-index: -1;
+        left: 0;
+        right: 0;
+    }
+}

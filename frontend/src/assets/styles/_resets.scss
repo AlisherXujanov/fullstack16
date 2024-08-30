@@ -19,18 +19,27 @@
     font-family: "Josefin Sans", sans-serif;
     font-weight: 400;
 }
-h1, h2, h3, h4, h5, h6 {
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-weight: 700;
 }
+
 a {
     text-decoration: none;
 }
+
 button {
     border: none;
     outline: none;
     cursor: pointer;
     padding: 10px;
 }
+
 input {
     border: none;
     outline: none;
@@ -49,7 +58,7 @@ input {
         position: absolute;
         box-shadow: 0 8px 16px lightgray;
         top: 37px;
-        left: -10px;
+        left: 0px;
         display: none;
 
         p {
