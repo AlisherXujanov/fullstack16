@@ -1,33 +1,46 @@
 @import "../../../assets/styles/setting";
 
 .featured-products-wrapper {
-    .product-item {
-        text-align: center;
+    padding: 100px 200px;
+    text-align: center;
 
-        .img-wrapper {
-            width: 100%;
-            height: 200px;
-            background-color: black;
-        }
-        h4 {
-            color: $darkest-blue;
-            margin: 10px 0;
-        }
-        .colors {
-            margin: 5px 0;
-            @include flex(row, center, center, 5px);
+    h1 {
+        font-size: 42px;
+    }
 
-            div {
-                height: 2px;
-                width: 10px;
-                &.green { background-color: $green; }
-                &.red { background-color: $red; }
-                &.blue { background-color: $darkest-blue; }
+    .products-content {
+        @include grid(4, 1fr, 30px);
+        margin: 50px 0;
+        padding: 0 150px;
+
+        .product-item {
+            text-align: center;
+    
+            .img-wrapper {
+                width: 100%;
+                height: 200px;
+                background-color: black;
             }
-        }
-        .code, .price { 
-            margin: 10px 0;
-            font-size: small;
+            h4 {
+                color: $darkest-blue;
+                margin: 10px 0;
+            }
+            .colors {
+                margin: 5px 0;
+                @include flex(row, center, center, 5px);
+    
+                div {
+                    height: 2px;
+                    width: 10px;
+                    &.green { background-color: $green; }
+                    &.red { background-color: $red; }
+                    &.blue { background-color: $darkest-blue; }
+                }
+            }
+            .code, .price { 
+                margin: 10px 0;
+                font-size: small;
+            }
         }
     }
 }

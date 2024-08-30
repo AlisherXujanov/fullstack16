@@ -1,4 +1,7 @@
 import "./style.scss"
+import Item from "./Item.jsx"
+import Img from "../../../assets/images/404_page.png"
+import FProductsJSON from "../../../db/featured_products.json"
 
 function FeaturedProducts(props) {
     return (
@@ -6,17 +9,20 @@ function FeaturedProducts(props) {
             <h1>Featured Products</h1>
 
             <div className="products-content">
-                <div className="product-item">
-                    <div className="img-wrapper"></div>
-                    <h4>Cantilever chair</h4>
-                    <div className="colors">
-                        <div className="green"></div>
-                        <div className="red"></div>
-                        <div className="blue"></div>
-                    </div>
-                    <p className="code">Code - Y641923</p>
-                    <p className="price">$42.00</p>
-                </div>
+                {
+                    FProductsJSON.map((product, index) => {
+                        return (
+                            <div key={index}>
+                                <Item 
+                                    img={Img} 
+                                    title={product.title}
+                                    code={product.code}
+                                    price={product.price}
+                                />
+                            </div>
+                        )
+                    })
+                }
             </div>
         </section>
     );
