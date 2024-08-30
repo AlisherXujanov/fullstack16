@@ -11,6 +11,10 @@ $darkest-blue: #0D0E43;
 $light: #FFFFFF;
 $black: #111;
 
+$red-gradient: linear-gradient(to right, #FB2E86, #ff8f77);
+$purple-gradient: linear-gradient(to right, #6e56ff, #b073ff, #7E33E0);
+$green-gradient: linear-gradient(to right, #56c2ff, #08D15F);
+
 
 // ------------------ @media sizes ------------------
 $phone: 600px;
@@ -40,7 +44,7 @@ $md-desktop: 1520px;
 }
 
 // ======================================================================
-@mixin darken_bg_on_hover($color) {
+@mixin darken_bg_on_hover($color, $percent: 20%) {
     position: relative;
     z-index: 1;
 
@@ -53,7 +57,7 @@ $md-desktop: 1520px;
         left: 0;
         right: 100%;
         z-index: 0;
-        background: darken($color, 20%);
+        background: darken($color, $percent);
     }
 
     &:hover::before {

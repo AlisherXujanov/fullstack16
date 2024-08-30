@@ -4,7 +4,7 @@
 nav {
     .top {
         padding: 0 200px;
-        background-color: $violet;
+        background: $purple-gradient;
         @include flex(row, center, space-between, 20px);
 
         a {
@@ -80,8 +80,13 @@ nav {
                     padding: 20px 25px;
                     position: relative;
                     top: 0.6px;
-                    background-color: $red;
-                    @include darken_bg_on_hover($red);
+                    background: $red-gradient;
+
+                    @include darken_bg_on_hover($red, 5%);
+
+                    &::before {
+                        transition: 0.2s;
+                    }
 
                     svg {
                         transform: scale(2);

@@ -5,7 +5,7 @@ import { RiArrowDropDownLine } from "react-icons/ri";
 import { CgProfile } from "react-icons/cg";
 import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
-import { CiSearch } from "react-icons/ci";
+import { IoSearch } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 
 
@@ -67,7 +67,7 @@ function Nav(props) {
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" />
-                        <button><CiSearch /></button>
+                        <button><IoSearch /></button>
                     </div>
                 </div>
             </div>
