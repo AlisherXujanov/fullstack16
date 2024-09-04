@@ -1,0 +1,24 @@
+@import "../../../assets/styles/setting";
+
+
+.latest-products-wrapper {
+    text-align: center;
+    padding: 100px 200px;
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .products-wrapper-container {
+        @include grid(3, 1fr, 30px);
+        margin: 20px 0;
+        padding: 0 150px;
+
+        .product-item-wrapper {
+            img {
+                width: 100%;
+                height: 350px;
+            }
+        }
+    }
+}

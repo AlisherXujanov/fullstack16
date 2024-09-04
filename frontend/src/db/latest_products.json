@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Comfort Handy Craft",
+        "price": 42,
+        "discount": 35
+    },
+    {
+        "id": 2,
+        "name": "Sofa",
+        "price": 52,
+        "discount": 25
+    },
+    {
+        "id": 3,
+        "name": "Comfort Bad",
+        "price": 25,
+        "discount": 10
+    },
+    {
+        "id": 4,
+        "name": "Cozy Handy Craft",
+        "price": 75,
+        "discount": 20
+    },
+    {
+        "id": 5,
+        "name": "Comfort Handy Craft",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 6,
+        "name": "Comfort Handy Craft",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 7,
+        "name": "Comfort Handy Craft",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 8,
+        "name": "Comfort Handy Craft",
+        "price": 55,
+        "discount": 15
+    }
+]

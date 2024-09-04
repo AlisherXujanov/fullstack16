@@ -2,6 +2,7 @@ import "./style.scss"
 import Heading from "../common/Heading"
 import { FaHome } from "react-icons/fa";
 import FeaturedProducts from "./FeaturedProducts"
+import LatestProducts from "./LatestProducts"
 
 
 function Home() {
@@ -12,6 +13,7 @@ function Home() {
             </Heading>
 
             <FeaturedProducts />
+            <LatestProducts />
         </div>
     );
 }
