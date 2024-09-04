@@ -17,9 +17,11 @@ function LatestProducts() {
                                     <div className="row">
                                         <p>{product.name}</p>
                                         <div className="price-wrapper">
-                                            <span className="price">${product.price}</span>
+                                            <span className="price">
+                                                ${product.price - (product.price*(product.discount/100))}
+                                            </span>
                                             <del className="discount">
-                                                ${product.price/(product.discount/100)}
+                                                ${product.price}
                                             </del>
                                         </div>
                                     </div>
