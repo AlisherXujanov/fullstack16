@@ -3,6 +3,7 @@ import Heading from "../common/Heading"
 import { FaHome } from "react-icons/fa";
 import FeaturedProducts from "./FeaturedProducts"
 import LatestProducts from "./LatestProducts"
+import ShopexProducts from "./ShopexProducts"
 
 
 function Home() {
@@ -14,6 +15,7 @@ function Home() {
 
             <FeaturedProducts />
             <LatestProducts />
+            <ShopexProducts />
         </div>
     );
 }
