@@ -3,6 +3,9 @@ import Img from "../../../assets/images/404_page.png"
 import "./style.scss"
 
 function ShopexProducts() {
+    // let imgs = [Img1, Img2, Img3]
+    // imgs[offer.id % imgs.length]
+
     return (
         <div className="shopex-offers-wrapper">
             <h1>What Shopex Offer!</h1>

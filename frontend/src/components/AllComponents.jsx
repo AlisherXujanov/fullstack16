@@ -3,6 +3,8 @@ import Home from "./Home"
 import About from './About'
 import Navigation from './Navigation'
 import PageNotFound from './PageNotFound'
+import Authentication from './Authentication'
+
 
 function AllComponents(props) {
     const location = useLocation()
@@ -15,6 +17,9 @@ function AllComponents(props) {
 
                 {/* http://localhost:5173/about */}
                 <Route path="about" element={<About />} />
+
+                {/* http://localhost:5173/login */}
+                <Route path="login" element={<Authentication />} />
 
                 {/* http://localhost:5173/contact */}
                 {/* <Route path="contacts" element={<Contacts />} /> */}
