@@ -14,7 +14,7 @@ function Login(props) {
                 <input type="password" placeholder="Password" />
             </div>
             <div className="form-control">
-                <p>Forgot your password?</p>
+                <p className="fotgot-password">Forgot your password?</p>
             </div>
             <div className="form-control">
                 <button type="submit">Sign in</button>

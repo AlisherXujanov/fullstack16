@@ -19,9 +19,6 @@ function Registration(props) {
                 <input type="password" placeholder="Password confirmation" />
             </div>
             <div className="form-control">
-                <p>Forgot your password?</p>
-            </div>
-            <div className="form-control">
                 <button type="submit">Sign up</button>
             </div>
         </form>
