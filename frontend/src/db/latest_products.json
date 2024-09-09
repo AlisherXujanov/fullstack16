@@ -1,37 +1,109 @@
 [
     {
         "id": 1,
-        "name": "Comfort Handy Craft",
+        "name": "Comfort Handy Craft 1",
         "price": 42,
         "discount": 35
     },
     {
         "id": 2,
-        "name": "Sofa",
+        "name": "Sofa 2",
         "price": 52,
         "discount": 25
     },
     {
         "id": 3,
-        "name": "Comfort Bad",
+        "name": "Comfort Bad 3",
         "price": 25,
         "discount": 10
     },
     {
         "id": 4,
-        "name": "Cozy Handy Craft",
+        "name": "Cozy Handy Craft 4",
         "price": 75,
         "discount": 20
     },
     {
         "id": 5,
-        "name": "Comfort Handy Craft",
+        "name": "Comfort Handy Craft 5",
         "price": 55,
         "discount": 15
     },
     {
         "id": 6,
-        "name": "Comfort Handy Craft",
+        "name": "Comfort Handy Craft 6",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 1,
+        "name": "Comfort Handy Craft 7",
+        "price": 42,
+        "discount": 35
+    },
+    {
+        "id": 2,
+        "name": "Sofa 8",
+        "price": 52,
+        "discount": 25
+    },
+    {
+        "id": 3,
+        "name": "Comfort Bad 9",
+        "price": 25,
+        "discount": 10
+    },
+    {
+        "id": 4,
+        "name": "Cozy Handy Craft 10",
+        "price": 75,
+        "discount": 20
+    },
+    {
+        "id": 5,
+        "name": "Comfort Handy Craft 11",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 6,
+        "name": "Comfort Handy Craft 12",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 1,
+        "name": "Comfort Handy Craft 13",
+        "price": 42,
+        "discount": 35
+    },
+    {
+        "id": 2,
+        "name": "Sofa 14",
+        "price": 52,
+        "discount": 25
+    },
+    {
+        "id": 3,
+        "name": "Comfort Bad 15",
+        "price": 25,
+        "discount": 10
+    },
+    {
+        "id": 4,
+        "name": "Cozy Handy Craft 16",
+        "price": 75,
+        "discount": 20
+    },
+    {
+        "id": 5,
+        "name": "Comfort Handy Craft 17",
+        "price": 55,
+        "discount": 15
+    },
+    {
+        "id": 6,
+        "name": "Comfort Handy Craft 18",
         "price": 55,
         "discount": 15
     }

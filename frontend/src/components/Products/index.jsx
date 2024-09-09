@@ -1,6 +1,7 @@
 import "./style.scss"
 import Heading from "../common/Heading"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
+import LatestProducts from "../Home/LatestProducts"
 
 
 function Products(props) {
@@ -9,6 +10,8 @@ function Products(props) {
             <Heading title="Products" path="Products">
                 <MdOutlineShoppingCartCheckout />
             </Heading>
+
+            <LatestProducts />
         </div>
     )
 }
