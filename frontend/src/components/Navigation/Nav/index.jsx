@@ -7,6 +7,7 @@ import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import Logo from "../../../assets/images/logo.png";
 
 
 function Nav(props) {
@@ -53,17 +54,19 @@ function Nav(props) {
             <div className="bottom">
                 <div className="left">
                     <Link to={"/"}>
-                        <h1 className="logo">WebMaster</h1>
+                        <h1 className="logo">
+                            <img src={Logo} width={100} height={100} style={{transform: "scale(2)"}} />
+                        </h1>
                     </Link>
                 </div>
                 <div className="right">
                     <div className="links">
-                        <NavLink to="/" activeClassName="active">Home</NavLink>
-                        <NavLink to="about" activeClassName="active">About</NavLink>
-                        <NavLink to="products" activeClassName="active">Products</NavLink>
-                        <NavLink to="blog" activeClassName="active">Blog</NavLink>
-                        <NavLink to="shop" activeClassName="active">Shop</NavLink>
-                        <NavLink to="contact" activeClassName="active">Contact</NavLink>
+                        <NavLink to="/" activeclassname="active">Home</NavLink>
+                        <NavLink to="about" activeclassname="active">About</NavLink>
+                        <NavLink to="products" activeclassname="active">Products</NavLink>
+                        <NavLink to="blog" activeclassname="active">Blog</NavLink>
+                        <NavLink to="shop" activeclassname="active">Shop</NavLink>
+                        <NavLink to="contact" activeclassname="active">Contact</NavLink>
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" />
