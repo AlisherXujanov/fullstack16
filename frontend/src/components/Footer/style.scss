@@ -1,0 +1,104 @@
+@import "../../assets/styles/setting";
+
+
+.footer {
+    background-color: #EEEFFB;
+    padding: 55px 190px 0px;
+    color: $light-blue;
+
+
+
+
+    .description {
+
+        @include grid(2, 1fr, 30px);
+        grid-template-columns: 1fr 1.6fr;
+
+        #first-column {
+            h1 {
+                color: $black;
+                font-size: 35px;
+            }
+
+            p {
+                margin: 30px 15px;
+            }
+
+            .email {
+                padding: 17px;
+                border: none;
+                border-radius: 5px;
+                background-color: #fff;
+                margin-top: 10px;
+                margin-left: 15px;
+                
+                &:focus {
+                    outline: 4px solid #FB2E8630;
+                    border-color: $red;
+                }
+            }
+
+            .sign-up {
+                padding: 17px;
+                border: none;
+                border-radius: 5px;
+                background-color: $red;
+                color: $light;
+                @include darken_bg_on_hover($red, 10%);
+            }
+
+        }
+
+        #second-column {
+
+            @include flex(row, start, space-between, 25px);
+
+            .footer-section {
+
+                h4 {
+                
+                    margin-bottom: 50px;
+                color: $black;
+                }
+
+                ul {
+                    list-style-type: none;
+                    padding: 0;
+
+                    li {
+                        margin-bottom: 20px;
+
+                        a {
+                            color: #8A8FB9;
+                            &:hover{
+                                color: $red;
+                            }
+                            &:active{
+                                color: blue;
+                            }
+                        }
+                    }
+                }
+
+            }
+
+
+
+        }
+
+    }
+
+}
+.social {
+    @include grid(2, 1fr, 30px);
+    text-align: center;
+    grid-template-columns: 1fr 1fr;
+    background-color: #E7E4F8;  
+    padding: 15px;
+    color: #9DA0AE;
+    img{
+        margin: 0 10px;
+        cursor: pointer;
+        
+    }
+}

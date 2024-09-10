@@ -2,7 +2,7 @@ import "./style.scss"
 import Heading from "../common/Heading"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import LatestProducts from "../Home/LatestProducts"
-
+import Footer from '../Footer';
 
 function Products(props) {
     return (
@@ -12,6 +12,8 @@ function Products(props) {
             </Heading>
 
             <LatestProducts />
+
+            <Footer />
         </div>
     )
 }

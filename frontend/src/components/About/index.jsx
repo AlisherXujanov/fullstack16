@@ -1,6 +1,7 @@
 import "./style.scss"
 import Heading from "../common/Heading"
 import { BsInfoSquareFill } from "react-icons/bs";
+import Footer from '../Footer';
 
 function About(props) {
     // props = props ? props : "..."
@@ -11,6 +12,8 @@ function About(props) {
                 <BsInfoSquareFill />
             </Heading>
             {/* plus || minus || division || multiply */}
+
+            <Footer />
         </div>
     );
 }
