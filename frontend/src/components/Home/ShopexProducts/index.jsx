@@ -1,10 +1,13 @@
 import ShopexOffersJSON from "../../../db/shopex_offers.json"
-import Img from "../../../assets/images/404_page.png"
+import Img1 from "../../../assets//ShopexImg/img-1.png"
+import Img2 from "../../../assets//ShopexImg/img-2.png"
+import Img3 from "../../../assets//ShopexImg/img-3.png"
+import Img4 from "../../../assets//ShopexImg/img-4.png"
 import "./style.scss"
 
 function ShopexProducts() {
-    // let imgs = [Img1, Img2, Img3]
-    // imgs[offer.id % imgs.length]
+    let imgs = [Img1, Img2, Img3, Img4];
+    
 
     return (
         <div className="shopex-offers-wrapper">
@@ -15,7 +18,7 @@ function ShopexProducts() {
                     ShopexOffersJSON.map((offer, index) => {
                         return (
                             <div key={index} className="offer">
-                                <img src={Img} />
+                                <img src={imgs[offer.id % imgs.length]} />
                                 <h2>{offer.title}</h2>
                                 <p>{offer.text}</p>
                             </div>

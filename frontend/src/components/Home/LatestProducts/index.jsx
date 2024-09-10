@@ -1,10 +1,18 @@
 import LProductsJSON from "../../../db/latest_products.json"
-import Img from "../../../assets/images/404_page.png"
+import Img1 from "../../../assets/LatestPImg/img-1.png"
+import Img2 from "../../../assets/LatestPImg/img-2.png"
+import Img3 from "../../../assets/LatestPImg/img-3.png"
+import Img4 from "../../../assets/LatestPImg/img-4.png"
+import Img5 from "../../../assets/LatestPImg/img-5.png"
+import Img6 from "../../../assets/LatestPImg/img-6.png"
 import { useState } from "react"
 import { range } from "../../../store/helpers"
 import "./style.scss"
 
+
+
 function LatestProducts() {
+    let imgs = [Img1, Img2, Img3, Img4, Img5, Img6];
     const [numberOfItems, setNumberOfItems] = useState(0)
     let numberOfPages = LProductsJSON.length
 
@@ -43,7 +51,7 @@ function LatestProducts() {
                         return (
                             <div key={index}>
                                 <div className="product-item-wrapper">
-                                    <img src={Img} />
+                                    <img src={imgs[product.id % imgs.length]} />
                                     <div className="row">
                                         <p>{product.name}</p>
                                         <div className="price-wrapper">
