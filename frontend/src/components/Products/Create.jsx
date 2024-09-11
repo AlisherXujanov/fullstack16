@@ -26,12 +26,18 @@ function Create(props) {
                     </div>
                     <div className="form-control">
                         <label htmlFor="product-material-input">Material type</label>
-                        <input id="product-material-input" type="text" placeholder="Material type" name="material"/>
+                        <input id="product-material-input" type="text" placeholder="Material type" name="material" />
                     </div>
                 </div>
                 <div className="right">
-                    <label htmlFor="product-desctiption">Desctiption</label>
-                    <textarea id="product-desctiption" name="desctiption" placeholder="Desctiption" />
+                    <div className="form-control">
+                        <label htmlFor="product-desctiption">Desctiption</label>
+                        <textarea id="product-desctiption" name="desctiption" placeholder="Desctiption" />
+                    </div>
+
+                    <div className="form-control">
+                        <button type="submit">Create</button>
+                    </div>
                 </div>
             </form>
         </div>

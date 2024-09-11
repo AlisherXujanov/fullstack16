@@ -15,4 +15,59 @@
             }
         }
     }
+
+    .create-product-wrapper {
+        text-align: center;
+
+        form {
+            width: 80%;
+            margin: 20px auto;
+            @include grid(2, 1fr, 20px);
+            grid-template-columns: 1fr 2fr;
+
+            .form-control {
+                margin: 15px 0;
+                text-align: left;
+
+                textarea,
+                input,
+                button {
+                    width: 100%;
+                    display: block;
+                    padding: 20px;
+                    background-color: transparent;
+                }
+
+                ::placeholder {
+                    color: $light-blue;
+                }
+
+                textarea,
+                input {
+                    border: 2px solid #9096B250;
+
+                    &[type="color"] {
+                        padding: 0 20px;
+                    }
+                }
+                textarea {
+                    height: 200px;
+                }
+
+                textarea:focus,
+                input:focus {
+                    outline: 4px solid #FB2E8630;
+                    border-color: $red;
+                }
+
+                button {
+                    display: inline-block;
+                    background-color: $red;
+                    color: snow;
+                    font-size: 1.2em;
+                    @include darken_bg_on_hover($red, 10%);
+                }
+            }
+        }
+    }
 }
