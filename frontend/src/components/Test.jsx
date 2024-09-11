@@ -1,6 +1,12 @@
 import { useState } from 'react'
 import "./test.scss"
 
+
+
+// CRUD  =>  Create Read Update Delete 
+
+
+
 function Test(props) {
     const [theme, setTheme] = useState(true)
     const [counter, setCounter] = useState(0)

@@ -30,20 +30,6 @@ function LatestProducts() {
     return (
         <div className="latest-products-wrapper">
             <h1>Latest Products</h1>
-
-            <div className="pagination-wrapper">
-                {
-                    range(numberOfPages / 3).map((_, index) => {
-                        return (
-                            <button className={index == 0 ? "active item" : "item"} key={index}
-                                onClick={(e) => { activateNumber(e, index * 3) }}
-                            >
-                                {index + 1}
-                            </button>
-                        )
-                    })
-                }
-            </div>
             <div className="products-wrapper-container">
 
                 {
@@ -65,6 +51,20 @@ function LatestProducts() {
                                     </div>
                                 </div>
                             </div>
+                        )
+                    })
+                }
+            </div>
+
+            <div className="pagination-wrapper">
+                {
+                    range(numberOfPages / 3).map((_, index) => {
+                        return (
+                            <button className={index == 0 ? "active item" : "item"} key={index}
+                                onClick={(e) => { activateNumber(e, index * 3) }}
+                            >
+                                {index + 1}
+                            </button>
                         )
                     })
                 }
