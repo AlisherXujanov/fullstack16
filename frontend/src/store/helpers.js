@@ -1,10 +1,10 @@
-function getUsersFromLocalStorage() {
-    let users = localStorage.getItem('users') ?? "[]"
-    return JSON.parse(users) // [...]
+function getFromLocalStorage(key) {
+    let items = localStorage.getItem(key) ?? "[]"
+    return JSON.parse(items) // [...]
 }
 
 function addNewUserToLocalStorage(new_user) {
-    let existingUsers = getUsersFromLocalStorage()
+    let existingUsers = getFromLocalStorage('users')
 
     if (userExistsInDB(new_user)) {
         return false
@@ -16,7 +16,7 @@ function addNewUserToLocalStorage(new_user) {
 }
 
 function userExistsInDB({ username, password }) {
-    let users = getUsersFromLocalStorage()
+    let users = getFromLocalStorage('users')
     for (let user of users) {
         if (user.username == username && user.password == password) {
             return true
@@ -36,7 +36,7 @@ function range(start, end=null) {
 }
 
 export {
-    getUsersFromLocalStorage,
+    getFromLocalStorage,
     addNewUserToLocalStorage,
     userExistsInDB,
     range,
