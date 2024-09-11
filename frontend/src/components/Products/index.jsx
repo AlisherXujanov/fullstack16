@@ -3,6 +3,7 @@ import Heading from "../common/Heading"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import LatestProducts from "../Home/LatestProducts"
 import { useState } from "react";
+import CreateForm from "./Create.jsx"
 
 function Products(props) {
     const [sectionName, setSectionName] = useState("products")
@@ -13,6 +14,7 @@ function Products(props) {
         const btns = document.querySelectorAll(".settings-wrapper .action-buttons button")
         btns.forEach(btn => { btn.classList.remove("active") })
         e.target.classList.add("active")
+        setSectionName(name)
     }
 
 
@@ -39,7 +41,11 @@ function Products(props) {
                 </div>
             </div>
 
-            <LatestProducts />
+            {
+                sectionName == 'products' ?
+                    <LatestProducts />    :
+                    <CreateForm />
+            }
         </div>
     )
 }
