@@ -61,11 +61,13 @@
                 }
 
                 button {
-                    display: inline-block;
+                    width: 150px;
                     background-color: $red;
                     color: snow;
                     font-size: 1.2em;
                     @include darken_bg_on_hover($red, 10%);
+                    float: right;
+                    margin-top: 20px;
                 }
             }
         }
