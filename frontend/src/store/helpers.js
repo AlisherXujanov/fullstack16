@@ -1,5 +1,5 @@
-function getFromLocalStorage(key) {
-    let items = localStorage.getItem(key) ?? "[]"
+function getFromLocalStorage(key, defaultValue="[]") {
+    let items = localStorage.getItem(key) ?? defaultValue
     return JSON.parse(items) // [...]
 }
 
