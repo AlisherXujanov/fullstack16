@@ -8,6 +8,7 @@ function Create(props) {
         color: "",
         description: "",
         discount: 0,
+        image: "",
     })
 
 
@@ -36,7 +37,14 @@ function Create(props) {
 
     function handleFormChange(e) {
         const { name, value } = e.target
-        setForm({ ...form, [name]: value })
+        
+        if (name !== 'image') {
+            setForm({ ...form, [name]: value })
+        } else {
+            const file = e.target.files[0]
+            const fileURL = URL.createObjectURL(file)
+            setForm({ ...form, [name]: fileURL })
+        }
     }
 
 
@@ -50,20 +58,20 @@ function Create(props) {
                         <label htmlFor="product-name-input">Name of the product</label>
                         <input id="product-name-input"
                             onChange={handleFormChange}
-                            type="text" placeholder="Product name" name="name" />
+                            type="text" placeholder="Product name" name="name" required />
                     </div>
                     <div className="form-control">
                         <label htmlFor="product-color-input">Color of the product</label>
                         <input id="product-color-input"
                             onChange={handleFormChange}
-                            type="color" name="color" />
+                            type="color" name="color" required />
                     </div>
                     <div className="form-control price-discount">
                         <div>
                             <label htmlFor="product-price-input">Price of the product</label>
                             <input id="product-price-input"
                                 onChange={handleFormChange}
-                                type="number" placeholder="Price" name="price" />
+                                type="number" placeholder="Price" name="price" required />
                         </div>
                         <div>
                             <label htmlFor="product-discount-input">Discount</label>
@@ -86,7 +94,12 @@ function Create(props) {
                             onChange={handleFormChange}
                             name="description" placeholder="Desctiption" />
                     </div>
-
+                    <div className="form-control">
+                        <label htmlFor="product-image">Image</label>
+                        <input id="product-image"
+                            onChange={handleFormChange}
+                            type="file" name="image" required />
+                    </div>
                     <div className="form-control">
                         <button type="submit">Create</button>
                     </div>

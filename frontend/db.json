@@ -1,52 +1,24 @@
 {
   "products": [
     {
-      "id": 1726235188043,
-      "name": "Chair",
+      "id": 1726237525308,
+      "name": "Bemiyya",
       "price": "200",
       "material": "Iron",
-      "color": "#1f13c9",
-      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam eum laboriosam debitis esse dolorem facilis! Modi veniam voluptatum libero nam quas nemo similique exercitationem sed illo? Architecto assumenda quia ad."
+      "color": "#822727",
+      "description": " const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products'",
+      "discount": "10",
+      "image": "blob:http://localhost:5173/7a24ffe9-91cc-4abc-8c29-f5a2a9477273"
     },
     {
-      "id": 1726236024804,
-      "name": "Test 2",
+      "id": 1726237625701,
+      "name": "Asadbek",
       "price": "100",
-      "material": "Iron",
-      "color": "",
-      "description": "<div className=\"pagination-wrapper\">\n                { products ?\n                    range(products?.length / 3).map((_, index) => {\n                        return (\n                            <button className={index == 0 ? \"active item\" : \"item\"} key={index}\n                                onClick={(e) => { activateNumber(e, index * 3) }}\n                            >\n                                {index + 1}\n                            </button>\n                        )\n                    }) : null\n                }\n            </div>"
-    },
-    {
-      "id": 1726236026708,
-      "name": "",
-      "price": "",
-      "material": "",
-      "color": "",
-      "description": ""
-    },
-    {
-      "id": 1726236026860,
-      "name": "",
-      "price": "",
-      "material": "",
-      "color": "",
-      "description": ""
-    },
-    {
-      "id": 1726236027005,
-      "name": "",
-      "price": "",
-      "material": "",
-      "color": "",
-      "description": ""
-    },
-    {
-      "id": 1726236027156,
-      "name": "",
-      "price": "",
-      "material": "",
-      "color": "",
-      "description": ""
+      "material": "Person",
+      "color": "#159924",
+      "description": "{/* <div className=\"pagination-wrapper\">\n                { products ?\n                    range(products?.length / 3).map((_, index) => {\n                        return (\n                            <button className={index == 0 ? \"active item\" : \"item\"} key={index}\n                                onClick={(e) => { activateNumber(e, index * 3) }}\n                            >\n                                {index + 1}\n                            </button>\n                        )\n                    }) : null\n                }\n            </div> */}",
+      "discount": "5",
+      "image": "blob:http://localhost:5173/00388122-707c-47f4-9018-e5ba355cc921"
     }
   ]
 }

@@ -62,7 +62,7 @@ function LatestProducts() {
                 }
             </div>
 
-            <div className="pagination-wrapper">
+            {/* <div className="pagination-wrapper">
                 { products ?
                     range(products?.length / 3).map((_, index) => {
                         return (
@@ -74,7 +74,7 @@ function LatestProducts() {
                         )
                     }) : null
                 }
-            </div>
+            </div> */}
         </div>
     )
 }
