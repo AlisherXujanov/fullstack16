@@ -12,10 +12,16 @@ function Create(props) {
 
     function submit(e) {
         e.preventDefault();
-        const newProduct = { ...form, id: new Date().getTime() };
-        const existingProducts = JSON.parse(localStorage.getItem("products")) || [];
-        const updatedProducts = [...existingProducts, newProduct];
-        localStorage.setItem("products", JSON.stringify(updatedProducts));
+        const URL = 'http://localhost:3000/products'
+        const newProduct = { ...form, id: new Date().getTime() }
+        fetch(URL, {
+            method: "POST",
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(newProduct)
+        })
+            .then(response => response.json())
+            .then(data => console.log(data))
+
         setForm({
             name: "",
             price: "",
@@ -24,7 +30,7 @@ function Create(props) {
             description: "",
         });
     }
-    
+
 
     function handleFormChange(e) {
         const { name, value } = e.target
@@ -35,13 +41,7 @@ function Create(props) {
     return (
         <div className="create-product-wrapper">
             <h1>Create Product</h1>
-
-            {form.name} <br />
-            {form.price} <br />
-            {form.material} <br />
-            {form.description} <br />
-            {form.color} <br />
-
+            
             <form onSubmit={submit}>
                 <div className="left">
                     <div className="form-control">
