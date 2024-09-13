@@ -13,7 +13,6 @@ function About(props) {
             </Heading>
             {/* plus || minus || division || multiply */}
 
-            <Footer />
         </div>
     );
 }

@@ -18,7 +18,6 @@ function Home() {
             <LatestProducts />
             <ShopexProducts />
 
-            <Footer />
         </div>
     );
 }

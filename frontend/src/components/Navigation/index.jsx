@@ -14,7 +14,7 @@ function Navigation() {
                 <Outlet />
             </main>
 
-            {/* <Footer /> */}
+            <Footer />
         </>
     );
 }
