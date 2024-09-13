@@ -1,3 +1,8 @@
+import Img1 from "../../../assets/LatestPImg/img-1.png"
+import Img2 from "../../../assets/LatestPImg/img-2.png"
+import Img3 from "../../../assets/LatestPImg/img-3.png"
+import Img4 from "../../../assets/LatestPImg/img-4.png"
+import Img5 from "../../../assets/LatestPImg/img-5.png"
 import { useState, useEffect } from "react"
 import { range } from "../../../store/helpers"
 import "./style.scss"
@@ -43,7 +48,7 @@ function LatestProducts() {
                         return (
                             <div key={index}>
                                 <div className="product-item-wrapper">
-                                    <img src={product.image} />
+                                    <img src={Img1} />
                                     <div className="row">
                                         <p>{product.name}</p>
                                         <div className="price-wrapper">
@@ -62,7 +67,7 @@ function LatestProducts() {
                 }
             </div>
 
-            {/* <div className="pagination-wrapper">
+            <div className="pagination-wrapper">
                 { products ?
                     range(products?.length / 3).map((_, index) => {
                         return (
@@ -74,7 +79,7 @@ function LatestProducts() {
                         )
                     }) : null
                 }
-            </div> */}
+            </div>
         </div>
     )
 }

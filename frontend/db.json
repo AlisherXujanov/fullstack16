@@ -1,24 +1,33 @@
 {
   "products": [
     {
-      "id": 1726237525308,
-      "name": "Bemiyya",
-      "price": "200",
+      "id": 1726238015794,
+      "name": "Test 2",
+      "price": "22",
       "material": "Iron",
-      "color": "#822727",
-      "description": " const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products' const URL = 'http://localhost:3000/products'",
-      "discount": "10",
-      "image": "blob:http://localhost:5173/7a24ffe9-91cc-4abc-8c29-f5a2a9477273"
+      "color": "",
+      "description": "",
+      "discount": "2",
+      "image": "{}"
     },
     {
-      "id": 1726237625701,
-      "name": "Asadbek",
-      "price": "100",
-      "material": "Person",
-      "color": "#159924",
-      "description": "{/* <div className=\"pagination-wrapper\">\n                { products ?\n                    range(products?.length / 3).map((_, index) => {\n                        return (\n                            <button className={index == 0 ? \"active item\" : \"item\"} key={index}\n                                onClick={(e) => { activateNumber(e, index * 3) }}\n                            >\n                                {index + 1}\n                            </button>\n                        )\n                    }) : null\n                }\n            </div> */}",
-      "discount": "5",
-      "image": "blob:http://localhost:5173/00388122-707c-47f4-9018-e5ba355cc921"
+      "id": 1726238049219,
+      "name": "12",
+      "price": "222",
+      "material": "",
+      "color": "",
+      "description": "",
+      "image": {}
+    },
+    {
+      "id": 1726238200248,
+      "name": "Test 2",
+      "price": "222",
+      "material": "Iron",
+      "color": "#b93737",
+      "description": "eqwedq",
+      "discount": "2",
+      "image": "blob:http://localhost:5173/5a445b42-5eb9-42b8-9ddf-93f28a28b584"
     }
   ]
 }
