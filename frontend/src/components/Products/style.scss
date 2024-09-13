@@ -69,6 +69,11 @@
                     float: right;
                     margin-top: 20px;
                 }
+
+                &.price-discount {
+                    @include grid(2, 1fr, 10px);
+                    grid-template-columns: 2fr 1fr;
+                }
             }
         }
     }

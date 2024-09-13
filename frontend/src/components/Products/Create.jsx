@@ -7,6 +7,7 @@ function Create(props) {
         material: "",
         color: "",
         description: "",
+        discount: 0,
     })
 
 
@@ -16,7 +17,7 @@ function Create(props) {
         const newProduct = { ...form, id: new Date().getTime() }
         fetch(URL, {
             method: "POST",
-            headers: {'Content-Type': 'application/json'},
+            headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newProduct)
         })
             .then(response => response.json())
@@ -29,6 +30,7 @@ function Create(props) {
             color: "",
             description: "",
         });
+        e.target.reset()
     }
 
 
@@ -41,7 +43,7 @@ function Create(props) {
     return (
         <div className="create-product-wrapper">
             <h1>Create Product</h1>
-            
+
             <form onSubmit={submit}>
                 <div className="left">
                     <div className="form-control">
@@ -56,11 +58,19 @@ function Create(props) {
                             onChange={handleFormChange}
                             type="color" name="color" />
                     </div>
-                    <div className="form-control">
-                        <label htmlFor="product-price-input">Price of the product</label>
-                        <input id="product-price-input"
-                            onChange={handleFormChange}
-                            type="number" placeholder="Price" name="price" />
+                    <div className="form-control price-discount">
+                        <div>
+                            <label htmlFor="product-price-input">Price of the product</label>
+                            <input id="product-price-input"
+                                onChange={handleFormChange}
+                                type="number" placeholder="Price" name="price" />
+                        </div>
+                        <div>
+                            <label htmlFor="product-discount-input">Discount</label>
+                            <input id="product-discount-input"
+                                onChange={handleFormChange}
+                                type="number" placeholder="Discount" name="discount" />
+                        </div>
                     </div>
                     <div className="form-control">
                         <label htmlFor="product-material-input">Material type</label>
