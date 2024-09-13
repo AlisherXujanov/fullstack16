@@ -11,9 +11,20 @@ function Create(props) {
 
 
     function submit(e) {
-        e.preventDefault()
-        const newProduct = { ...form, id: (new Date).getTime() }
+        e.preventDefault();
+        const newProduct = { ...form, id: new Date().getTime() };
+        const existingProducts = JSON.parse(localStorage.getItem("products")) || [];
+        const updatedProducts = [...existingProducts, newProduct];
+        localStorage.setItem("products", JSON.stringify(updatedProducts));
+        setForm({
+            name: "",
+            price: "",
+            material: "",
+            color: "",
+            description: "",
+        });
     }
+    
 
     function handleFormChange(e) {
         const { name, value } = e.target
