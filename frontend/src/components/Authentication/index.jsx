@@ -4,10 +4,8 @@ import { CiLogin } from "react-icons/ci";
 import { useState } from 'react'
 import Login from "./Login.jsx"
 import Registration from "./Registration.jsx"
-import Footer from '../Footer';
 
-
-function Authentication(props) {
+function Authentication() {
     const [isRegistered, setIsRegistered] = useState(true)
 
     function toggleAuth() {
@@ -34,8 +32,6 @@ function Authentication(props) {
                     }
                 </p>
             </div>
-
-            <Footer />
         </div>
     );
 }

@@ -14,12 +14,10 @@ function Create(props) {
 
     function submit(e) {
         e.preventDefault();
-        const URL = 'http://localhost:3000/products'
-        const newProduct = { ...form, id: new Date().getTime() }
-        fetch(URL, {
+        fetch('http://localhost:3000/products', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(newProduct)
+            body: JSON.stringify({ ...form, id: Date.now() })
         })
             .then(response => response.json())
             .then(data => console.log(data))
@@ -37,7 +35,7 @@ function Create(props) {
 
     function handleFormChange(e) {
         const { name, value } = e.target
-        
+
         if (name !== 'image') {
             setForm({ ...form, [name]: value })
         } else {
@@ -77,7 +75,9 @@ function Create(props) {
                             <label htmlFor="product-discount-input">Discount</label>
                             <input id="product-discount-input"
                                 onChange={handleFormChange}
-                                type="number" placeholder="Discount" name="discount" />
+                                type="number" placeholder="Discount" name="discount"
+                                max="99"
+                            />
                         </div>
                     </div>
                     <div className="form-control">

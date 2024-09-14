@@ -7,7 +7,7 @@ import Img3 from "../../../assets/FeaturesImg/image3.png"
 import Img4 from "../../../assets/FeaturesImg/image4.png"
     
 
-function FeaturedProducts(props) {
+function FeaturedProducts() {
     let imgs = [Img1, Img2, Img3, Img4];
     return (
         <section className="featured-products-wrapper">

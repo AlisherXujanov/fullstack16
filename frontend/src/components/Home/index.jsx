@@ -4,8 +4,6 @@ import { FaHome } from "react-icons/fa";
 import FeaturedProducts from "./FeaturedProducts"
 import LatestProducts from "./LatestProducts"
 import ShopexProducts from "./ShopexProducts"
-import Footer from '../Footer';
-
 
 function Home() {
     return (

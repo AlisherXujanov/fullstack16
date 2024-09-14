@@ -7,10 +7,7 @@
     color: $light-blue;
 
 
-
-
     .description {
-
         @include grid(2, 1fr, 30px);
         grid-template-columns: 1fr 1.6fr;
 
@@ -18,6 +15,7 @@
             h1 {
                 color: $black;
                 font-size: 35px;
+                margin-bottom: 20px;
             }
 
             p {
@@ -31,7 +29,7 @@
                 background-color: #fff;
                 margin-top: 10px;
                 margin-left: 15px;
-                
+
                 &:focus {
                     outline: 4px solid #FB2E8630;
                     border-color: $red;
@@ -56,9 +54,9 @@
             .footer-section {
 
                 h4 {
-                
+
                     margin-bottom: 50px;
-                color: $black;
+                    color: $black;
                 }
 
                 ul {
@@ -70,10 +68,12 @@
 
                         a {
                             color: #8A8FB9;
-                            &:hover{
+
+                            &:hover {
                                 color: $red;
                             }
-                            &:active{
+
+                            &:active {
                                 color: blue;
                             }
                         }
@@ -89,16 +89,18 @@
     }
 
 }
+
 .social {
     @include grid(2, 1fr, 30px);
     text-align: center;
     grid-template-columns: 1fr 1fr;
-    background-color: #E7E4F8;  
+    background-color: #E7E4F8;
     padding: 15px;
     color: #9DA0AE;
-    img{
+
+    img {
         margin: 0 10px;
         cursor: pointer;
-        
+
     }
 }

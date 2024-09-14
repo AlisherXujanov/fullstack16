@@ -1,33 +1,4 @@
 {
   "products": [
-    {
-      "id": 1726238015794,
-      "name": "Test 2",
-      "price": "22",
-      "material": "Iron",
-      "color": "",
-      "description": "",
-      "discount": "2",
-      "image": "{}"
-    },
-    {
-      "id": 1726238049219,
-      "name": "12",
-      "price": "222",
-      "material": "",
-      "color": "",
-      "description": "",
-      "image": {}
-    },
-    {
-      "id": 1726238200248,
-      "name": "Test 2",
-      "price": "222",
-      "material": "Iron",
-      "color": "#b93737",
-      "description": "eqwedq",
-      "discount": "2",
-      "image": "blob:http://localhost:5173/5a445b42-5eb9-42b8-9ddf-93f28a28b584"
-    }
   ]
 }

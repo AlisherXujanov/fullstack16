@@ -7,7 +7,7 @@ import Authentication from './Authentication'
 import Products from './Products'
 
 
-function AllComponents(props) {
+function AllComponents() {
     const location = useLocation()
 
     return (
@@ -21,7 +21,6 @@ function AllComponents(props) {
 
                 {/* http://localhost:5173/login */}
                 <Route path="login" element={<Authentication />} />
-
 
                 {/* http://localhost:5173/products */}
                 <Route path="products" element={<Products />} />

@@ -50,6 +50,7 @@
                         padding: 0 20px;
                     }
                 }
+
                 textarea {
                     height: 200px;
                 }
@@ -65,9 +66,9 @@
                     background-color: $red;
                     color: snow;
                     font-size: 1.2em;
-                    @include darken_bg_on_hover($red, 10%);
-                    float: right;
                     margin-top: 20px;
+                    float: right;
+                    @include darken_bg_on_hover($red, 10%);
                 }
 
                 &.price-discount {
