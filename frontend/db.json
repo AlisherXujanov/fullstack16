@@ -1,4 +1,44 @@
 {
   "products": [
+    {
+      "id": 1726423607992,
+      "name": "First product",
+      "price": "200",
+      "material": "Metallic Silver",
+      "color": "#d11f1f",
+      "description": "lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul ",
+      "discount": "15",
+      "image": "blob:http://localhost:5173/656ba563-f9d4-426c-ba5b-6af63bece3dc"
+    },
+    {
+      "id": 1726424317152,
+      "name": "Second item",
+      "price": "185",
+      "material": "Metallic Silver",
+      "color": "#1e9799",
+      "description": "lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul lorem ispul ",
+      "discount": "10",
+      "image": "blob:http://localhost:5173/06c649ce-611d-4d5a-9b6e-786dcbfa9735"
+    },
+    {
+      "id": 1726424357206,
+      "name": "Hello world",
+      "price": "1231",
+      "material": "qwep",
+      "color": "",
+      "description": "dqw;ldm",
+      "discount": "22",
+      "image": ""
+    },
+    {
+      "id": 1726424429775,
+      "name": "qweqew",
+      "price": "100",
+      "material": "qwd",
+      "color": "#b51717",
+      "description": "dqw",
+      "discount": "10",
+      "image": ""
+    }
   ]
 }

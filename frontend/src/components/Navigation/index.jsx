@@ -1,7 +1,7 @@
 import { Outlet } from 'react-router-dom'
 import Nav from "./Nav"
-import "./style.scss"
 import Footer from '../Footer';
+import "./style.scss"
 
 function Navigation() {
     return (
@@ -10,7 +10,7 @@ function Navigation() {
                 <Nav />
             </header>
 
-            <main>
+            <main id="outlet-wrapper">
                 <Outlet />
             </main>
 

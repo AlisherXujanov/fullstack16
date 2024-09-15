@@ -30,6 +30,7 @@ function Create(props) {
             description: "",
         });
         e.target.reset()
+        props.activateSection(null, true)
     }
 
 
@@ -98,7 +99,7 @@ function Create(props) {
                         <label htmlFor="product-image">Image</label>
                         <input id="product-image"
                             onChange={handleFormChange}
-                            type="file" name="image" required />
+                            type="file" name="image" />
                     </div>
                     <div className="form-control">
                         <button type="submit">Create</button>

@@ -75,6 +75,20 @@
                     @include grid(2, 1fr, 10px);
                     grid-template-columns: 2fr 1fr;
                 }
+
+                input[type="file"] {
+                    margin-top: 1px;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &::-webkit-file-upload-button {
+                        border: none;
+                        padding: 10px;
+                        background-color: $red;
+                        color: $light;
+                        cursor: pointer;
+                    }
+                }
             }
         }
     }

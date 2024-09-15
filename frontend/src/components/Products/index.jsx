@@ -8,13 +8,18 @@ import CreateForm from "./Create.jsx"
 function Products(props) {
     const [sectionName, setSectionName] = useState("products")
 
-    function activateSection(e) {
-        const { name } = e.target
-
+    function activateSection(e=null, item_created=false) {
         const btns = document.querySelectorAll(".settings-wrapper .action-buttons button")
         btns.forEach(btn => { btn.classList.remove("active") })
-        e.target.classList.add("active")
-        setSectionName(name)
+
+        if (item_created) {
+            btns[0].classList.add("active")
+            setSectionName("products")
+        } else {
+            const { name } = e.target
+            e.target.classList.add("active")
+            setSectionName(name)
+        }
     }
 
 
@@ -44,7 +49,7 @@ function Products(props) {
             {
                 sectionName == 'products' ?
                     <LatestProducts />    :
-                    <CreateForm />
+                    <CreateForm activateSection={activateSection} />
             }
         </div>
     )

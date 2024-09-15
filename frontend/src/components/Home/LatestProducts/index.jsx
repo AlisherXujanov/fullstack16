@@ -56,7 +56,7 @@ function LatestProducts() {
                                         <p>{product.name}</p>
                                         <div className="price-wrapper">
                                             <span className="price">
-                                                ${product.price - (product.price * (product.discount / 100))}
+                                                ${(product.price - (product.price * (product.discount / 100))).toFixed(2)}
                                             </span>
                                             <del className="discount">
                                                 ${product.price}
@@ -72,10 +72,10 @@ function LatestProducts() {
             </div>
 
             <div className="pagination-wrapper">
-                {
-                    range(parseInt(products.length / 3)).map((_, index) => {
+                { products.length > 3 &&
+                    range(Math.ceil(products.length / 3)).map((_, index) => {
                         return (
-                            <button className={index == 0 ? "active item" : "item"} key={index}
+                            <button className={index === numberOfItems / 3 ? "active item" : "item"} key={index}
                                 onClick={(e) => { activateNumber(e, index * 3) }}
                             >
                                 {index + 1}
