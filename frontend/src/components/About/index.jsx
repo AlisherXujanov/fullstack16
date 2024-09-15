@@ -1,8 +1,9 @@
 import "./style.scss"
 import Heading from "../common/Heading"
 import { BsInfoSquareFill } from "react-icons/bs";
-import Footer from '../Footer';
-
+import Contact from './Contact';
+import ShopexProducts from "../Home/ShopexProducts";
+import Reviews from "./Reviews";
 function About(props) {
     // props = props ? props : "..."
 
@@ -11,8 +12,9 @@ function About(props) {
             <Heading title="About" path="About">
                 <BsInfoSquareFill />
             </Heading>
-            {/* plus || minus || division || multiply */}
-
+            <Contact />
+            <ShopexProducts/>
+            <Reviews/>
         </div>
     );
 }
