@@ -110,7 +110,7 @@ function Nav(props) {
                         <NavLink to="contact" activeclassname="active">Contact</NavLink>
                     </div>
                     <div className="searchbar">
-                        <input type="text" placeholder="Search" onChange={handleSearch} />
+                        <input type="search" placeholder="Search" onChange={handleSearch} />
                         <button><IoSearch /></button>
 
                         {searchResults &&
