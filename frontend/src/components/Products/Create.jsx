@@ -41,8 +41,12 @@ function Create(props) {
             setForm({ ...form, [name]: value })
         } else {
             const file = e.target.files[0]
-            const fileURL = URL.createObjectURL(file)
-            setForm({ ...form, [name]: fileURL })
+            // const fileURL = URL.createObjectURL(file)
+            const fileReader = new FileReader()
+            fileReader.readAsDataURL(file)
+            fileReader.onload = function () {
+                setForm({ ...form, [name]: fileReader.result })
+            }
         }
     }
 

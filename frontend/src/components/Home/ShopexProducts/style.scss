@@ -12,17 +12,20 @@
     .offers-container {
         @include grid(4, 1fr, 20px);
         margin: 20px 0;
-        padding: 20px 150px;
+        padding: 20px 200px;
 
         .offer {
             text-align: center;
+
             img {
                 width: 50px;
                 height: 50px;
             }
+
             h2 {
                 margin: 20px 0;
             }
+
             p {
                 color: lightgray;
             }

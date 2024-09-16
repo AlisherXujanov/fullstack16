@@ -1,4 +1,3 @@
-import LProductsJSON from "../../../db/latest_products.json"
 import Img1 from "../../../assets/LatestPImg/img-1.png"
 import Img2 from "../../../assets/LatestPImg/img-2.png"
 import Img3 from "../../../assets/LatestPImg/img-3.png"
@@ -51,7 +50,8 @@ function LatestProducts() {
                         return (
                             <div key={index}>
                                 <div className="product-item-wrapper">
-                                    <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} />
+                                    <img src={product.image} />
+                                    {/* <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} /> */}
                                     <div className="row">
                                         <p>{product.name}</p>
                                         <div className="price-wrapper">

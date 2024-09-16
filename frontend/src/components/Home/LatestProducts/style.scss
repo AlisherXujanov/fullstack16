@@ -35,9 +35,9 @@
     }
 
     .products-wrapper-container {
-        @include grid(3, 1fr, 50px);
+        @include grid(3, 1fr, 100px);
         margin: 100px 0;
-        padding: 20px 150px;
+        padding: 20px 250px;
 
         .product-item-wrapper {
             img {

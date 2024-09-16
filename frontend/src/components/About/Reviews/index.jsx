@@ -16,7 +16,7 @@ function Reviews() {
                 </div>
 
                 <div className="reviews">
-                    <h2>Selina Gomez</h2>
+                    <h2>Selena Gomez</h2>
                     <h5>Ceo At Webecy Digital</h5>
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Non duis ultrices quam vel dui sollicitudin <br />
