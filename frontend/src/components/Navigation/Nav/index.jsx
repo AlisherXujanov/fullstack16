@@ -36,7 +36,12 @@ function Nav(props) {
             setSearchResults([])
         } else {
             let result = products.filter(p => p.name.toLowerCase().includes(value))
-            setSearchResults(result)
+
+            if (result.length == 0) {
+                setSearchResults([{ name: "No results found", id: '/not_found' }])
+            } else {
+                setSearchResults(result)
+            }
         }
     }
 
