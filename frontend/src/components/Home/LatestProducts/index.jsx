@@ -1,17 +1,11 @@
-import Img1 from "../../../assets/LatestPImg/img-1.png"
-import Img2 from "../../../assets/LatestPImg/img-2.png"
-import Img3 from "../../../assets/LatestPImg/img-3.png"
-import Img4 from "../../../assets/LatestPImg/img-4.png"
-import Img5 from "../../../assets/LatestPImg/img-5.png"
-import Img6 from "../../../assets/LatestPImg/img-6.png"
 import { useState, useEffect } from "react"
 import { range } from "../../../store/helpers"
+import { Link } from "react-router-dom"
 import "./style.scss"
 
 
 
 function LatestProducts() {
-    let imgs = [Img1, Img2, Img3, Img4, Img5, Img6];
     const [products, setProducts] = useState([])
     const [numberOfItems, setNumberOfItems] = useState(0)
 
@@ -50,19 +44,21 @@ function LatestProducts() {
                         return (
                             <div key={index}>
                                 <div className="product-item-wrapper">
-                                    <img src={product.image} />
-                                    {/* <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} /> */}
-                                    <div className="row">
-                                        <p>{product.name}</p>
-                                        <div className="price-wrapper">
-                                            <span className="price">
-                                                ${(product.price - (product.price * (product.discount / 100))).toFixed(2)}
-                                            </span>
-                                            <del className="discount">
-                                                ${product.price}
-                                            </del>
+                                    <Link>
+                                        <img src={product.image} />
+                                        {/* <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} /> */}
+                                        <div className="row">
+                                            <p>{product.name}</p>
+                                            <div className="price-wrapper">
+                                                <span className="price">
+                                                    ${(product.price - (product.price * (product.discount / 100))).toFixed(2)}
+                                                </span>
+                                                <del className="discount">
+                                                    ${product.price}
+                                                </del>
+                                            </div>
                                         </div>
-                                    </div>
+                                    </Link>
                                 </div>
                             </div>
                         )
