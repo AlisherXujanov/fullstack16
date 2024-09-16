@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import { range } from "../../../store/helpers"
 import { Link } from "react-router-dom"
+import { BASE_URL } from "../../../store"
 import "./style.scss"
 
 
@@ -14,8 +15,7 @@ function LatestProducts() {
     }, [])
 
     function fetchLatestProducts() {
-        const URL = "http://localhost:3000/products"
-        fetch(URL)
+        fetch(BASE_URL + "products")
             .then(response => response.json())
             .then(data => {
                 setProducts(data.sort((a, b) => parseInt(b.id) - parseInt(a.id)))
@@ -44,7 +44,7 @@ function LatestProducts() {
                         return (
                             <div key={index}>
                                 <div className="product-item-wrapper">
-                                    <Link>
+                                    <Link to={"/products/" + product.id}>
                                         <img src={product.image} />
                                         {/* <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} /> */}
                                         <div className="row">
