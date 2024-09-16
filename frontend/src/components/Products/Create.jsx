@@ -42,11 +42,11 @@ function Create(props) {
         } else {
             const file = e.target.files[0]
             // const fileURL = URL.createObjectURL(file)
-            const fileReader = new FileReader()
-            fileReader.readAsDataURL(file)
-            fileReader.onload = function () {
-                setForm({ ...form, [name]: fileReader.result })
-            }
+            // const fileReader = new FileReader()
+            // fileReader.readAsDataURL(file)
+            // fileReader.onload = function () {
+            //     setForm({ ...form, [name]: fileReader.result })
+            // }
         }
     }
 

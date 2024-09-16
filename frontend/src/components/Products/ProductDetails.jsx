@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 import "./productDetails.scss"
 
 function ProductDetails() {
-    const [ product, setProduct ] = useState({})
+    const [product, setProduct] = useState({})
     const { id } = useParams()
 
     useEffect(() => {
@@ -31,7 +31,7 @@ function ProductDetails() {
             </Heading>
 
             <div className="product-details-wrapper">
-                <h1></h1>
+                <h1>{product.title}</h1>
             </div>
         </>
     );

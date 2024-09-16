@@ -2,7 +2,7 @@ import "./style.scss"
 import Heading from "../common/Heading"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import LatestProducts from "../Home/LatestProducts"
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import CreateForm from "./Create.jsx"
 
 function Products(props) {
@@ -21,6 +21,10 @@ function Products(props) {
             setSectionName(name)
         }
     }
+
+    useEffect(() => {
+        document.title = "Products"
+    }, [])
 
 
     return (
