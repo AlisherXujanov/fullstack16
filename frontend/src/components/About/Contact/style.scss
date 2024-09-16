@@ -1,0 +1,49 @@
+@import "../../../assets/styles/setting";
+
+.contact-page-wrapper {
+    background-color: $light;
+    padding: 100px 200px;
+    margin-bottom: 50px;
+    text-align: center;
+    @include grid(2, 1fr, 0px);
+    .photo{
+        width: 505px;
+        height: 340px;
+        background-color: #2B3CAB;
+        padding-bottom: 15px;
+        border-radius: 5px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            margin-left: 15px;
+            border-radius: 5px;
+        }
+    }
+    .contact-info {
+        margin-top: 40px;
+        text-align: left;
+        h1 {
+            font-size: 40px;
+            color: #151875;
+            font-family: Josefin Sans;
+        }
+        p {
+            text-align: justify;
+            line-height: 1.5;
+            margin: 18px 0;
+            color: #151875b1;
+        }
+        .contact-btn {
+            background-color: $red;
+            color: snow;
+            margin-top: 40px;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            &:hover {
+                background-color: $darkest-blue;
+            }
+        }
+    }
+}
