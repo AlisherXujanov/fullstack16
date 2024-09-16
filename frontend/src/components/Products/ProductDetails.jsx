@@ -17,10 +17,8 @@ function ProductDetails() {
         fetch(BASE_URL + "products/" + id)
             .then(response => response.json())
             .then(data => {
-                setTimeout(() => {
-                    setProduct(data)
-                    document.title = "Product: " + data.name
-                }, 1000)
+                setProduct(data)
+                document.title = "Product: " + data.name
             })
     }
 
@@ -31,7 +29,7 @@ function ProductDetails() {
             </Heading>
 
             <div className="product-details-wrapper">
-                <h1>{product.title}</h1>
+                <h1>{product.name}</h1>
             </div>
         </>
     );

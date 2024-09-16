@@ -66,7 +66,7 @@ nav {
             .searchbar {
                 padding: 2px;
                 @include flex(row, center, center, 0);
-
+                position: relative;
 
                 input {
                     width: 300px;
@@ -150,6 +150,32 @@ nav {
                     }
                 }
 
+                .search-info {
+                    position: absolute;
+                    z-index: 99;
+                    top: 50px;
+                    display: inline-block;
+                    width: 99%;
+                    box-shadow: 8px 16px 32px $border;
+                    border-top: none;
+
+                    a {
+                        position: relative;
+                        z-index: 9999;
+                        display: block;
+                        background-color: $light;
+                        padding: 10px 20px;
+                        border-radius: 0;
+
+                        &.last {
+                            border-radius: 0 0 10px 10px;
+                        }
+
+                        &:hover {
+                            background-color: $violet-dark;
+                        }
+                    }
+                }
             }
         }
     }

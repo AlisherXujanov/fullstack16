@@ -8,9 +8,45 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/images/logo.png";
+import { useState, useEffect } from "react";
+import { BASE_URL } from "../../../store";
 
 
 function Nav(props) {
+    const [products, setProducts] = useState([])
+    const [searchResults, setSearchResults] = useState([])
+
+    useEffect(() => {
+        fetchLatestProducts()
+    }, [])
+
+    function fetchLatestProducts() {
+        fetch(BASE_URL + "products")
+            .then(response => response.json())
+            .then(data => {
+                setProducts(data)
+                console.log(data)
+            })
+    }
+
+    function handleSearch(e) {
+        let value = e.target.value.toLowerCase()
+
+        if (value.length == 0) {
+            setSearchResults([])
+        } else {
+            let result = products.filter(p => p.name.toLowerCase().includes(value))
+            setSearchResults(result)
+        }
+    }
+
+    const borderStyle = {
+        border: "1px solid #FB2E86",
+        borderTop: "none",
+        borderBottomLeftRadius: "10px",
+        borderBottomRightRadius: "10px",
+    }
+
     return (
         <nav>
             <div className="top">
@@ -55,7 +91,7 @@ function Nav(props) {
                 <div className="left">
                     <Link to={"/"}>
                         <h1 className="logo">
-                            <img src={Logo} width={100} height={100} style={{transform: "scale(2)"}} />
+                            <img src={Logo} width={100} height={100} style={{ transform: "scale(2)" }} />
                         </h1>
                     </Link>
                 </div>
@@ -69,8 +105,30 @@ function Nav(props) {
                         <NavLink to="contact" activeclassname="active">Contact</NavLink>
                     </div>
                     <div className="searchbar">
-                        <input type="search" placeholder="Search" />
+                        <input type="text" placeholder="Search" onChange={handleSearch} />
                         <button><IoSearch /></button>
+
+                        {searchResults &&
+                            <div className="search-info"
+                                style={searchResults.length > 0 ? borderStyle : {}}
+                            >
+                                {
+                                    searchResults.map((product, idx) => {
+                                        return (
+                                            <div key={idx}>
+                                                <Link to={"products/" + product.id}
+                                                    className={searchResults.length-1 == idx ? "last" : ""}
+                                                >
+                                                    <div className="search-link">
+                                                        <h4>{product.name}</h4>
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        )
+                                    })
+                                }
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
