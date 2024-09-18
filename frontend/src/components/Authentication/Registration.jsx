@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { toast } from 'react-toastify'
 import { BASE_URL } from "../../store"
-import axios from 'axios'
+import axios, { all } from 'axios'
 
 
 function Registration(props) {
@@ -15,9 +15,52 @@ function Registration(props) {
     async function submit(e) {
         e.preventDefault()
 
-        let response = await axios.post(BASE_URL + 'user', form)
+        if (await validated()) {
+            await axios.post(BASE_URL+'users', {
+                username: form.username,
+                email: form.email,
+                password: form.password,
+            })
+            toast.success("Account created successfully", { theme: "dark" })
+            setForm({
+                username: "",
+                email: "",
+                password: "",
+                password2: "",
+            })
+            e.target.reset()
+        }
+    }
 
-        toast.success("Account created successfully", { theme: "dark" })
+    async function validated() {
+        const existing_users = await axios.get(BASE_URL+'users')
+        let all_emails = existing_users.data.map(user => user.email)
+
+        const name_pattern = /^[a-zA-Z]{1,20}$/
+        const password_pattern = /^[a-zA-Z0-9]{6,30}$/
+
+        let result = true
+        if (!form.username.length || !form.email.length || !form.password.length || !form.password2.length) {
+            result = false
+            toast.error("All fields are required", { theme: "dark" })
+        } 
+        else if (!name_pattern.test(form.username)) {
+            result = false
+            toast.error("Invalid username", { theme: "dark" })
+        } 
+        else if (all_emails.includes(form.email)) {
+            result = false
+            toast.error("Email already exists", { theme: "dark" })
+        }
+        else if (!password_pattern.test(form.password)) {
+            result = false
+            toast.error("Password must consist of only letters and numbers and 6<", { theme: "dark" })
+        } 
+        else if (form.password !== form.password2) {
+            result = false
+            toast.error("Passwords do not match", { theme: "dark" })
+        }
+        return result
     }
 
     function handleFormInformation(e) {
@@ -38,7 +81,7 @@ function Registration(props) {
                 />
             </div>
             <div className="form-control">
-                <input type="text" placeholder="Email Address" name='email'
+                <input type="email" placeholder="Email Address" name='email'
                     onChange={handleFormInformation}
                 />
             </div>

@@ -11,7 +11,7 @@
       "image": ""
     },
     {
-      "id": 1726492613924,
+      "id": "1726492613924",
       "name": "Google",
       "price": "10",
       "material": "www.google.com",
@@ -23,11 +23,11 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "admin",
-      "first_name": "Alijon",
-      "last_name": "Sobiraliyev",
-      "email": "...",
+      "first_name": "Alisher",
+      "last_name": "...",
+      "email": "alisherqwexujanov163@gmail.com",
       "password": "qweqweqwe"
     }
   ]
