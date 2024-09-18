@@ -22,21 +22,6 @@
             position: relative;
             @include card_hover();
 
-            &:hover {
-                .content {
-                    color: white; 
-                }
-
-                .icons {
-                    display: flex; 
-                    color: $violet;
-                }
-
-                .view-details {
-                    display: block;
-                }
-            }
-
             .img-wrapper {
                 width: 100%;
                 height: 200px;
@@ -53,24 +38,22 @@
                     top: 0;
                     left: 0;
                     margin: 15px;
-                    display: none; 
                     @include flex(row, center, center, 10px);
-                }
-
-                .view-details {
                     display: none;
-                    position: absolute;
-                    top: 55%;
-                    left: 25%;
-                    width: 50%;
-                    background-color: $violet;
-                    color: white;
-                    padding: 10px 0;
-                    border: none;
-                    cursor: pointer;
-                    transition: all 0.3s ease; 
                 }
             }
+
+            &:hover {
+                .content {
+                    color: white;
+                }
+
+                .icons {
+                    display: flex;
+                    color: $violet;
+                }
+            }
+
 
             h4 {
                 margin: 10px 0;

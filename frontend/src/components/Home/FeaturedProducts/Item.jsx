@@ -6,7 +6,6 @@ function Item(props) {
     return (
         <div className="product-item">
             <div className="img-wrapper">
-                <button className="view-details">View Details</button>
                 <div className="icons">
                     <FiShoppingCart />
                     <FaRegHeart />
