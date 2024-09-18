@@ -1,3 +1,7 @@
+import { FiShoppingCart } from 'react-icons/fi';
+import { FaRegHeart } from 'react-icons/fa';
+
+
 function Item(props) {
     return (
         <div className="product-item">
@@ -5,7 +9,6 @@ function Item(props) {
                 <div className="icons">
                     <FiShoppingCart />
                     <FaRegHeart />
-                    <HiMagnifyingGlassPlus />
                 </div>
                 <img src={props.img} alt={props.title} />
             </div>
