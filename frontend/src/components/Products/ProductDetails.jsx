@@ -4,6 +4,7 @@ import { SlInfo } from "react-icons/sl"
 import { BASE_URL } from "../../store"
 import { useEffect, useState } from "react"
 import "./productDetails.scss"
+import Img from "../../assets/images/logo.png"
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
@@ -29,7 +30,17 @@ function ProductDetails() {
             </Heading>
 
             <div className="product-details-wrapper">
-                <h1>{product.name}</h1>
+                <div className="img-wrapper">
+                    <img src={Img} alt="" />
+                </div>
+                <div className="details">
+                    <h1>{product.name}</h1>
+                    <p className="description">{product.description}</p>
+                    <p className="color">Color: {product.color}</p>
+                    <p className="material">Material: {product.material}</p>
+                    <p className="price">${product.price}</p>
+                    <button>Buy now</button>
+                </div>
             </div>
         </>
     );
