@@ -20,5 +20,15 @@
       "discount": "10",
       "image": ""
     }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "username": "admin",
+      "first_name": "Alijon",
+      "last_name": "Sobiraliyev",
+      "email": "...",
+      "password": "qweqweqwe"
+    }
   ]
 }
