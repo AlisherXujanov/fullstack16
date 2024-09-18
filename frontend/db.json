@@ -30,5 +30,15 @@
       "discount": "12",
       "image": ""
     }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "username": "admin",
+      "first_name": "Alisher",
+      "last_name": "...",
+      "email": "alisherqwexujanov163@gmail.com",
+      "password": "qweqweqwe"
+    }
   ]
 }

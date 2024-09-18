@@ -2,7 +2,12 @@ function Item(props) {
     return (
         <div className="product-item">
             <div className="img-wrapper">
-                <img src={props.img} width={"100%"} height={200} />
+                <div className="icons">
+                    <FiShoppingCart />
+                    <FaRegHeart />
+                    <HiMagnifyingGlassPlus />
+                </div>
+                <img src={props.img} alt={props.title} />
             </div>
             <h4>{props.title}</h4>
             <div className="colors">

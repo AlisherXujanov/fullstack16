@@ -1,5 +1,7 @@
 import AllComponents from "./components/AllComponents.jsx"
 import { BrowserRouter } from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
@@ -7,9 +9,12 @@ function App() {
     // http://localhost:5173/
     // http://localhost:5173/about
     // http://localhost:5173/contact
-    <BrowserRouter>
-      <AllComponents />
-    </BrowserRouter>
+    <>
+      <ToastContainer />
+      <BrowserRouter>
+        <AllComponents />
+      </BrowserRouter>
+    </>
   )
 }
 
