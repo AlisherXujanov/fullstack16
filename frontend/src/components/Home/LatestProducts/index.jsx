@@ -1,3 +1,9 @@
+import Img1 from "../../../assets/LatestPImg/img-1.png"
+import Img2 from "../../../assets/LatestPImg/img-2.png"
+import Img3 from "../../../assets/LatestPImg/img-3.png"
+import Img4 from "../../../assets/LatestPImg/img-4.png"
+import Img5 from "../../../assets/LatestPImg/img-5.png"
+import Img6 from "../../../assets/LatestPImg/img-6.png"
 import { useState, useEffect } from "react"
 import { range } from "../../../store/helpers"
 import { Link } from "react-router-dom"
@@ -7,6 +13,7 @@ import "./style.scss"
 
 
 function LatestProducts() {
+    let imgs = [Img1, Img2, Img3, Img4, Img5, Img6];
     const [products, setProducts] = useState([])
     const [numberOfItems, setNumberOfItems] = useState(0)
 
@@ -45,8 +52,8 @@ function LatestProducts() {
                             <div key={index}>
                                 <div className="product-item-wrapper">
                                     <Link to={"/products/" + product.id}>
-                                        <img src={product.image} />
-                                        {/* <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} /> */}
+                                        {/* <img src={product.image} /> */}
+                                        <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} />
                                         <div className="row">
                                             <p>{product.name}</p>
                                             <div className="price-wrapper">
