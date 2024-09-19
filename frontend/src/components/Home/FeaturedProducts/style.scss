@@ -9,9 +9,9 @@
     }
 
     .products-content {
-        @include grid(4, 1fr, 80px);
+        @include grid(4, 1fr, 20px);
         margin: 50px 0;
-        padding: 0 200px;
+        padding: 0 50px;
 
         .product-item {
             text-align: center;
@@ -21,6 +21,8 @@
             height: 300px;
             position: relative;
             @include card_hover();
+
+          
 
             .img-wrapper {
                 width: 100%;
@@ -39,24 +41,21 @@
                     left: 0;
                     margin: 15px;
                     @include flex(row, center, center, 10px);
-                    display: none;
+                    opacity: 0; 
+                    transition: none;
                 }
+
             }
-
-            &:hover {
-                .content {
-                    color: white;
-                }
-
+            &:hover {   
                 .icons {
-                    display: flex;
-                    color: $violet;
+                    opacity: 1; 
+                }
+
+                .view-details {
+                    display: block; 
                 }
             }
-
-
             h4 {
-                color: $darkest-blue;
                 margin: 10px 0;
             }
 
@@ -84,9 +83,11 @@
 
             .code,
             .price {
+                transition: none;
                 margin: 10px 0;
                 font-size: small;
             }
+            
         }
     }
 }

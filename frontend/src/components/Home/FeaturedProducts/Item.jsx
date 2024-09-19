@@ -1,6 +1,6 @@
 import { FiShoppingCart } from 'react-icons/fi';
 import { FaRegHeart } from 'react-icons/fa';
-
+import { HiMagnifyingGlassPlus } from "react-icons/hi2";
 
 function Item(props) {
     return (
@@ -9,6 +9,7 @@ function Item(props) {
                 <div className="icons">
                     <FiShoppingCart />
                     <FaRegHeart />
+                    <HiMagnifyingGlassPlus />
                 </div>
                 <img src={props.img} alt={props.title} />
             </div>
