@@ -19,6 +19,16 @@
       "description": "Google is an American search engine company, founded in 1998 by Sergey Brin and Larry Page. Since 2015, Google has been a subsidiary of the holding company Alphabet, Inc. More than 70% of worldwide online search requests are handled by Google, placing it at the heart of most Internet users' experience.",
       "discount": "10",
       "image": ""
+    },
+    {
+      "id": 1726855647189,
+      "name": "Test",
+      "price": "1000",
+      "material": "Metallic Silver",
+      "color": "#d41c1c",
+      "description": "qwdqwd qw dqw d",
+      "discount": "22",
+      "image": ""
     }
   ],
   "users": [

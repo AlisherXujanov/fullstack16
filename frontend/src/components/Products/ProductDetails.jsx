@@ -63,14 +63,14 @@ function ProductDetails() {
                 <div className="alert-wrapper">
                     <div className="content">
                         <h2>Delete {product?.name}</h2>
-                        <p>Are you sure to delete {product?.name}</p>
+                        <p>Are you sure to delete - <b>{product?.name}</b> ?</p>
                         <div className="action-buttons-wrapper">
                             <button className="delete-btn"
                                 onClick={fetchDelete}
-                            >Yes</button>
+                            >YES</button>
                             <button className="cancel-btn"
                                 onClick={() => setShowAlert(false)}
-                            >No</button>
+                            >NO</button>
                         </div>
                     </div>
                 </div>
