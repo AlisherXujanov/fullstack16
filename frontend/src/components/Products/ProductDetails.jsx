@@ -8,7 +8,7 @@ import Img from "../../assets/images/logo.png"
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
-    const [showAlert, setShowAlert] = useState(false)
+    const [showAlert, setShowAlert] = useState(true)
     const { id } = useParams()
 
     useEffect(() => {
