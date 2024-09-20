@@ -180,5 +180,50 @@ nav {
         }
     }
 
+    @media (max-width: $xx-large) {
+        .top {
+            padding: 0 100px;
+        }
 
+        .bottom {
+            padding: 20px 100px;
+        }
+    }
+
+    @media (max-width: $x-large) {
+        .top {
+            padding: 0 10px 0 100px;
+        }
+
+        .bottom {
+            padding: 20px 10px 20px 100px;
+            gap: 20px;
+        }
+    }
+
+    @media (max-width: $large) {
+        .top {
+            padding: 0 10px;
+        }
+
+        .bottom {
+            padding: 20px 10px 20px 40px;
+            gap: 5px;
+            grid-template-columns: 150px 1fr;
+
+            .right {
+                gap: 10px;
+
+                .links {
+                    a {
+                        padding: 0 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: $medium) {}
+
+    @media (max-width: $small) {}
 }
