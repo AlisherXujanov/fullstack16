@@ -19,10 +19,15 @@ $green-gradient: linear-gradient(to right, #56c2ff, #08D15F);
 
 
 // ------------------ @media sizes ------------------
-$phone: 600px;
-$tablet: 900px;
-$sm-desktop: 1200px;
-$md-desktop: 1520px;
+$small: 600px;
+$medium: 900px;
+$large: 1200px;
+$x-large: 1525px;
+
+// @media (max-width: $x-large) {}
+// @media (max-width: $large) {}
+// @media (max-width: $medium) {}
+// @media (max-width: $small) {}
 
 
 // ======================================================================
