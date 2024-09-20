@@ -42,16 +42,17 @@ nav {
         }
 
         #burger-menu-wrapper {
-            width: 65px;
-            height: 50px;
+            width: 50px;
+            height: 35px;
             position: absolute;
             z-index: 998;
             right: 20px;
             top: 85px;
             background-color: transparent;
-            @include grid(1, 1fr, 8px);
+            @include grid(1, 1fr, 6px);
             grid-template-rows: repeat(3, 1fr);
             cursor: pointer;
+            display: none;
 
             div {
                 display: block;
@@ -63,10 +64,11 @@ nav {
         #burger-menu-toggler-input-checkbox {
             position: absolute;
             z-index: 999;
-            top: 85px;
-            right: 18px;
-            width: 70px;
-            height: 60px;
+            top: 82px;
+            right: 15px;
+            width: 60px;
+            height: 45px;
+            display: none;
             opacity: 0;
         }
 
@@ -254,15 +256,46 @@ nav {
 
     @media (max-width: $medium) {
         .bottom {
-            position: relative;
-
-            .right {
-                display: none;
+            * {
+                transition: 0.2s linear;
             }
 
-            #burger-menu-wrapper,
+            .right {
+                width: 100%;
+                height: 100vh;
+                background-color: rgb(0, 0, 0, 0.9);
+                backdrop-filter: blur(10px);
+                position: fixed;
+                z-index: 99;
+                left: 0;
+                top: 0;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                gap: 10px;
+                transform: translateX(-100%);
+
+                .links {
+                    a {
+                        color: white;
+                        display: block;
+                        width: 100%;
+                        margin: 10px 0;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+
+            #burger-menu-wrapper {
+                display: grid;
+            }
+
             #burger-menu-toggler-input-checkbox {
                 display: block;
+            }
+
+            #burger-menu-toggler-input-checkbox:checked+.right {
+                transform: translateX(0);
             }
         }
 
