@@ -41,6 +41,35 @@ nav {
             }
         }
 
+        #burger-menu-wrapper {
+            width: 65px;
+            height: 50px;
+            position: absolute;
+            z-index: 998;
+            right: 20px;
+            top: 85px;
+            background-color: transparent;
+            @include grid(1, 1fr, 8px);
+            grid-template-rows: repeat(3, 1fr);
+            cursor: pointer;
+
+            div {
+                display: block;
+                width: 100%;
+                background: $red-gradient;
+            }
+        }
+
+        #burger-menu-toggler-input-checkbox {
+            position: absolute;
+            z-index: 999;
+            top: 85px;
+            right: 18px;
+            width: 70px;
+            height: 60px;
+            opacity: 0;
+        }
+
         .right {
             @include flex(row, center, space-between, 20px);
 
@@ -223,7 +252,21 @@ nav {
         }
     }
 
-    @media (max-width: $medium) {}
+    @media (max-width: $medium) {
+        .bottom {
+            position: relative;
+
+            .right {
+                display: none;
+            }
+
+            #burger-menu-wrapper,
+            #burger-menu-toggler-input-checkbox {
+                display: block;
+            }
+        }
+
+    }
 
     @media (max-width: $small) {}
 }

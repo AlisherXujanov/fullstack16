@@ -19,7 +19,6 @@ function Nav(props) {
     useEffect(() => {
         fetchLatestProducts()
     }, [])
-
     function fetchLatestProducts() {
         fetch(BASE_URL + "products")
             .then(response => response.json())
@@ -28,7 +27,6 @@ function Nav(props) {
                 console.log(data)
             })
     }
-
     function handleSearch(e) {
         let value = e.target.value.toLowerCase()
 
@@ -44,14 +42,12 @@ function Nav(props) {
             }
         }
     }
-
     const borderStyle = {
         border: "1px solid #FB2E86",
         borderTop: "none",
         borderBottomLeftRadius: "10px",
         borderBottomRightRadius: "10px",
     }
-
     return (
         <nav>
             <div className="top">
@@ -100,6 +96,16 @@ function Nav(props) {
                         </h1>
                     </Link>
                 </div>
+
+                
+                <div id="burger-menu-wrapper">
+                    <div className="burger-top"></div>
+                    <div className="burger-middle"></div>
+                    <div className="burger-bottom"></div>
+                </div>
+                <input id="burger-menu-toggler-input-checkbox" type="checkbox" />
+
+
                 <div className="right">
                     <div className="links">
                         <NavLink to="/" activeclassname="active">Home</NavLink>
