@@ -1,14 +1,17 @@
 import Heading from "../common/Heading"
-import { useParams } from "react-router-dom"
+import { useParams, useNavigate } from "react-router-dom"
 import { SlInfo } from "react-icons/sl"
 import { BASE_URL } from "../../store"
 import { useEffect, useState } from "react"
+import axios from "axios"
+import { toast } from "react-toastify"
 import "./productDetails.scss"
 import Img from "../../assets/images/logo.png"
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
-    const [showAlert, setShowAlert] = useState(true)
+    const [showAlert, setShowAlert] = useState(false)
+    const navigate = useNavigate()
     const { id } = useParams()
 
     useEffect(() => {
@@ -24,6 +27,14 @@ function ProductDetails() {
             })
     }
 
+    async function fetchDelete() {
+        let response = axios.delete(BASE_URL + "products/" + id)
+        console.log(response)
+        toast.success("Product deleted successfully", { theme: "dark" })
+        setShowAlert(false)
+        navigate("/products")
+    }
+
     return (
         <>
             <Heading title="Product details" path={"Products: " + product?.name}>
@@ -35,6 +46,10 @@ function ProductDetails() {
                     <img src={Img} alt="" />
                 </div>
                 <div className="details">
+                    <button className="delete-btn"
+                        onClick={() => setShowAlert(true)}
+                    >Delete</button>
+
                     <h1>{product.name}</h1>
                     <p className="description">{product.description}</p>
                     <p className="color">Color: {product.color}</p>
@@ -50,8 +65,12 @@ function ProductDetails() {
                         <h2>Delete {product?.name}</h2>
                         <p>Are you sure to delete {product?.name}</p>
                         <div className="action-buttons-wrapper">
-                            <button className="delete-btn">Yes</button>
-                            <button className="cancel-btn">No</button>
+                            <button className="delete-btn"
+                                onClick={fetchDelete}
+                            >Yes</button>
+                            <button className="cancel-btn"
+                                onClick={() => setShowAlert(false)}
+                            >No</button>
                         </div>
                     </div>
                 </div>

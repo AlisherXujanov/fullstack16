@@ -3,7 +3,7 @@
 
 .product-details-wrapper {
     padding: 50px 150px;
-    @include flex(row, center, center, 15px);
+    @include flex(row, center, center, 0);
     background-color: #fff;
 
     .img-wrapper {
@@ -29,13 +29,13 @@
         background-color: snow;
         display: flex;
         box-shadow: 5px 5px 15px rgb(0, 0, 0, 0.2),
-            -5px -5px 15px rgb(0, 0, 0, 0.2),
-        ;
+            -5px -5px 15px rgb(0, 0, 0, 0.2);
         flex-direction: column;
         justify-content: center;
         align-items: start;
         gap: 20px;
         padding: 30px;
+        position: relative;
 
         h1 {
             color: $darkest-blue;
@@ -68,6 +68,13 @@
             padding: 5px 20px;
             border-radius: 5px;
             margin-top: 20px;
+
+            &.delete-btn {
+                padding: 10px 20px;
+                position: absolute;
+                top: 5px;
+                right: 10px;
+            }
         }
     }
 }
@@ -87,31 +94,14 @@
     .content {
         text-align: center;
         padding: 20px;
-        border-radius: 20px;
+        border-radius: 10px;
         background: $purple-gradient;
         color: snow;
         transform: scale(1.5);
+        box-shadow: 0 8px 16px #333;
 
         .action-buttons-wrapper {
             margin: 20px 0 10px 0;
-
-            button {
-                padding: 10px 20px;
-                cursor: pointer;
-                color: snow;
-                border: none;
-                margin: 0 5px;
-
-                &.delete-btn {
-                    background: $red-gradient;
-                    @include darken_bg_on_hover($red);
-                }
-
-                &.cancel-btn {
-                    background: $green-gradient;
-                    @include darken_bg_on_hover($green);
-                }
-            }
         }
     }
 }

@@ -59,6 +59,7 @@ $md-desktop: 1520px;
         left: 0;
         right: 100%;
         z-index: 0;
+        border-radius: 5px;
         background: darken($color, $percent);
     }
 
@@ -74,6 +75,7 @@ $md-desktop: 1520px;
     z-index: 1;
     scale: 1.1;
     cursor: pointer;
+
     &::before {
         content: "";
         transition: 0.2s;

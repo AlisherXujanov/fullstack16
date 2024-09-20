@@ -38,6 +38,21 @@ button {
     outline: none;
     cursor: pointer;
     padding: 10px;
+    margin: 0 5px;
+    border-radius: 5px;
+
+
+    &.delete-btn {
+        color: $light;
+        background: $red-gradient;
+        @include darken_bg_on_hover($red);
+    }
+
+    &.cancel-btn {
+        color: $light;
+        background: $green-gradient;
+        @include darken_bg_on_hover($green);
+    }
 }
 
 input {
