@@ -8,6 +8,7 @@ import Img from "../../assets/images/logo.png"
 
 function ProductDetails() {
     const [product, setProduct] = useState({})
+    const [showAlert, setShowAlert] = useState(false)
     const { id } = useParams()
 
     useEffect(() => {
@@ -42,6 +43,19 @@ function ProductDetails() {
                     <button>Buy now</button>
                 </div>
             </div>
+
+            {showAlert &&
+                <div className="alert-wrapper">
+                    <div className="content">
+                        <h2>Delete {product?.name}</h2>
+                        <p>Are you sure to delete {product?.name}</p>
+                        <div className="action-buttons-wrapper">
+                            <button className="delete-btn">Yes</button>
+                            <button className="cancel-btn">No</button>
+                        </div>
+                    </div>
+                </div>
+            }
         </>
     );
 }
