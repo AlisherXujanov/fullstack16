@@ -80,30 +80,32 @@ $xx-large: 1525px;
 
 @mixin card_hover($color: $violet) {
     position: relative;
-    z-index: 1;
-    scale: 1.1;
     cursor: pointer;
 
     &::before {
         content: "";
-        transition: 0.2s;
         position: absolute;
         top: 0;
         bottom: 0;
         left: 0;
         right: 200%;
-        z-index: 0;
         background-color: $color;
+        z-index: 0;
     }
 
     &:hover::before {
-        z-index: -1;
         left: 0;
         right: 0;
+        z-index: -1;
     }
 
     &:hover {
         color: $light;
+        scale: 1.1;
+
+        .icons {
+            color: $violet;
+        }
 
         h4 {
             color: $light;

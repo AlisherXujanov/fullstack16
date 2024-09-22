@@ -10,25 +10,25 @@
     }
 
     .pagination-wrapper {
-        
+
         margin: 20px 0;
-        
+
         * {
             margin: 2px
         }
-        
+
         // test
         .item {
             font-size: 1.1em;
             border-radius: 5px;
-            
+
             &.active,
             &:hover {
                 background: $red-gradient;
                 color: $light;
                 transform: scale(1.1);
             }
-            
+
             &:active {
                 transform: scale(1);
             }
@@ -39,7 +39,7 @@
         @include grid(3, 1fr, 100px);
         margin: 100px 0;
         padding: 20px 250px;
-        
+
         .product-item-wrapper {
             img {
                 width: 100%;
@@ -63,6 +63,98 @@
                         display: inline-block;
                         margin-left: 10px;
                     }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $x-large) {
+    .latest-products-wrapper {
+        padding: 20px 100px;
+
+        h1 {
+            font-size: 36px;
+        }
+
+        .products-wrapper-container {
+            @include grid(2, 1fr, 60px);
+
+            .product-item-wrapper {
+                img {
+                    height: 200px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .latest-products-wrapper {
+        padding: 20px 0;
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .products-wrapper-container {
+            @include grid(3, 1fr, 40px);
+
+            .product-item-wrapper {
+                width: 150px;
+
+                &:hover {
+                    transform: scale(1.1);
+                }
+
+                img {
+                    width: 140px;
+                    height: 140px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .latest-products-wrapper {
+        padding: 20px 0;
+
+
+        h1 {
+            font-size: 28px;
+        }
+
+        .products-wrapper-container {
+            @include grid(1, 1fr, 50px);
+
+            .product-item-wrapper {
+                width: 130px;
+                margin-left: 50px;
+                img {
+                    height: 150px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .latest-products-wrapper {
+        padding: 10px;
+
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .products-wrapper-container {
+            @include grid(1, 1fr, 20px);
+
+            .product-item-wrapper {
+                width: 100px;
+                img {
+                    height: 120px; 
                 }
             }
         }

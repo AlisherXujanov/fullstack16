@@ -1,11 +1,9 @@
 @import "../../assets/styles/setting";
 
-
 .footer {
     background-color: #EEEFFB;
     padding: 55px 190px 0px;
     color: $light-blue;
-
 
     .description {
         @include grid(2, 1fr, 30px);
@@ -44,17 +42,17 @@
                 color: $light;
                 @include darken_bg_on_hover($red, 10%);
             }
-
         }
 
         #second-column {
-
             @include flex(row, start, space-between, 25px);
+            flex-wrap: wrap; // Добавляем перенос строк для меньших экранов
 
             .footer-section {
+                flex: 1; // Позволяет секциям равномерно распределять пространство
+                min-width: 150px; // Минимальная ширина для секций
 
                 h4 {
-
                     margin-bottom: 50px;
                     color: $black;
                 }
@@ -79,15 +77,9 @@
                         }
                     }
                 }
-
             }
-
-
-
         }
-
     }
-
 }
 
 .social {
@@ -101,6 +93,92 @@
     img {
         margin: 0 10px;
         cursor: pointer;
+    }
+}
 
+@media (max-width: $x-large) {
+    .footer {
+        padding: 40px 100px;
+
+        .description {
+            grid-template-columns: 1fr 1.5fr;
+
+            #first-column {
+                h1 {
+                    font-size: 30px;
+                }
+            }
+
+            #second-column {
+                @include flex(row, start, space-between, 15px);
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .footer {
+        padding: 30px 50px;
+
+        .description {
+            grid-template-columns: 1fr 1fr;
+
+            #first-column {
+                h1 {
+                    font-size: 28px;
+                }
+            }
+
+            #second-column {
+                font-size: 14px;
+                width: 100px;
+                @include grid(3, 1fr, 15px);
+            }
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .footer {
+        padding: 20px 20px;
+
+        .description {
+            grid-template-columns: 1fr;
+
+            #first-column {
+                h1 {
+                    font-size: 24px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $small) {
+    .footer {
+        padding: 10px;
+
+        .description {
+            #first-column {
+                h1 {
+                    font-size: 20px;
+                }
+            }
+
+            #second-column {
+                @include flex(column, start, center, 10px);
+            }
+        }
+    }
+
+    .social {
+        flex-direction: column;
+        text-align: center;
+
+        img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
     }
 }

@@ -13,8 +13,8 @@ function About(props) {
                 <BsInfoSquareFill />
             </Heading>
             <Contact />
-            <ShopexProducts/>
-            <Reviews/>
+            <ShopexProducts />
+            <Reviews />
         </div>
     );
 }

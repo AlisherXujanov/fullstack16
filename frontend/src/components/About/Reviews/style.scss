@@ -3,8 +3,8 @@
 .reviews-wrapper {
     background-color: $light;
     padding: 70px 200px;
-    margin-top: 80px;
-    margin-bottom: 150px;
+    margin-top: 50px;
+    margin-bottom: 50px;
     text-align: center;
     background-color: $violet-light;
 
@@ -58,6 +58,44 @@
 
                     &.active {
                         background-color: $darkest-blue;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .reviews-wrapper {
+        padding: 30px 20px;
+
+        h1 {
+            font-size: 30px;
+        }
+
+        .reviews-container {
+            padding: 10px;
+
+
+            .reviews {
+                h2 {
+                    font-size: 24px;
+                }
+
+                h5 {
+                    font-size: 18px;
+
+                    p {
+                        font-size: 14px;
+                    }
+
+                    .pagination {
+                        flex-direction: column;
+                        margin-top: 20px;
+
+                        div {
+                            width: 40px;
+                        }
                     }
                 }
             }
