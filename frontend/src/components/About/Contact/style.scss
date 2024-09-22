@@ -5,13 +5,15 @@
     padding: 100px 200px;
     margin-bottom: 50px;
     text-align: center;
-    @include grid(2, 1fr, 0px);
-    .photo{
+    @include grid(2, 1fr, 30px);
+
+    .photo {
         width: 505px;
         height: 340px;
         background-color: #2B3CAB;
         padding-bottom: 15px;
         border-radius: 5px;
+
         img {
             width: 100%;
             height: 100%;
@@ -20,20 +22,24 @@
             border-radius: 5px;
         }
     }
+
     .contact-info {
         margin-top: 40px;
         text-align: left;
+
         h1 {
             font-size: 40px;
             color: #151875;
             font-family: Josefin Sans;
         }
+
         p {
             text-align: justify;
             line-height: 1.5;
             margin: 18px 0;
             color: #151875b1;
         }
+
         .contact-btn {
             background-color: $red;
             color: snow;
@@ -41,8 +47,46 @@
             padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
+
             &:hover {
                 background-color: $darkest-blue;
+            }
+        }
+    }
+}
+
+@media (max-width: $large) {
+    .contact-page-wrapper {
+        padding: 60px 100px;
+
+        .photo {
+            width: 100%;
+            height: auto;
+        }
+
+        .contact-info {
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+@media (max-width: $medium) {
+    .contact-page-wrapper {
+        padding: 40px 20px;
+
+        .contact-info {
+            h1 {
+                font-size: 24px;
+            }
+
+            p {
+                font-size: 12px;
             }
         }
     }

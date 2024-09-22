@@ -1,34 +1,121 @@
-@import "../../../assets/styles/setting";
+    @import "../../../assets/styles/setting";
 
 
-.shopex-offers-wrapper {
-    text-align: center;
-    padding: 50px 200px;
+    .shopex-offers-wrapper {
+        text-align: center;
+        padding: 50px 200px;
 
-    h1 {
-        font-size: 42px;
-    }
+        h1 {
+            font-size: 42px;
+        }
 
-    .offers-container {
-        @include grid(4, 1fr, 20px);
-        margin: 20px 0;
-        padding: 20px 200px;
+        .offers-container {
+            @include grid(4, 1fr, 20px);
+            margin: 20px 0;
+            padding: 20px 200px;
 
-        .offer {
-            text-align: center;
+            .offer {
+                text-align: center;
 
-            img {
-                width: 50px;
-                height: 50px;
-            }
+                img {
+                    width: 50px;
+                    height: 50px;
+                }
 
-            h2 {
-                margin: 20px 0;
-            }
+                h2 {
+                    margin: 20px 0;
+                }
 
-            p {
-                color: lightgray;
+                p {
+                    color: lightgray;
+                }
             }
         }
     }
-}
+    @media (max-width: $x-large) {
+        .shopex-offers-wrapper {
+            padding: 50px 100px;
+    
+            h1 {
+                font-size: 36px;
+            }
+    
+            .offers-container {
+                @include grid(4, 1fr, 20px);
+                padding: 20px 100px;
+    
+                .offer {
+                    img {
+                        width: 40px;    
+                        height: 40px;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $large) {
+        .shopex-offers-wrapper {
+            padding: 30px 50px;
+    
+            h1 {
+                font-size: 30px;
+            }
+    
+            .offers-container {
+                @include grid(2, 1fr, 20px);
+                padding: 20px 50px;
+    
+                .offer {
+                    img {
+                        width: 35px; 
+                        height: 35px;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $medium) {
+        .shopex-offers-wrapper {
+            padding: 20px 20px;
+            
+            h1 {
+                font-size: 20px;
+            }
+    
+            .offers-container {
+                @include grid(2, 1fr, 15px);
+                font-size: 8px;
+                .offer {
+                    img {
+                        width: 30px; 
+                        height: 30px;
+                    }
+                }
+            }
+        }
+    }
+    
+    @media (max-width: $small) {
+        .shopex-offers-wrapper {
+            padding: 10px;
+    
+            h1 {
+                font-size: 20px;
+            }
+    
+            .offers-container {
+                @include grid(4, 1fr, 10px);
+                font-size: 7px;
+    
+                .offer {
+                    img {
+                        width: 25px; 
+                        height: 25px;
+                    }
+                }
+            }
+        }
+    }
+    
