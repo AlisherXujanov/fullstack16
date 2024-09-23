@@ -20,8 +20,8 @@
      - You can create a ThemeContext to manage light and dark themes across your application.
      - Example:
         ```jsx
-        import React, { useContext } from 'react';
-        const ThemeContext = React.createContext('light');
+        import { useContext, createContext } from 'react';
+        const ThemeContext = createContext('light');
         
         function ThemedComponent() {
           const theme = useContext(ThemeContext);
@@ -68,8 +68,8 @@
    - Use useContext with useReducer for managing complex state logic.
    - Example:
       ```jsx
-      import React, { useReducer, useContext } from 'react';
-      const CountContext = React.createContext();
+      import { useReducer, useContext, createContext } from 'react';
+      const CountContext = createContext();
       function countReducer(state, action) {
         switch (action.type) {
           case 'increment':
@@ -108,9 +108,9 @@
    - Use `useContext` with `useReducer` for managing complex state logic.
    - Example:
       ```jsx
-      import React, { useContext, useState } from 'react';
+      import { useContext, useState, createContext } from 'react';
 
-      const FormContext = React.createContext();
+      const FormContext = createContext();
 
       function useForm() {
         const context = useContext(FormContext);
