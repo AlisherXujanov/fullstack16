@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import PageNotFound from './PageNotFound'
 import Authentication from './Authentication'
 import Products from './Products'
+import Blog from './Blog'
 import ProductDetails from './Products/ProductDetails.jsx'
 
 
@@ -19,6 +20,9 @@ function AllComponents() {
 
                 {/* http://localhost:5173/about */}
                 <Route path="about" element={<About />} />
+
+                {/* http://localhost:5173/about */}
+                <Route path="blog" element={<Blog />} />
 
                 {/* http://localhost:5173/login */}
                 <Route path="login" element={<Authentication />} />

@@ -1,10 +1,13 @@
 import AllComponents from "./components/AllComponents.jsx"
 import { BrowserRouter } from "react-router-dom"
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify'
+import { context } from "./store"
+import { useState } from "react"
 
 
 function App() {
+  const [counter, setCounter] = useState(0)
+
   return (
     // http://localhost:5173/
     // http://localhost:5173/about
@@ -12,7 +15,9 @@ function App() {
     <>
       <ToastContainer />
       <BrowserRouter>
-        <AllComponents />
+        <context.Provider value={{counter, setCounter}}>
+          <AllComponents />
+        </context.Provider>
       </BrowserRouter>
     </>
   )

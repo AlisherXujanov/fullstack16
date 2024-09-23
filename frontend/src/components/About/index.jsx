@@ -6,11 +6,12 @@ import ShopexProducts from "../Home/ShopexProducts";
 import Reviews from "./Reviews";
 import Test from "./Test.jsx"
 import UseContextTest from "./UseContextTest.jsx"
-import { useState } from "react";
+import { useContext } from "react";
+import { context } from "../../store";
 
 
 function About(props) {
-    const [count, setCount] = useState(0)
+    const { counter, setCounter } = useContext(context)
     // props = props ? props : "..."
 
     return (
@@ -25,9 +26,9 @@ function About(props) {
             <div align='center'>
                 <hr />
                 <hr />
-                <button className="delete-btn" onClick={(e) => { setCount(count - 1) }}>Decrement</button>
-                {count}
-                <button className="cancel-btn" onClick={(e) => { setCount(count + 1) }}>Increment</button>
+                <button className="delete-btn" onClick={(e) => { setCounter(counter - 1) }}>Decrement</button>
+                {counter}
+                <button className="cancel-btn" onClick={(e) => { setCounter(counter + 1) }}>Increment</button>
                 <hr />
                 <hr />
                 <Test />

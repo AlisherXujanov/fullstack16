@@ -1,6 +1,8 @@
 import { memo } from 'react';
 
 function Test() {
+
+
     console.log("Test построен заново");
 
     return (
