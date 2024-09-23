@@ -4,8 +4,12 @@ import { FaHome } from "react-icons/fa";
 import FeaturedProducts from "./FeaturedProducts"
 import LatestProducts from "./LatestProducts"
 import ShopexProducts from "./ShopexProducts"
+import { context } from "../../store";
+import { useContext } from "react";
 
 function Home() {
+    const { state, setState } = useContext(context)
+
     return (
         <div className="home-page-wrapper">
             <Heading title="Home" path="Home">
@@ -13,6 +17,17 @@ function Home() {
             </Heading>
 
             <FeaturedProducts />
+
+            <hr />
+            <div align='center'>
+                <input type="color" 
+                    onChange={
+                        (e) => { setState({ ...state, color: e.target.value })}
+                    } 
+                />
+            </div>
+            <hr />
+
             <LatestProducts />
             <ShopexProducts />
 

@@ -6,7 +6,10 @@ import { useState } from "react"
 
 
 function App() {
-  const [counter, setCounter] = useState(0)
+  const [state, setState] = useState({
+    counter: 0,
+    color: ''
+  })
 
   return (
     // http://localhost:5173/
@@ -15,7 +18,7 @@ function App() {
     <>
       <ToastContainer />
       <BrowserRouter>
-        <context.Provider value={{counter, setCounter}}>
+        <context.Provider value={{ state, setState }}>
           <AllComponents />
         </context.Provider>
       </BrowserRouter>
