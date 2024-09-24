@@ -23,21 +23,7 @@ function About(props) {
             <ShopexProducts />
             <Reviews />
 
-            <div align='center'>
-                <hr />
-                <hr />
-                <button className="delete-btn" onClick={(e) => { setState({ ...state, counter: state.counter - 1 }) }}>Decrement</button>
-                {state.counter}
-                <button className="cancel-btn" onClick={(e) => { setState({ ...state, counter: state.counter + 1 }) }}>Increment</button>
-                <hr />
-                <hr />
-                <Test />
-            </div>
-            <hr />
-            <hr />
-            <div align='center'>
-                <UseContextTest />
-            </div>
+            
         </div>
     );
 }

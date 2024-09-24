@@ -7,17 +7,7 @@ function Blog() {
 
     return (
         <div align='center'>
-            <button className="delete-btn"
-                onClick={(e) => { setState({ ...state, counter: state.counter - 1 }) }}>
-                Decrement
-            </button>
-
-            <h1>{state.counter}</h1>
-
-            <button className="cancel-btn"
-                onClick={(e) => { setState({ ...state, counter: state.counter + 1 }) }}>
-                Increment
-            </button>
+            <h1>Blog</h1>
         </div>
     )
 }
