@@ -9,7 +9,7 @@ function Heading(props) {
         <div className="heading-wrapper">
             <h1>
                 {props.children}
-                <span style={{ color: state.color }}>{props.title}</span>
+                <span>{props.title}</span>
             </h1>
             <p>
                 Home.Pages<span className="path">.{props.path}</span>

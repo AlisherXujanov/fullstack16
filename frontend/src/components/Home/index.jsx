@@ -15,19 +15,7 @@ function Home() {
             <Heading title="Home" path="Home">
                 <FaHome />
             </Heading>
-
             <FeaturedProducts />
-
-            <hr />
-            <div align='center'>
-                <input type="color" 
-                    onChange={
-                        (e) => { setState({ ...state, color: e.target.value })}
-                    } 
-                />
-            </div>
-            <hr />
-
             <LatestProducts />
             <ShopexProducts />
 
