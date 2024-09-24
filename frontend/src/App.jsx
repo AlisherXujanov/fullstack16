@@ -8,7 +8,8 @@ import { useState } from "react"
 function App() {
   const [state, setState] = useState({
     counter: 0,
-    color: ''
+    color: '',
+    selectedCurrency: 'USD'
   })
 
   return (
