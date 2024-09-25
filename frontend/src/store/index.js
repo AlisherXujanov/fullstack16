@@ -7,6 +7,7 @@ const BASE_URL = "http://localhost:3000/"
 const initialState = {
     counter: 0,
     color: '',
+    first: 0,
     currencies: [
         { code: "USD", active: true },
         { code: "EUR", active: false },

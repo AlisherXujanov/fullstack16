@@ -13,7 +13,7 @@ import "./style.scss"
 
 
 function Nav(props) {
-    const { state, dispatch } = useContext(context)
+    const state = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
 
@@ -45,7 +45,7 @@ function Nav(props) {
     }
 
     function activateCurrency(currency) {
-        dispatch({ type: "ACTIVATE_CURRENCY", моя_информация: currency })
+        state.dispatch({ type: "ACTIVATE_CURRENCY", payload: currency.code })
     }
 
     const borderStyle = {
@@ -68,7 +68,7 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    <Link to="#" className="dropdown">
+                    {/* <Link to="#" className="dropdown">
                         {state.selectedLanguage || 'English'} <RiArrowDropDownLine />
                         <div className="drp-content">
                             <p
@@ -108,15 +108,18 @@ function Nav(props) {
                                 French
                             </p>
                         </div>
-                    </Link>
+                    </Link> */}
 
                     <Link to="#" className="dropdown">
-                        {state.currencies.find(c => c.active).code} <RiArrowDropDownLine />
+                        { state.currencies.find(c => c.active).code } <RiArrowDropDownLine />
                         <div className="drp-content">
                             {
                                 state.currencies.map((cur, idx) => {
                                     return (
-                                        <p onClick={(e) => { activateCurrency(cur) }} key={idx}>
+                                        <p key={idx}
+                                            onClick={(e) => { activateCurrency(cur) }}
+                                            className={cur.active == true ? "active" : ""}
+                                        >
                                             {cur.code}
                                         </p>
                                     )

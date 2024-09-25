@@ -2,10 +2,14 @@ function globalReducer(state, action) {
     switch (action.type) {
         case "ACTIVATE_CURRENCY":
             let updatedCurrencies = state.currencies.map(curr => {
-                curr.active = curr.code == action.моя_информация ? true : false
+                curr.active = curr.code == action.payload ? true : false
                 return curr
             })
             return { ...state, currencies: updatedCurrencies }
+        case "INCREMENT":
+            return { ...state, first: state.first + 1 }
+        case "DECREMENT":
+            return { ...state, first: state.first - 1 }
     }
 }
 

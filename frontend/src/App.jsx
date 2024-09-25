@@ -7,12 +7,13 @@ import { useReducer } from "react"
 
 function App() {
   const [state, dispatch] = useReducer(globalReducer, initialState)
+  state.dispatch = dispatch
 
   return (
     <>
       <ToastContainer />
       <BrowserRouter>
-        <context.Provider value={{ state, dispatch }}>
+        <context.Provider value={state}>
           <AllComponents />
         </context.Provider>
       </BrowserRouter>
