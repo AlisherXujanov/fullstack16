@@ -1,4 +1,16 @@
-function getFromLocalStorage(key, defaultValue="[]") {
+function globalReducer(state, action) {
+    switch (action.type) {
+        case "ACTIVATE_CURRENCY":
+            let updatedCurrencies = state.currencies.map(curr => {
+                curr.active = curr.code == action.моя_информация ? true : false
+                return curr
+            })
+            return { ...state, currencies: updatedCurrencies }
+    }
+}
+
+
+function getFromLocalStorage(key, defaultValue = "[]") {
     let items = localStorage.getItem(key) ?? defaultValue
     return JSON.parse(items) // [...]
 }
@@ -25,7 +37,7 @@ function userExistsInDB({ username, password }) {
     return false
 }
 
-function range(start, end=null) {
+function range(start, end = null) {
     if (end === null) {
         end = start
         start = 0
@@ -40,4 +52,5 @@ export {
     addNewUserToLocalStorage,
     userExistsInDB,
     range,
+    globalReducer
 }

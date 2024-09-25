@@ -1,25 +1,18 @@
 import AllComponents from "./components/AllComponents.jsx"
 import { BrowserRouter } from "react-router-dom"
 import { ToastContainer } from 'react-toastify'
-import { context } from "./store"
-import { useState } from "react"
+import { context, globalReducer, initialState } from "./store"
+import { useReducer } from "react"
 
 
 function App() {
-  const [state, setState] = useState({
-    counter: 0,
-    color: '',
-    selectedCurrency: 'USD'
-  })
+  const [state, dispatch] = useReducer(globalReducer, initialState)
 
   return (
-    // http://localhost:5173/
-    // http://localhost:5173/about
-    // http://localhost:5173/contact
     <>
       <ToastContainer />
       <BrowserRouter>
-        <context.Provider value={{ state, setState }}>
+        <context.Provider value={{ state, dispatch }}>
           <AllComponents />
         </context.Provider>
       </BrowserRouter>

@@ -1,4 +1,3 @@
-import "./style.scss"
 import { AiOutlineMail } from "react-icons/ai";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { RiArrowDropDownLine } from "react-icons/ri";
@@ -7,14 +6,14 @@ import { CiHeart } from "react-icons/ci";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoSearch } from "react-icons/io5";
 import { Link, NavLink } from "react-router-dom";
+import { useState, useEffect, useContext } from "react";
+import { BASE_URL, context } from "../../../store";
 import Logo from "../../../assets/images/logo.png";
-import { useState, useEffect } from "react";
-import { BASE_URL } from "../../../store";
-import { useContext } from "react";
-import { context } from "../../../store";
+import "./style.scss"
+
 
 function Nav(props) {
-    const { state, setState } = useContext(context)
+    const { state, dispatch } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
 
@@ -44,6 +43,11 @@ function Nav(props) {
             }
         }
     }
+
+    function activateCurrency(currency) {
+        dispatch({ type: "ACTIVATE_CURRENCY", моя_информация: currency })
+    }
+
     const borderStyle = {
         border: "1px solid #FB2E86",
         borderTop: "none",
@@ -107,38 +111,17 @@ function Nav(props) {
                     </Link>
 
                     <Link to="#" className="dropdown">
-                        {state.selectedCurrency || 'USD'} <RiArrowDropDownLine />
+                        {state.currencies.find(c => c.active).code} <RiArrowDropDownLine />
                         <div className="drp-content">
-                            <p
-                                className={state.selectedCurrency === 'USD' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'USD' }))}
-                            >
-                                USD
-                            </p>
-                            <p
-                                className={state.selectedCurrency === 'UZS' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'UZS' }))}
-                            >
-                                UZS
-                            </p>
-                            <p
-                                className={state.selectedCurrency === 'RUB' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'RUB' }))}
-                            >
-                                RUB
-                            </p>
-                            <p
-                                className={state.selectedCurrency === 'JPY' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'JPY' }))}
-                            >
-                                JPY
-                            </p>
-                            <p
-                                className={state.selectedCurrency === 'GBP' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'GBP' }))}
-                            >
-                                GBP
-                            </p>
+                            {
+                                state.currencies.map((cur, idx) => {
+                                    return (
+                                        <p onClick={(e) => { activateCurrency(cur) }} key={idx}>
+                                            {cur.code}
+                                        </p>
+                                    )
+                                })
+                            }
                         </div>
                     </Link>
 
