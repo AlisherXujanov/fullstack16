@@ -21,7 +21,7 @@ function About(props) {
             <ShopexProducts />
             <Reviews />
 
-            
+
         </div>
     );
 }
