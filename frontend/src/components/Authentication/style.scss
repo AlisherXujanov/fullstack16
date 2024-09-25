@@ -4,7 +4,7 @@
 .auth-wrapper-container {
     .form-wrapper {
         box-shadow: 2px 2px 30px 2px $violet-dark,
-                    -2px -2px 30px 2px $violet-dark;
+            -2px -2px 30px 2px $violet-dark;
         width: 40%;
         margin: 50px auto;
         padding: 50px;
@@ -13,21 +13,24 @@
         p {
             color: $light-blue;
         }
-        
+
         form {
             margin-bottom: 50px;
-            
+
             header {
                 text-align: center;
                 margin-bottom: 50px;
+
                 p {
                     margin-top: 20px;
                 }
             }
+
             .form-control {
                 margin: 15px 0;
 
-                input, button {
+                input,
+                button {
                     width: 100%;
                     display: block;
                     padding: 20px;
@@ -41,10 +44,12 @@
                 input {
                     border: 2px solid #9096B250;
                 }
+
                 input:focus {
                     outline: 4px solid #FB2E8630;
                     border-color: $red;
                 }
+
                 button {
                     background-color: $red;
                     color: snow;
@@ -68,6 +73,14 @@
                     border-bottom: 1px solid $red;
                 }
             }
+        }
+
+        @media(max-width: $x-large) {
+            width: 60%;
+        }
+
+        @media(max-width: $medium) {
+            width: 80%;
         }
     }
 }
