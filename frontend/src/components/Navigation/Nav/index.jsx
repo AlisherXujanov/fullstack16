@@ -9,6 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { BASE_URL, context } from "../../../store";
 import Logo from "../../../assets/images/logo.png";
+import NavLinkDrp from './NavLinkDrp.jsx'
 import "./style.scss"
 
 
@@ -71,41 +72,8 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    <Link to="#" className="dropdown">
-                        {state.languages.find(lang => lang.active).code} <RiArrowDropDownLine />
-                        <div className="drp-content">
-                            {
-                                state.languages.map((lang, idx) => {
-                                    return (
-                                        <p key={idx}
-                                            onClick={(e) => { activateLang(lang) }}
-                                            className={lang.active == true ? "active" : ""}
-                                        >
-                                            {lang.code}
-                                        </p>
-                                    )
-                                })
-                            }
-                        </div>
-                    </Link>
-
-                    <Link to="#" className="dropdown">
-                        {state.currencies.find(c => c.active).code} <RiArrowDropDownLine />
-                        <div className="drp-content">
-                            {
-                                state.currencies.map((cur, idx) => {
-                                    return (
-                                        <p key={idx}
-                                            onClick={(e) => { activateCurrency(cur) }}
-                                            className={cur.active == true ? "active" : ""}
-                                        >
-                                            {cur.code}
-                                        </p>
-                                    )
-                                })
-                            }
-                        </div>
-                    </Link>
+                    <NavLinkDrp items={state.languages} activateFn={activateLang} />
+                    <NavLinkDrp items={state.currencies} activateFn={activateCurrency} />
 
                     <Link to="login">Login <CgProfile /></Link>
                     <Link to="wishlist">Wishlist <CiHeart /></Link>
