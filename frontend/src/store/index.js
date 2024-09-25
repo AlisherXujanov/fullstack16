@@ -15,6 +15,11 @@ const initialState = {
         { code: "JPY", active: false },
         { code: "RUB", active: false },
         { code: "UZS", active: false }
+    ],
+    languages: [
+        { code: "EN", active: true },
+        { code: "UZ", active: false },
+        { code: "RU", active: false }
     ]
 }
 

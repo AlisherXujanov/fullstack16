@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { context } from "../../store"
 
 function Blog() {
-    const state = useContext(context)
+    const { state, dispatch } = useContext(context)
 
     return (
         <div align='center'>
@@ -11,13 +11,13 @@ function Blog() {
             <hr />
             <br />
             <button className="cancel-btn"
-                onClick={() => { state.dispatch({ type: "DECREMENT" }) }}
+                onClick={() => { dispatch({ type: "DECREMENT" }) }}
             >Decrement</button>
 
             {state.first}
 
             <button className="delete-btn"
-                onClick={() => { state.dispatch({ type: "INCREMENT" }) }}
+                onClick={() => { dispatch({ type: "INCREMENT" }) }}
             >Increment</button>
         </div>
     )

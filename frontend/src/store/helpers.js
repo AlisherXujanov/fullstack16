@@ -6,6 +6,12 @@ function globalReducer(state, action) {
                 return curr
             })
             return { ...state, currencies: updatedCurrencies }
+        case "SET_LANG":
+            let updatedLanguages = state.languages.map(lang => {
+                lang.active = lang.code == action.payload ? true : false
+                return lang
+            })
+            return { ...state, languages: updatedLanguages }
         case "INCREMENT":
             return { ...state, first: state.first + 1 }
         case "DECREMENT":

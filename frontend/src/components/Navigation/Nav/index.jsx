@@ -13,7 +13,7 @@ import "./style.scss"
 
 
 function Nav(props) {
-    const state = useContext(context)
+    const { state, dispatch } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
 
@@ -45,7 +45,10 @@ function Nav(props) {
     }
 
     function activateCurrency(currency) {
-        state.dispatch({ type: "ACTIVATE_CURRENCY", payload: currency.code })
+        dispatch({ type: "ACTIVATE_CURRENCY", payload: currency.code })
+    }
+    function activateLang(language) {
+        dispatch({ type: "SET_LANG", payload: language.code })
     }
 
     const borderStyle = {
@@ -68,50 +71,26 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    {/* <Link to="#" className="dropdown">
-                        {state.selectedLanguage || 'English'} <RiArrowDropDownLine />
+                    <Link to="#" className="dropdown">
+                        {state.languages.find(lang => lang.active).code} <RiArrowDropDownLine />
                         <div className="drp-content">
-                            <p
-                                className={state.selectedLanguage === 'English' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'English' }))}
-                            >
-                                English
-                            </p>
-                            <p
-                                className={state.selectedLanguage === 'Russian' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Russian' }))}
-                            >
-                                Russian
-                            </p>
-                            <p
-                                className={state.selectedLanguage === 'Turkish' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Turkish' }))}
-                            >
-                                Turkish
-                            </p>
-                            <p
-                                className={state.selectedLanguage === 'Italian' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Italian' }))}
-                            >
-                                Italian
-                            </p>
-                            <p
-                                className={state.selectedLanguage === 'Deutsch' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Deutsch' }))}
-                            >
-                                Deutsch
-                            </p>
-                            <p
-                                className={state.selectedLanguage === 'French' ? 'active' : ''}
-                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'French' }))}
-                            >
-                                French
-                            </p>
+                            {
+                                state.languages.map((lang, idx) => {
+                                    return (
+                                        <p key={idx}
+                                            onClick={(e) => { activateLang(lang) }}
+                                            className={lang.active == true ? "active" : ""}
+                                        >
+                                            {lang.code}
+                                        </p>
+                                    )
+                                })
+                            }
                         </div>
-                    </Link> */}
+                    </Link>
 
                     <Link to="#" className="dropdown">
-                        { state.currencies.find(c => c.active).code } <RiArrowDropDownLine />
+                        {state.currencies.find(c => c.active).code} <RiArrowDropDownLine />
                         <div className="drp-content">
                             {
                                 state.currencies.map((cur, idx) => {
