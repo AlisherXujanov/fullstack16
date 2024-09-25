@@ -10,9 +10,11 @@ import { Link, NavLink } from "react-router-dom";
 import Logo from "../../../assets/images/logo.png";
 import { useState, useEffect } from "react";
 import { BASE_URL } from "../../../store";
-
+import { useContext } from "react";
+import { context } from "../../../store";
 
 function Nav(props) {
+    const { state, setState } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
 
@@ -63,26 +65,83 @@ function Nav(props) {
                 </div>
                 <div className="right">
                     <Link to="#" className="dropdown">
-                        English <RiArrowDropDownLine />
+                        {state.selectedLanguage || 'English'} <RiArrowDropDownLine />
                         <div className="drp-content">
-                            <p>English</p>
-                            <p>Russian</p>
-                            <p>Turkish</p>
-                            <p>Italian</p>
-                            <p>Deutsch</p>
-                            <p>French</p>
+                            <p
+                                className={state.selectedLanguage === 'English' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'English' }))}
+                            >
+                                English
+                            </p>
+                            <p
+                                className={state.selectedLanguage === 'Russian' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Russian' }))}
+                            >
+                                Russian
+                            </p>
+                            <p
+                                className={state.selectedLanguage === 'Turkish' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Turkish' }))}
+                            >
+                                Turkish
+                            </p>
+                            <p
+                                className={state.selectedLanguage === 'Italian' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Italian' }))}
+                            >
+                                Italian
+                            </p>
+                            <p
+                                className={state.selectedLanguage === 'Deutsch' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'Deutsch' }))}
+                            >
+                                Deutsch
+                            </p>
+                            <p
+                                className={state.selectedLanguage === 'French' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedLanguage: 'French' }))}
+                            >
+                                French
+                            </p>
                         </div>
                     </Link>
+
                     <Link to="#" className="dropdown">
-                        USD <RiArrowDropDownLine />
+                        {state.selectedCurrency || 'USD'} <RiArrowDropDownLine />
                         <div className="drp-content">
-                            <p>USD</p>
-                            <p>UZS</p>
-                            <p>RUB</p>
-                            <p>JPY</p>
-                            <p>GBP</p>
+                            <p
+                                className={state.selectedCurrency === 'USD' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'USD' }))}
+                            >
+                                USD
+                            </p>
+                            <p
+                                className={state.selectedCurrency === 'UZS' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'UZS' }))}
+                            >
+                                UZS
+                            </p>
+                            <p
+                                className={state.selectedCurrency === 'RUB' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'RUB' }))}
+                            >
+                                RUB
+                            </p>
+                            <p
+                                className={state.selectedCurrency === 'JPY' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'JPY' }))}
+                            >
+                                JPY
+                            </p>
+                            <p
+                                className={state.selectedCurrency === 'GBP' ? 'active' : ''}
+                                onClick={() => setState(prevState => ({ ...prevState, selectedCurrency: 'GBP' }))}
+                            >
+                                GBP
+                            </p>
                         </div>
                     </Link>
+
                     <Link to="login">Login <CgProfile /></Link>
                     <Link to="wishlist">Wishlist <CiHeart /></Link>
                     <Link to="cart"><MdOutlineShoppingCart /></Link>
@@ -97,7 +156,7 @@ function Nav(props) {
                     </Link>
                 </div>
 
-                
+
                 <div id="burger-menu-wrapper">
                     <div className="burger-top"></div>
                     <div className="burger-middle"></div>
@@ -128,7 +187,7 @@ function Nav(props) {
                                         return (
                                             <div key={idx}>
                                                 <Link to={"products/" + product.id}
-                                                    className={searchResults.length-1 == idx ? "last" : ""}
+                                                    className={searchResults.length - 1 == idx ? "last" : ""}
                                                 >
                                                     <div className="search-link">
                                                         <h4>{product.name}</h4>
