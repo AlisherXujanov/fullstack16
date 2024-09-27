@@ -19,6 +19,7 @@ function FeaturedProducts() {
                         return (
                             <div key={index}>
                                 <Item 
+                                    id={product.id}
                                     img={imgs[product.id % imgs.length]} 
                                     title={product.title}
                                     code={product.code}

@@ -12,10 +12,16 @@ function globalReducer(state, action) {
                 return lang
             })
             return { ...state, languages: updatedLanguages }
-        case "INCREMENT":
-            return { ...state, first: state.first + 1 }
-        case "DECREMENT":
-            return { ...state, first: state.first - 1 }
+        case "ADD_TO_CART":
+            return {
+                ...state,
+                selectedProducts: [...state.selectedProducts, action.payload]
+            }
+        case "REMOVE_FROM_CART":
+            return {
+                ...state,
+                selectedProducts: state.selectedProducts.filter(p_id => p_id != action.payload)
+            }
     }
 }
 
