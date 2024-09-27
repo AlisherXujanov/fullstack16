@@ -6,6 +6,7 @@ import PageNotFound from './PageNotFound'
 import Authentication from './Authentication'
 import Products from './Products'
 import Blog from './Blog'
+import Wishlist from './Wishlist'
 import ProductDetails from './Products/ProductDetails.jsx'
 
 
@@ -29,6 +30,9 @@ function AllComponents() {
 
                 {/* http://localhost:5173/products */}
                 <Route path="products" element={<Products />} />
+
+                {/* http://localhost:5173/wishlist */}
+                <Route path="wishlist" element={<Wishlist />} />
 
                 {/* http://localhost:5173/products/22 */}
                 <Route path="products/:id" element={<ProductDetails />} />
