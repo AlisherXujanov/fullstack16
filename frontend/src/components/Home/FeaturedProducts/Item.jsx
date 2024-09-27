@@ -11,9 +11,9 @@ function Item(props) {
 
     function addToWishlist(e) {
         if (state.selectedProducts.includes(props.id)) {
-            dispatch({ type: "REMOVE_FROM_CART", payload: props.id })
+            dispatch({ type: "REMOVE_FROM_WISHLIST", payload: props.id })
         } else {
-            dispatch({ type: "ADD_TO_CART", payload: props.id })
+            dispatch({ type: "ADD_TO_WISHLIST", payload: props.id })
         }
     }
 

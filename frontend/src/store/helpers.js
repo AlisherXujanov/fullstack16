@@ -12,12 +12,12 @@ function globalReducer(state, action) {
                 return lang
             })
             return { ...state, languages: updatedLanguages }
-        case "ADD_TO_CART":
+        case "ADD_TO_WISHLIST":
             return {
                 ...state,
                 selectedProducts: [...state.selectedProducts, action.payload]
             }
-        case "REMOVE_FROM_CART":
+        case "REMOVE_FROM_WISHLIST":
             return {
                 ...state,
                 selectedProducts: state.selectedProducts.filter(p_id => p_id != action.payload)
