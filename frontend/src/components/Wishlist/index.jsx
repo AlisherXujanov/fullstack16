@@ -22,7 +22,9 @@ function Wishlist() {
 
                 <div className="products-content">
                     {
-                        FProductsJSON.filter(p => state.selectedProducts.includes(p.id)).map((product, index) => {
+                        FProductsJSON.filter(p => 
+                            state.selectedProducts.includes(p.id)
+                        ).map((product, index) => {
                             return (
                                 <div key={index}>
                                     <Item
