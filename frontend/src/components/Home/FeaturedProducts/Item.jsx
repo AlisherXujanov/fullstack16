@@ -23,7 +23,7 @@ function Item(props) {
         if (state.basket.includes(props.id)) {
             dispatch({ type: "REMOVE_FROM_BASKET", payload: props.id })
         } else {
-            dispatch({ type: "ADD_TO_BASKET", payload: props.id })
+            dispatch({ type: "ADD_TO_BASKET", payload: { id: props.id, count: 1 } })
         }
     }
 

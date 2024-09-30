@@ -10,6 +10,13 @@ import Img from "../../assets/FeaturesImg/image2.png"
 function Cart() {
     const { state, dispatch } = useContext(context)
 
+    function getAllIDs() {
+        return state.basket.map(p => p.id)
+    }
+    function getProductCount(p_id) {
+        return state.basket.find(p => p.id == p_id).count
+    }
+
     return (
         <>
             <Heading title="Cart" path="Cart">
@@ -19,7 +26,7 @@ function Cart() {
                 <div className="products-content">
                     {
                         FProductsJSON.filter(p =>
-                            state.basket.includes(p.id)
+                            getAllIDs().includes(p.id)
                         ).map((product, index) => {
                             return (
                                 <div className="product-item" key={index}>
@@ -31,9 +38,9 @@ function Cart() {
                                         price={product.price}
                                     />
                                     <div className="products-count">
-                                        <button>-</button>
-                                        {/* {count} */}
-                                        <button>+</button>
+                                        <button>➖</button>
+                                        {getProductCount(product.id)}
+                                        <button>➕</button>
                                     </div>
                                 </div>
                             )

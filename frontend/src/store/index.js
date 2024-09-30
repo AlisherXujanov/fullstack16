@@ -19,9 +19,7 @@ const initialState = {
         { code: "UZ", active: false },
         { code: "RU", active: false }
     ],
-    basket: [
-        { id: 1, count: 2 }
-    ],
+    basket: [],
 }
 
 export {
