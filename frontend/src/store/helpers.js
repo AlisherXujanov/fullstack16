@@ -38,6 +38,30 @@ function globalReducer(state, action) {
                 ...state,
                 basket: state.basket.filter(p => p.id != action.payload)
             }
+        // ------------------------------------------------------------------------------------
+        // --------------------- BASKET ITEM COUNT --------------------------------------------
+        case "inc":
+            return {
+                ...state,
+                backet: state.basket.map(p => {
+                    if (p.id == action.payload) {
+                        p.count += 0.5
+                    }
+                    return p
+                })
+            }
+        case "dec":
+            return {
+                ...state,
+                backet: state.basket.map(p => {
+                    if (p.id == action.payload) {
+                        if (p.count > 1) {
+                            p.count -= 0.5
+                        }
+                    }
+                    return p
+                })
+            }
     }
 }
 

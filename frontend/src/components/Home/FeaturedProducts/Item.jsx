@@ -3,7 +3,7 @@ import { BsCartCheckFill } from "react-icons/bs";
 import { FaRegHeart } from 'react-icons/fa'
 import { HiMagnifyingGlassPlus } from "react-icons/hi2"
 import { FaHeart } from "react-icons/fa";
-import { useContext } from 'react'
+import { useContext, memo } from 'react'
 import { context } from "../../../store"
 import { toast } from 'react-toastify'
 
@@ -73,4 +73,4 @@ function Item(props) {
     )
 }
 
-export default Item
+export default memo(Item)

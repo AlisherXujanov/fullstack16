@@ -17,6 +17,19 @@ function Cart() {
         return state.basket.find(p => p.id == p_id).count
     }
 
+    // function setProductItemCount(event, p_id) {
+    //     event.preventDefault()
+    //     event.stopPropagation()
+    //     const { name } = event.target
+
+    //     if (name == 'inc' || name == 'dec') {
+    //         dispatch({ type: name, payload: p_id })
+    //     }
+    //     else {
+    //         console.error("Invalid btn name")
+    //     }
+    // }
+
     return (
         <>
             <Heading title="Cart" path="Cart">
@@ -38,9 +51,13 @@ function Cart() {
                                         price={product.price}
                                     />
                                     <div className="products-count">
-                                        <button>➖</button>
+                                        <button name="dec"
+                                            onClick={(e) => dispatch({ type: e.target.name, payload: product.id })}
+                                        >➖</button>
                                         {getProductCount(product.id)}
-                                        <button>➕</button>
+                                        <button name="inc"
+                                            onClick={(e) => dispatch({ type: e.target.name, payload: product.id })}
+                                        >➕</button>
                                     </div>
                                 </div>
                             )
