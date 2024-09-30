@@ -36,7 +36,7 @@ function globalReducer(state, action) {
         case "REMOVE_FROM_BASKET":
             return {
                 ...state,
-                basket: state.basket.filter(p_id => p_id != action.payload)
+                basket: state.basket.filter(p => p.id != action.payload)
             }
     }
 }

@@ -20,7 +20,7 @@ function Item(props) {
     }
     function addToBasket(e) {
         e.stopPropagation()
-        if (state.basket.includes(props.id)) {
+        if (state.basket.map(p => p.id).includes(props.id)) {
             dispatch({ type: "REMOVE_FROM_BASKET", payload: props.id })
         } else {
             dispatch({ type: "ADD_TO_BASKET", payload: { id: props.id, count: 1 } })
@@ -43,7 +43,7 @@ function Item(props) {
                             </span>
                     }
                     {
-                        state.basket.includes(props.id)
+                        state.basket.map(p => p.id).includes(props.id)
                             ?
                             <span className='manual-icon show-icon'>
                                 <BsCartCheckFill color='#7E33E0' onClick={addToBasket} />
