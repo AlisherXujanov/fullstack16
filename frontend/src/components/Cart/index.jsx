@@ -17,18 +17,13 @@ function Cart() {
         return state.basket.find(p => p.id == p_id).count
     }
 
-    // function setProductItemCount(event, p_id) {
-    //     event.preventDefault()
-    //     event.stopPropagation()
-    //     const { name } = event.target
-
-    //     if (name == 'inc' || name == 'dec') {
-    //         dispatch({ type: name, payload: p_id })
-    //     }
-    //     else {
-    //         console.error("Invalid btn name")
-    //     }
-    // }
+    function getTotalPrice() {
+        let total = 0
+        state.basket.forEach(p => {
+            total += p.price * p.count
+        })
+        return total
+    }
 
     return (
         <>
@@ -65,7 +60,7 @@ function Cart() {
                     }
                 </div>
                 <div className="prices-wrapper">
-                    <h2>In total:</h2>
+                    <h2><mark>In total: ${getTotalPrice()}</mark></h2>
                 </div>
             </div>
         </>

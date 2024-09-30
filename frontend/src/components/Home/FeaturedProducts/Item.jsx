@@ -5,6 +5,7 @@ import { HiMagnifyingGlassPlus } from "react-icons/hi2"
 import { FaHeart } from "react-icons/fa";
 import { useContext, memo } from 'react'
 import { context } from "../../../store"
+import FProductsJSON from "../../../db/featured_products.json"
 import { toast } from 'react-toastify'
 
 function Item(props) {
@@ -20,10 +21,13 @@ function Item(props) {
     }
     function addToBasket(e) {
         e.stopPropagation()
+
+        let product = FProductsJSON.find(p => p.id == props.id)
+
         if (state.basket.map(p => p.id).includes(props.id)) {
             dispatch({ type: "REMOVE_FROM_BASKET", payload: props.id })
         } else {
-            dispatch({ type: "ADD_TO_BASKET", payload: { id: props.id, count: 1 } })
+            dispatch({ type: "ADD_TO_BASKET", payload: { id: props.id, count: 1, price: product.price } })
         }
     }
 
