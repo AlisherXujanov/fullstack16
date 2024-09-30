@@ -1,0 +1,21 @@
+@import "../../assets/styles/setting";
+
+.cart-page-wrapper {
+    padding: 100px 200px;
+    text-align: center;
+
+    @include grid(2, 1fr, 20px);
+
+    .products-content {
+        .product-item {
+            margin: 20px 0;
+            @include flex();
+
+            button {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .prices-wrapper {}
+}

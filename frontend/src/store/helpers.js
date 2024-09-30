@@ -6,12 +6,16 @@ function globalReducer(state, action) {
                 return curr
             })
             return { ...state, currencies: updatedCurrencies }
+        // ------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
         case "SET_LANG":
             let updatedLanguages = state.languages.map(lang => {
                 lang.active = lang.code == action.payload ? true : false
                 return lang
             })
             return { ...state, languages: updatedLanguages }
+        // ------------------------------------------------------------------------------------
+        // --------------------- WISHLIST -----------------------------------------------------
         case "ADD_TO_WISHLIST":
             return {
                 ...state,
@@ -21,6 +25,18 @@ function globalReducer(state, action) {
             return {
                 ...state,
                 selectedProducts: state.selectedProducts.filter(p_id => p_id != action.payload)
+            }
+        // ------------------------------------------------------------------------------------
+        // --------------------- BASKET -------------------------------------------------------
+        case "ADD_TO_BASKET":
+            return {
+                ...state,
+                basket: [...state.basket, action.payload]
+            }
+        case "REMOVE_FROM_BASKET":
+            return {
+                ...state,
+                basket: state.basket.filter(p_id => p_id != action.payload)
             }
     }
 }

@@ -18,7 +18,10 @@ const initialState = {
         { code: "EN", active: true },
         { code: "UZ", active: false },
         { code: "RU", active: false }
-    ]
+    ],
+    basket: [
+        { id: 1, count: 2 }
+    ],
 }
 
 export {

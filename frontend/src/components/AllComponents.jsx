@@ -7,6 +7,7 @@ import Authentication from './Authentication'
 import Products from './Products'
 import Blog from './Blog'
 import Wishlist from './Wishlist'
+import Cart from './Cart'
 import ProductDetails from './Products/ProductDetails.jsx'
 
 
@@ -36,6 +37,9 @@ function AllComponents() {
 
                 {/* http://localhost:5173/products/22 */}
                 <Route path="products/:id" element={<ProductDetails />} />
+
+                {/* http://localhost:5173/cart */}
+                <Route path="cart" element={<Cart />} />
 
                 {/* http://localhost:5173/contact */}
                 {/* <Route path="contacts" element={<Contacts />} /> */}
