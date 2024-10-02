@@ -26,7 +26,6 @@ function Nav(props) {
             .then(response => response.json())
             .then(data => {
                 setProducts(data)
-                console.log(data)
             })
     }
     function handleSearch(e) {

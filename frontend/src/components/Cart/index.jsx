@@ -25,6 +25,28 @@ function Cart() {
         return total
     }
 
+    function handleCountChange(e, p_id) {
+        let updatedBasket = [...state.basket]
+        if (e.target.name == "inc") {
+            updatedBasket = updatedBasket.map(p => {
+                if (p.id == p_id) {
+                    p.count += 1
+                }
+                return p
+            })
+        } else if (e.target.name == "dec") {
+            updatedBasket = updatedBasket.map(p => {
+                if (p.id == p_id) {
+                    if (p.count > 1) {
+                        p.count -= 1
+                    }
+                }
+                return p
+            })
+        }
+        dispatch({ type: e.target.name, payload: updatedBasket })
+    }
+
     return (
         <>
             <Heading title="Cart" path="Cart">
@@ -47,11 +69,11 @@ function Cart() {
                                     />
                                     <div className="products-count">
                                         <button name="dec"
-                                            onClick={(e) => dispatch({ type: e.target.name, payload: product.id })}
+                                            onClick={(e) => handleCountChange(e, product.id)}
                                         >➖</button>
                                         {getProductCount(product.id)}
                                         <button name="inc"
-                                            onClick={(e) => dispatch({ type: e.target.name, payload: product.id })}
+                                            onClick={(e) => handleCountChange(e, product.id)}
                                         >➕</button>
                                     </div>
                                 </div>
@@ -59,9 +81,12 @@ function Cart() {
                         })
                     }
                 </div>
-                <div className="prices-wrapper">
-                    <h2><mark>In total: ${getTotalPrice()}</mark></h2>
-                </div>
+                {
+                    getTotalPrice() > 0 &&
+                    <div className="prices-wrapper">
+                        <h2><mark>In total: ${getTotalPrice()}</mark></h2>
+                    </div>
+                }
             </div>
         </>
     );

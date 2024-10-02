@@ -26,7 +26,6 @@ function LatestProducts() {
             .then(response => response.json())
             .then(data => {
                 setProducts(data.sort((a, b) => parseInt(b.id) - parseInt(a.id)))
-                console.log(data)
             })
     }
 

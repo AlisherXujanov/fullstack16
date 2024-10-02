@@ -41,27 +41,13 @@ function globalReducer(state, action) {
         // ------------------------------------------------------------------------------------
         // --------------------- BASKET ITEM COUNT --------------------------------------------
         case "inc":
-            return {
-                ...state,
-                backet: state.basket.map(p => {
-                    if (p.id == action.payload) {
-                        p.count += 0.5
-                    }
-                    return p
-                })
-            }
+            return { ...state,  basket: action.payload}
         case "dec":
-            return {
-                ...state,
-                backet: state.basket.map(p => {
-                    if (p.id == action.payload) {
-                        if (p.count > 1) {
-                            p.count -= 0.5
-                        }
-                    }
-                    return p
-                })
-            }
+            return { ...state, basket: action.payload}
+        // ------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
+        default:
+            return state; // Add a default case to return the current state
     }
 }
 
