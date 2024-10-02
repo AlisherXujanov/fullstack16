@@ -7,8 +7,23 @@ function Blog() {
     const [counter, setCounter] = useState(0)
 
     useEffect(() => {
-        console.log("Counter changed to ", counter)
-    })
+        let counterLS = JSON.parse(localStorage.getItem('counter') || "0")
+        setCounter(counterLS)
+
+        return () => {
+            console.log("Counter is getting saved into LOCAL STORAGE")
+            // localStorage.setItem('counter', JSON.stringify(counter))
+        }
+    }, [])
+
+    function increment(e) {
+        setCounter(counter + 1)
+        localStorage.setItem('counter', JSON.stringify(counter))
+    }
+    function decrement(e) {
+        setCounter(counter - 1)
+        localStorage.setItem('counter', JSON.stringify(counter))
+    }
 
 
     return (
@@ -17,9 +32,9 @@ function Blog() {
 
             <hr />
             <div className="container">
-                <button className="delete-btn" onClick={(e) => setCounter(counter-1)}>Decrement</button>
+                <button className="delete-btn" onClick={increment}>Decrement</button>
                 <h2>{counter}</h2>
-                <button className="cancel-btn" onClick={(e) => setCounter(counter+1)}>Increment</button>
+                <button className="cancel-btn" onClick={decrement}>Increment</button>
             </div>
         </div>
     )
