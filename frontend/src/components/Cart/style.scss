@@ -7,15 +7,31 @@
     @include grid(2, 1fr, 20px);
 
     .products-content {
-        .product-item {
-            margin: 20px 0;
-            @include flex();
+        .product-item-component-wrapper {
+            margin-bottom: 50px;
+            @include flex(column);
 
             button {
                 font-size: 1.5em;
 
                 &:active {
                     transform: scale(0.6);
+                }
+            }
+
+            &>div {
+                @include flex(row);
+            }
+
+            .product-item-total-price {
+                border-left: 2px solid $violet;
+                padding-left: 20px;
+
+                span {
+                    display: inline-block;
+                    padding: 5px 10px;
+                    background-color: $violet;
+                    color: $light;
                 }
             }
         }

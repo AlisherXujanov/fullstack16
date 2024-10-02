@@ -21,6 +21,7 @@
             background-color: snow;
             position: relative;
             padding-bottom: 5px;
+            @include flex(column);
             @include card_hover();
 
             .img-wrapper {

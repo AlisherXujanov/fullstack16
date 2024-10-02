@@ -16,6 +16,10 @@ function Cart() {
     function getProductCount(p_id) {
         return state.basket.find(p => p.id == p_id).count
     }
+    function getProductPrice(p_id) {
+        let product = state.basket.find(p => p.id == p_id)
+        return product.price * product.count
+    }
 
     function getTotalPrice() {
         let total = 0
@@ -59,22 +63,30 @@ function Cart() {
                             getAllIDs().includes(p.id)
                         ).map((product, index) => {
                             return (
-                                <div className="product-item" key={index}>
-                                    <Item
-                                        id={product.id}
-                                        img={Img}
-                                        title={product.title}
-                                        code={product.code}
-                                        price={product.price}
-                                    />
-                                    <div className="products-count">
-                                        <button name="dec"
-                                            onClick={(e) => handleCountChange(e, product.id)}
-                                        >➖</button>
-                                        {getProductCount(product.id)}
-                                        <button name="inc"
-                                            onClick={(e) => handleCountChange(e, product.id)}
-                                        >➕</button>
+                                <div className="product-item-component-wrapper" key={index}>
+                                    <div className="item-wrapper">
+                                        <Item
+                                            id={product.id}
+                                            img={Img}
+                                            title={product.title}
+                                            code={product.code}
+                                            price={product.price}
+                                        />
+                                    </div>
+                                    <div className="info-wrapper">
+
+                                        <div className="products-count">
+                                            <button name="dec"
+                                                onClick={(e) => handleCountChange(e, product.id)}
+                                            >➖</button>
+                                            {getProductCount(product.id)}
+                                            <button name="inc"
+                                                onClick={(e) => handleCountChange(e, product.id)}
+                                            >➕</button>
+                                        </div>
+                                        <div className="product-item-total-price">
+                                            <span>${getProductPrice(product.id).toFixed(2)}</span>
+                                        </div>
                                     </div>
                                 </div>
                             )
