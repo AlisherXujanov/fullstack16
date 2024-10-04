@@ -5,6 +5,7 @@ const context = createContext()
 const BASE_URL = "http://localhost:3000/"
 
 const initialState = {
+    loaded: true,
     selectedProducts: [],
     currencies: [
         { code: "USD", active: true },

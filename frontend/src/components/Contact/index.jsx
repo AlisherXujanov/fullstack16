@@ -1,11 +1,14 @@
 import "./style.scss"
 import Heading from "../common/Heading"
 import { GrContact } from "react-icons/gr"
-import { useState } from "react"
+import { useState, useContext } from "react"
+import { context } from "../../store"
 import emailjs from '@emailjs/browser';
 import { toast } from "react-toastify";
 
 function Contact() {
+    const { state, dispatch } = useContext(context)
+
     const [form, setForm] = useState({
         client_name: "",
         client_email: "",
@@ -15,20 +18,23 @@ function Contact() {
 
     function submit(e) {
         e.preventDefault()
+        dispatch({ type: "SET_LOADED", payload: false })
 
         emailjs
-            .send('...', '...', form, {
-                publicKey: '...-',
+            .send('', '', form, {
+                publicKey: '-',
             })
             .then(
                 (response) => {
+                    dispatch({ type: "SET_LOADED", payload: true })
                     toast.success('Successfully sent the message!')
                 },
                 (err) => {
                     console.log(err)
-                    toast.fail('FAILED to send message')
+                    dispatch({ type: "SET_LOADED", payload: true })
+                    toast.error('FAILED to send message')
                 },
-            );
+            )
     }
 
     function handleFormInfo(e) {
@@ -56,7 +62,7 @@ function Contact() {
                                 placeholder="Type your message*"></textarea>
                         </div>
                         <div className="form-control">
-                            <button>Send Mail</button>
+                            <button type="submit" disabled={!state.loaded}>Send Mail</button>
                         </div>
                     </form>
                 </div>

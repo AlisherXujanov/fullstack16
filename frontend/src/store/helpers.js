@@ -1,5 +1,9 @@
 function globalReducer(state, action) {
     switch (action.type) {
+        case "SET_LOADED":
+            return { ...state, loaded: action.payload }
+        // ------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------
         case "ACTIVATE_CURRENCY":
             let updatedCurrencies = state.currencies.map(curr => {
                 curr.active = curr.code == action.payload ? true : false

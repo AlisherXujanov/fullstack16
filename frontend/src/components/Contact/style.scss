@@ -41,6 +41,12 @@
                 width: auto;
                 margin: 0;
                 @include darken_bg_on_hover($red, 10%);
+
+                &:disabled {
+                    background-color: $light;
+                    color: $light-blue;
+                    cursor: not-allowed;
+                }
             }
 
 
