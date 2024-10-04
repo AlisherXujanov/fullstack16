@@ -1,0 +1,52 @@
+@import "../../assets/styles/setting";
+
+.contact-page-wrapper {
+    padding: 100px 200px;
+
+    form {
+        margin-bottom: 50px;
+
+
+
+        .form-control {
+            margin: 15px 0;
+
+            textarea,
+            input,
+            button {
+                width: 100%;
+                display: block;
+                padding: 20px;
+                background-color: transparent;
+            }
+
+            ::placeholder {
+                color: $light-blue;
+            }
+
+            textarea,
+            input {
+                border: 2px solid #9096B250;
+
+                &:focus {
+                    outline: 4px solid #FB2E8630;
+                    border-color: $red;
+                }
+            }
+
+            button {
+                background-color: $red;
+                color: snow;
+                font-size: 1.2em;
+                width: auto;
+                margin: 0;
+                @include darken_bg_on_hover($red, 10%);
+            }
+
+
+            &.row {
+                @include flex(row, space-between, center, 10px);
+            }
+        }
+    }
+}

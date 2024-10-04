@@ -17,8 +17,8 @@ function Contact() {
         e.preventDefault()
 
         emailjs
-            .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form, {
-                publicKey: 'YOUR_PUBLIC_KEY',
+            .send('service_8aytxhp', 'template_dbx4qji', form, {
+                publicKey: 'mbcCG18ZiPltCRfB-',
             })
             .then(
                 (response) => {
@@ -37,30 +37,31 @@ function Contact() {
     }
 
     return (
-        <div className="contact-page-wrapper">
+        <>
             <Heading title="Contact Us" path="Contact Us">
                 <GrContact />
             </Heading>
-
-            <div className="form-wrapper">
-                <form onSubmit={submit}>
-                    <div className="form-control row">
-                        <input type="text" placeholder="Your name*" onChange={handleFormInfo} name="client_name" required />
-                        <input type="email" placeholder="Your E-mail" onChange={handleFormInfo} name="client_email" required />
-                    </div>
-                    <div className="form-control">
-                        <input type="text" placeholder="Subject*" onChange={handleFormInfo} name="message_subject" required />
-                    </div>
-                    <div className="form-control">
-                        <textarea rows={8} name="message" onChange={handleFormInfo}
-                            placeholder="Type your message*"></textarea>
-                    </div>
-                    <div className="form-control">
-                        <button>Send Mail</button>
-                    </div>
-                </form>
+            <div className="contact-page-wrapper">
+                <div className="form-wrapper">
+                    <form onSubmit={submit}>
+                        <div className="form-control row">
+                            <input type="text" placeholder="Your name*" onChange={handleFormInfo} name="client_name" required />
+                            <input type="email" placeholder="Your E-mail" onChange={handleFormInfo} name="client_email" required />
+                        </div>
+                        <div className="form-control">
+                            <input type="text" placeholder="Subject*" onChange={handleFormInfo} name="message_subject" required />
+                        </div>
+                        <div className="form-control">
+                            <textarea rows={8} name="message" onChange={handleFormInfo}
+                                placeholder="Type your message*"></textarea>
+                        </div>
+                        <div className="form-control">
+                            <button>Send Mail</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
+        </>
     )
 }
 
