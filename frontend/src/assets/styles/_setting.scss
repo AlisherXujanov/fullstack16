@@ -67,7 +67,7 @@ $xx-large: 1525px;
         left: 0;
         right: 100%;
         z-index: 0;
-        border-radius: 5px;
+        border-radius: inherit;
         background: darken($color, $percent);
     }
 
