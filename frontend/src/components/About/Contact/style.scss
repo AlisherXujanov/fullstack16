@@ -1,6 +1,6 @@
 @import "../../../assets/styles/setting";
 
-.contact-page-wrapper {
+.contact-section-wrapper {
     background-color: $light;
     padding: 100px 200px;
     margin-bottom: 50px;
@@ -56,7 +56,7 @@
 }
 
 @media (max-width: $large) {
-    .contact-page-wrapper {
+    .contact-section-wrapper {
         padding: 60px 100px;
 
         .photo {
@@ -77,7 +77,7 @@
 }
 
 @media (max-width: $medium) {
-    .contact-page-wrapper {
+    .contact-section-wrapper {
         padding: 40px 20px;
 
         .contact-info {

@@ -8,6 +8,7 @@ import Products from './Products'
 import Blog from './Blog'
 import Wishlist from './Wishlist'
 import Cart from './Cart'
+import Contact from './Contact'
 import ProductDetails from './Products/ProductDetails.jsx'
 
 
@@ -42,7 +43,7 @@ function AllComponents() {
                 <Route path="cart" element={<Cart />} />
 
                 {/* http://localhost:5173/contact */}
-                {/* <Route path="contacts" element={<Contacts />} /> */}
+                <Route path="contact" element={<Contact />} />
 
                 <Route path="*" element={<PageNotFound />} />
             </Route>

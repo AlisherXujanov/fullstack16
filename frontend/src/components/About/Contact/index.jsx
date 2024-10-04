@@ -3,7 +3,7 @@ import Img from "../../../assets/AboutImg/contact-img.png"
 
 function Contact() {
     return (
-        <div className="contact-page-wrapper">
+        <div className="contact-section-wrapper">
             <div className="photo"><img src={Img} alt="" /></div>
 
             <div className="contact-info">
