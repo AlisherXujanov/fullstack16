@@ -17,8 +17,8 @@ function Contact() {
         e.preventDefault()
 
         emailjs
-            .send('service_8aytxhp', 'template_dbx4qji', form, {
-                publicKey: 'mbcCG18ZiPltCRfB-',
+            .send('...', '...', form, {
+                publicKey: '...-',
             })
             .then(
                 (response) => {
