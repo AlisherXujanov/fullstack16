@@ -9,7 +9,6 @@ import Image from "../../assets/ContactsAssets/GroupWork.png"; // Импорт �
 
 function Contact() {
     const { state, dispatch } = useContext(context);
-
     const [form, setForm] = useState({
         client_name: "",
         client_email: "",
@@ -22,8 +21,8 @@ function Contact() {
         dispatch({ type: "SET_LOADED", payload: false });
 
         emailjs
-            .send('', '', form, {
-                publicKey: '-',
+            .send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form, {
+                publicKey: 'YOUR_PUBLIC_KEY',
             })
             .then(
                 (response) => {
@@ -76,7 +75,7 @@ function Contact() {
                             </div>
 
                             <div className="contact-item email">
-                                <div className="circle">📧</div>
+                                <div className="circle">🛠️</div>
                                 <p>Support Forum <br />
                                 For over 24h</p>
                             </div>
@@ -88,7 +87,7 @@ function Contact() {
                             </div>
 
                             <div className="contact-item support">
-                                <div className="circle">🛠️</div>
+                                <div className="circle">📧</div>
                                 <p>Free Standart shiping <br />
                                 on all orders</p>
                             </div>
