@@ -1,14 +1,14 @@
 {
     "translation": {
         "navigation": {
-            "Home": "Bosh sahifa",
-            "About": "Biz haqimizda",
-            "Products": "Mahsulotlar",
-            "Contact": "Aloqa",
-            "Shop": "Do'kon",
-            "Blog": "Blog",
-            "Login": "Kirish",
-            "Wishlist": "Tanlanganlar"
+            "home": "Bosh sahifa",
+            "about": "Biz haqimizda",
+            "products": "Mahsulotlar",
+            "contact": "Aloqa",
+            "shop": "Do'kon",
+            "blog": "Blog",
+            "login": "Kirish",
+            "wishlist": "Tanlanganlar"
         }
     }
 }

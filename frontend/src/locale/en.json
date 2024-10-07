@@ -1,14 +1,14 @@
 {
     "translation": {
         "navigation": {
-            "Home": "Home",
-            "About": "About",
-            "Products": "Products",
-            "Contact": "Contact",
-            "Shop": "Shop",
-            "Blog": "Blog",
-            "Login": "Login",
-            "Wishlist": "Wishlist"
+            "home": "Home",
+            "about": "About",
+            "products": "Products",
+            "contact": "Contact",
+            "shop": "Shop",
+            "blog": "Blog",
+            "login": "Login",
+            "wishlist": "Wishlist"
         }
     }
 }

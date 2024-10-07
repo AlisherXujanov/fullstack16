@@ -1,14 +1,14 @@
 {
     "translation": {
         "navigation": {
-            "Home": "Главная",
-            "About": "О нас",
-            "Products": "Продукты",
-            "Contact": "Контакты",
-            "Shop": "Магазин",
-            "Blog": "Блог",
-            "Login": "Войти",
-            "Wishlist": "Избранное"
+            "home": "Главная",
+            "about": "О нас",
+            "products": "Продукты",
+            "contact": "Контакты",
+            "shop": "Магазин",
+            "blog": "Блог",
+            "login": "Войти",
+            "wishlist": "Избранное"
         }
     }
 }

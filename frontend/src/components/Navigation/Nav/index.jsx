@@ -18,7 +18,7 @@ function Nav(props) {
     const { state, dispatch } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
-    const { t, i18n: { changeLanguage} } = useTranslation();
+    const { t, i18n: { changeLanguage} } = useTranslation()
 
     useEffect(() => {
         fetchLatestProducts()
@@ -77,8 +77,8 @@ function Nav(props) {
                     <NavLinkDrp items={state.languages} activateFn={activateLang}  />
                     <NavLinkDrp items={state.currencies} activateFn={activateCurrency} />
 
-                    <Link to="login">Login <CgProfile /></Link>
-                    <Link to="wishlist">Wishlist <CiHeart /></Link>
+                    <Link to="login">{t("navigation.login")} <CgProfile /></Link>
+                    <Link to="wishlist">{t("navigation.wishlist")} <CiHeart /></Link>
                     <Link to="cart"><MdOutlineShoppingCart /></Link>
                 </div>
             </div>
@@ -102,12 +102,12 @@ function Nav(props) {
 
                 <div className="right">
                     <div className="links">
-                        <NavLink to="/" activeclassname="active">Home</NavLink>
-                        <NavLink to="about" activeclassname="active">About</NavLink>
-                        <NavLink to="products" activeclassname="active">Products</NavLink>
-                        <NavLink to="blog" activeclassname="active">Blog</NavLink>
-                        <NavLink to="shop" activeclassname="active">Shop</NavLink>
-                        <NavLink to="contact" activeclassname="active">Contact</NavLink>
+                        <NavLink to="/" activeclassname="active">{t("navigation.home")}</NavLink>
+                        <NavLink to="about" activeclassname="active">{t("navigation.about")}</NavLink>
+                        <NavLink to="products" activeclassname="active">{t("navigation.products")}</NavLink>
+                        <NavLink to="blog" activeclassname="active">{t("navigation.blog")}</NavLink>
+                        <NavLink to="shop" activeclassname="active">{t("navigation.shop")}</NavLink>
+                        <NavLink to="contact" activeclassname="active">{t("navigation.contact")}</NavLink>
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" onChange={handleSearch} />
