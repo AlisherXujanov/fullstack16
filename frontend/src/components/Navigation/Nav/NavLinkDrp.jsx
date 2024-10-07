@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 function NavLinkDrp(props) {
     return (
         <Link to="#" className="dropdown">
-            {props.items.find(item => item.active).code} <RiArrowDropDownLine />
+            {props.items.find(item => item.active).code.toUpperCase()} <RiArrowDropDownLine />
             <div className="drp-content">
                 {
                     props.items.map((item, idx) => {
@@ -14,7 +14,7 @@ function NavLinkDrp(props) {
                                 onClick={(e) => { props.activateFn(item) }}
                                 className={item.active == true ? "active" : ""}
                             >
-                                {item.code}
+                                {item.code.toUpperCase()}
                             </p>
                         )
                     })

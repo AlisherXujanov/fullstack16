@@ -16,9 +16,9 @@ const initialState = {
         { code: "UZS", active: false }
     ],
     languages: [
-        { code: "EN", active: true },
-        { code: "UZ", active: false },
-        { code: "RU", active: false }
+        { code: "en", active: true },
+        { code: "uz", active: false },
+        { code: "ru", active: false }
     ],
     basket: [],
 }

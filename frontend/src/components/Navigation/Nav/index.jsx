@@ -11,16 +11,19 @@ import { BASE_URL, context } from "../../../store";
 import Logo from "../../../assets/images/logo.png";
 import NavLinkDrp from './NavLinkDrp.jsx'
 import "./style.scss"
+import { useTranslation } from "react-i18next"
 
 
 function Nav(props) {
     const { state, dispatch } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
+    const { t, i18n: { changeLanguage} } = useTranslation();
 
     useEffect(() => {
         fetchLatestProducts()
     }, [])
+
     function fetchLatestProducts() {
         fetch(BASE_URL + "products")
             .then(response => response.json())
@@ -43,12 +46,12 @@ function Nav(props) {
             }
         }
     }
-
     function activateCurrency(currency) {
         dispatch({ type: "ACTIVATE_CURRENCY", payload: currency.code })
     }
     function activateLang(language) {
         dispatch({ type: "SET_LANG", payload: language.code })
+        changeLanguage(language.code)
     }
 
     const borderStyle = {
@@ -71,7 +74,7 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    <NavLinkDrp items={state.languages} activateFn={activateLang} />
+                    <NavLinkDrp items={state.languages} activateFn={activateLang}  />
                     <NavLinkDrp items={state.currencies} activateFn={activateCurrency} />
 
                     <Link to="login">Login <CgProfile /></Link>
