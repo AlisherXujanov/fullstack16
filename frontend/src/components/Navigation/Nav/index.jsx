@@ -18,7 +18,7 @@ function Nav(props) {
     const { state, dispatch } = useContext(context)
     const [products, setProducts] = useState([])
     const [searchResults, setSearchResults] = useState([])
-    const { t, i18n: { changeLanguage} } = useTranslation()
+    const { t, i18n: { changeLanguage } } = useTranslation()
 
     useEffect(() => {
         fetchLatestProducts()
@@ -74,7 +74,7 @@ function Nav(props) {
                     </a>
                 </div>
                 <div className="right">
-                    <NavLinkDrp items={state.languages} activateFn={activateLang}  />
+                    <NavLinkDrp items={state.languages} activateFn={activateLang} />
                     <NavLinkDrp items={state.currencies} activateFn={activateCurrency} />
 
                     <Link to="login">{t("navigation.login")} <CgProfile /></Link>
@@ -108,6 +108,9 @@ function Nav(props) {
                         <NavLink to="blog" activeclassname="active">{t("navigation.blog")}</NavLink>
                         <NavLink to="shop" activeclassname="active">{t("navigation.shop")}</NavLink>
                         <NavLink to="contact" activeclassname="active">{t("navigation.contact")}</NavLink>
+                        <NavLink to="#">
+                            {t("navigation.hello", { name: "Ranaldo" })}
+                        </NavLink>
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" onChange={handleSearch} />

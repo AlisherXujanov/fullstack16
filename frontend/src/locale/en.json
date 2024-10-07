@@ -8,7 +8,8 @@
             "shop": "Shop",
             "blog": "Blog",
             "login": "Login",
-            "wishlist": "Wishlist"
+            "wishlist": "Wishlist",
+            "hello": "Hello {{name}}!"
         }
     }
 }
