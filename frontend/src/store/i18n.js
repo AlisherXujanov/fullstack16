@@ -10,7 +10,9 @@ i18n.use(initReactI18next).init({
         ru: { ...ruJSON },
         uz: { ...uzJSON },
     }, // Where we're gonna put translations' files
-    
+
     lng: "en",     // Set the initial language of the App
     fallbackLng: "en", // If the language detector fails, it will use this language
 })
+
+export default i18n
