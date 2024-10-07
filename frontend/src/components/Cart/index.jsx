@@ -6,8 +6,10 @@ import { useContext } from "react";
 import { context } from "../../store";
 import FProductsJSON from "../../db/featured_products.json"
 import Img from "../../assets/FeaturesImg/image2.png"
+import { useTranslation } from "react-i18next";
 
 function Cart() {
+    const { t } = useTranslation();
     const { state, dispatch } = useContext(context)
 
     function getAllIDs() {
@@ -53,7 +55,7 @@ function Cart() {
 
     return (
         <>
-            <Heading title="Cart" path="Cart">
+            <Heading title={t("heading.cart")} path={t("heading.path.cart")}>
                 <FaCartArrowDown />
             </Heading>
             <div className="cart-page-wrapper">

@@ -108,9 +108,6 @@ function Nav(props) {
                         <NavLink to="blog" activeclassname="active">{t("navigation.blog")}</NavLink>
                         <NavLink to="shop" activeclassname="active">{t("navigation.shop")}</NavLink>
                         <NavLink to="contact" activeclassname="active">{t("navigation.contact")}</NavLink>
-                        <NavLink to="#">
-                            {t("navigation.hello", { name: "Ranaldo" })}
-                        </NavLink>
                     </div>
                     <div className="searchbar">
                         <input type="search" placeholder="Search" onChange={handleSearch} />

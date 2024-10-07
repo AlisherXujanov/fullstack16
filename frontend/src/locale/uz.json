@@ -10,6 +10,153 @@
             "login": "Kirish",
             "wishlist": "Tanlanganlar",
             "hello": "Salom {{name}}!"
+        },
+        "about": {
+            "about": "Bizning ecomerce biznesimiz haqida, tarixi",
+            "description": "Biz bilan telefon, elektron pochta orqali yoki shunchaki xabar yuborib bog'lanishdan tortinmang. Sizdan xabar olishni xohlardik! Telefon orqali biz bilan bog'lanishdan tortinmang, aziz mijoz! Biz sizga yordam berishga tayyormiz.",
+            "button": "Xabar yuborish"
+        },
+        "reviews": {
+            "title": "Mijozlarimiz aytadi!",
+            "reviewerName": "Selena Gomez",
+            "reviewerPosition": "Webecy Digital bosh direktori",
+            "reviewText": "Webecy Digital bilan ishlashdan mamnun edim! Ularning jamoasi professional va ehtiyotkor edi."
+        },
+        "footer": {
+            "brand": "Shopex",
+            "emailPlaceholder": "Emailingizni kiriting",
+            "signUp": "Ro'yxatdan o'tish",
+            "contactInfo": "Aloqa ma'lumotlari",
+            "address": "17 Princess Road, London, Greater London NW1 8JR, Buyuk Britaniya",
+            "categories": "Kategoriyalar",
+            "customerCare": "Mijozlar xizmati",
+            "pages": "Sahifalar",
+            "categoryList": [
+                "Noutbuklar va kompyuterlar",
+                "Kameralar va fotografiya",
+                "Smartfonlar va planshetlar",
+                "Video o'yinlar va konsollar",
+                "Suv o'tkazmaydigan naushniklar"
+            ],
+            "customerCareList": [
+                "Mening hisobim",
+                "Chegirma",
+                "Qaytish",
+                "Buyurtmalar tarixi",
+                "Buyurtma kuzatuv"
+            ],
+            "pagesList": [
+                "Blog",
+                "Do'konga qarang",
+                "Kategoriya",
+                "Oldindan tayyorlangan sahifalar",
+                "Vizual kompozitor elementlari",
+                "WooCommerce sahifalari"
+            ],
+            "rights": "©Webecy - Barcha huquqlar himoyalangan"
+        },
+        "shopex": {
+            "1": {
+                "title": "Eksklyuziv takliflar",
+                "text": "Sevimli mahsulotlaringizda eng yaxshi narxlarni oling."
+            },
+            "2": {
+                "title": "Cheklangan vaqtli chegirmalar",
+                "text": "Shoshiling! Chegirmangizni olib oling, uni yo'qotmasdan."
+            },
+            "3": {
+                "title": "Yangi kelishlar",
+                "text": "Bizning so'nggi kolleksiyamizni tekshiring."
+            },
+            "4": {
+                "title": "Eksklyuziv takliflar",
+                "text": "Sevimli mahsulotlaringizda eng yaxshi narxlarni oling."
+            }
+        },
+        "featured": {
+            "title": "Tadbirlar Recomendatsiyasi"
+        },
+        "trending": {
+            "title": "Eng yangi va trenddagi mahsulotlarning o'ziga xos xususiyatlari",
+            "features": [
+                "Barcha ramkalar qattiq yog'och va laminatlardan qurilgan",
+                "Ikki yog'och qadoqlari, yopishqoq, burchakli bloklar va mashina mixlari bilan mustahkamlash",
+                "Qo'llar, orqa va o'rindiqlar tuzilmaviy jihatdan mustahkamlangan"
+            ],
+            "button": "Savatchaga qo'shish",
+            "product": {
+                "name": "B&B Italiyaning divani",
+                "price": "$3999.99"
+            }
+        },
+        "latest": {
+            "title": "Eng yangi mahsulotlar",
+            "err": "Hozircha hech qanday mahsulot topilmadi"
+        },
+        "heading": {
+            "title": "Bosh sahifa",
+            "about": "Biz haqimizda",
+            "home": "Bosh",
+            "products": "Mahsulotlar",
+            "blog": "Blog",
+            "contact": "Biz bilan bog'laning",
+            "wishlist": "Savatcha",
+            "cart": "Korzina",
+            "login": "Kirish",
+            "path": {
+                "login": "Kirish",
+                "cart": "Korzina",
+                "wishlist": "Savatcha",
+                "about": "Biz haqimizda",
+                "home": "Bosh",
+                "products": "Mahsulotlar",
+                "blog": "Blog",
+                "contact": "Biz bilan bog'laning"
+            }
+        },
+        "contact": {
+            "infoTitle": "Biz haqimizda ma'lumot",
+            "infoDescription": "Mijozlarimiz bilan aloqamizni qadrlaymiz va sizga yordam berishga tayyormiz. Agar sizda biron bir savol bo'lsa, biz bilan bog'laning.",
+            "contactTitle": "Aloqa usullari",
+            "phone": "Tel: 877-67-88-99",
+            "email": "E-mail: shop@store.com",
+            "supportTitle": "Qo'llab-quvvatlash forum",
+            "supportTime": "24 soatdan ortiq mavjud",
+            "addressTitle": "Manzil",
+            "addressDetails": "20 Margaret St, London, Buyuk Britaniya, 3NM98-LK",
+            "shippingTitle": "Bepul standart yetkazib berish",
+            "shippingDetails": "barcha buyurtmalarga",
+            "formTitle": "Biz bilan bog'laning",
+            "formDescription": "Agar sizda biron bir savol yoki so'rov bo'lsa, quyidagi shaklni to'ldiring, va biz siz bilan imkon qadar tezroq bog'lanamiz.",
+            "placeholderName": "Ismingiz*",
+            "placeholderEmail": "E-mailingiz*",
+            "placeholderSubject": "Mavzu*",
+            "placeholderMessage": "Xabaringizni yozing*",
+            "sendButton": "Pochta yuborish",
+            "messageSent": "Xabar muvaffaqiyatli yuborildi!",
+            "messageFailed": "Xabar yuborishda xato"
+        },
+        "auth": {
+            "login": "Kirish",
+            "createAccount": "Hisob ochish",
+            "authenticate": "Autentifikatsiya",
+            "noAccount": "Hisobingiz yo‘qmi?",
+            "hasAccount": "Hisobingiz bormi?",
+            "loginPrompt": "Iltimos, quyida berilgan hisob ma'lumotlaringiz bilan kirishingizni so'raymiz",
+            "emailAddress": "Elektron pochta manzili",
+            "password": "Parol",
+            "forgotPassword": "Parolingizni unutdingizmi?",
+            "signIn": "Kirish",
+            "accountCreated": "Hisob muvaffaqiyatli yaratildi",
+            "allFieldsRequired": "Barcha maydonlar to'ldirilishi shart",
+            "invalidUsername": "Noto‘g‘ri foydalanuvchi nomi",
+            "emailExists": "Elektron pochta allaqachon mavjud",
+            "invalidPassword": "Parol faqat harflar va raqamlardan iborat bo'lishi va kamida 6 belgidan iborat bo'lishi kerak",
+            "passwordMismatch": "Parollar mos kelmaydi",
+            "enterDetails": "Iltimos, quyida hisob ma'lumotlaringizni kiriting",
+            "username": "Foydalanuvchi nomi",
+            "passwordConfirmation": "Parolni tasdiqlash",
+            "signUp": "Ro'yxatdan o'tish"
         }
     }
 }

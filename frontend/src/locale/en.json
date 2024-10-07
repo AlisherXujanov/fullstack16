@@ -10,6 +10,153 @@
             "login": "Login",
             "wishlist": "Wishlist",
             "hello": "Hello {{name}}!"
+        },
+        "about": {
+            "about": "Know About Our Ecomerce Business, History",
+            "description": "Feel free to get in touch with us via phone email or simply send us message. We would love to hear from you ! Feel free to get in touch with us via phone, We would love to hear from you dear client! We are here to help you.",
+            "button": "Contact Us"
+        },
+        "reviews": {
+            "title": "Our Clients Say!",
+            "reviewerName": "Selena Gomez",
+            "reviewerPosition": "CEO at Webecy Digital",
+            "reviewText": "Webecy Digital helped us increase sales by 30% in just three months. Highly recommended!"
+        },
+        "footer": {
+            "brand": "Shopex",
+            "emailPlaceholder": "Enter your email",
+            "signUp": "Sign up",
+            "contactInfo": "Contact Info",
+            "address": "17 Princess Road, London, Greater London NW1 8JR, UK",
+            "categories": "Categories",
+            "customerCare": "Customer Care",
+            "pages": "Pages",
+            "categoryList": [
+                "Laptops & Computers",
+                "Cameras & Photography",
+                "Smart Phones & Tablets",
+                "Video Games & Consoles",
+                "Waterproof Headphones"
+            ],
+            "customerCareList": [
+                "My Account",
+                "Discount",
+                "Returns",
+                "Orders History",
+                "Order Tracking"
+            ],
+            "pagesList": [
+                "Blog",
+                "Browse the Shop",
+                "Category",
+                "Pre-Built Pages",
+                "Visual Composer Elements",
+                "WooCommerce Pages"
+            ],
+            "rights": "©Webecy - All Rights Reserved"
+        },
+        "shopex": {
+            "1": {
+                "title": "Exclusive Offers",
+                "text": "Get the best deals on your favorite products."
+            },
+            "2": {
+                "title": "Limited Time Discounts",
+                "text": "Hurry up! Grab your discount before it's gone."
+            },
+            "3": {
+                "title": "New Arrivals",
+                "text": "Check out our latest collection."
+            },
+            "4": {
+                "title": "Limited Time Discounts",
+                "text": "Hurry up! Grab your discount before it's gone."
+            }
+        },
+        "featured": {
+            "title": "Featured Products"
+        },
+        "latest": {
+            "title": "Latest Products",
+            "err": "No products found"
+        },
+        "trending": {
+            "title": "Unique Features Of Latest & Trending Products",
+            "features": [
+                "All frames constructed with hardwood solids and laminates",
+                "Reinforced with double wood dowels, glue, screw-nails corner blocks and machine nails",
+                "Arms, backs and seats are structurally reinforced"
+            ],
+            "button": "Add to cart",
+            "product": {
+                "name": "B&B Italian Sofa",
+                "price": "$3999.99"
+            }
+        },
+        "heading": {
+            "title": "Home Page",
+            "about": "About Us",
+            "home": "Home",
+            "products": "Products",
+            "blog": "Blog",
+            "contact": "Contact Us",
+            "wishlist": "Wishlist",
+            "cart": "Cart",
+            "login": "Login",
+            "path": {
+                "cart": "Cart",
+                "login": "Login",
+                "wishlist": "Wishlist",
+                "about": "About",
+                "home": "Home",
+                "products": "Products",
+                "blog": "Blog",
+                "contact": "Contact Us"
+            }
+        },
+        "contact": {
+            "infoTitle": "Information About Us",
+            "infoDescription": "We value our connection with customers and are always ready to assist you. Please contact us if you have any questions.",
+            "contactTitle": "Contact Methods",
+            "phone": "Tel: 877-67-88-99",
+            "email": "E-mail: shop@store.com",
+            "supportTitle": "Support Forum",
+            "supportTime": "Available for over 24 hours",
+            "addressTitle": "Address",
+            "addressDetails": "20 Margaret St, London, Great Britain, 3NM98-LK",
+            "shippingTitle": "Free Standard Shipping",
+            "shippingDetails": "on all orders",
+            "formTitle": "Get In Touch",
+            "formDescription": "If you have any questions or requests, please fill out the form below, and we will contact you as soon as possible.",
+            "placeholderName": "Your name*",
+            "placeholderEmail": "Your E-mail*",
+            "placeholderSubject": "Subject*",
+            "placeholderMessage": "Type your message*",
+            "sendButton": "Send Mail",
+            "messageSent": "Message sent successfully!",
+            "messageFailed": "Failed to send the message"
+        },
+        "auth": {
+            "login": "Login",
+            "createAccount": "Create account",
+            "authenticate": "Authenticate",
+            "noAccount": "Don't have an account?",
+            "hasAccount": "Have an account?",
+            "loginPrompt": "Please login using account details below",
+            "emailAddress": "Email Address",
+            "password": "Password",
+            "forgotPassword": "Forgot your password?",
+            "signIn": "Sign in",
+            "accountCreated": "Account created successfully",
+            "allFieldsRequired": "All fields are required",
+            "invalidUsername": "Invalid username",
+            "emailExists": "Email already exists",
+            "invalidPassword": "Password must consist of only letters and numbers and be at least 6 characters long",
+            "passwordMismatch": "Passwords do not match",
+            "enterDetails": "Please, enter your account details below",
+            "username": "Username",
+            "passwordConfirmation": "Password confirmation",
+            "signUp": "Sign up"
         }
     }
 }

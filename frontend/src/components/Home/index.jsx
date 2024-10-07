@@ -7,13 +7,15 @@ import ShopexProducts from "./ShopexProducts"
 import Trending from "./TrendingP";
 import { context } from "../../store";
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
 
 function Home() {
+    const { t } = useTranslation();
     const { state, setState } = useContext(context)
 
     return (
         <div className="home-page-wrapper">
-            <Heading title="Home" path="Home">
+            <Heading title={t("heading.home")} path={t("heading.path.home")}>
                 <FaHome />
             </Heading>
             <FeaturedProducts />

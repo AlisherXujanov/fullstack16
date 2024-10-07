@@ -1,22 +1,20 @@
-import "./style.scss"
-import Img from "../../../assets/AboutImg/contact-img.png"
+import "./style.scss";
+import Img from "../../../assets/AboutImg/contact-img.png";
+import { useTranslation } from 'react-i18next';
 
 function Contact() {
+    const { t } = useTranslation(); 
+
     return (
         <div className="contact-section-wrapper">
-            <div className="photo"><img src={Img} alt="" /></div>
+            <div className="photo"><img src={Img} alt="Contact" /></div>
 
             <div className="contact-info">
-                <h1>Know About Our Ecomerce <br /> Business, History </h1>
+                <h1>{t('about.about')}</h1>
 
-                <p>Feel free to get in touch with us via phone
-                    email or simply send us message.
-                    We would love to hear from you !
-                    Feel free to get in touch with us via phone,
-                    We would love to hear from you dear client!
-                    We are here to help you.</p>
+                <p>{t('about.description')}</p>
 
-                <button className="contact-btn">Contact Us</button>
+                <button className="contact-btn">{t('about.button')}</button>
             </div>
         </div>
     );
