@@ -1,5 +1,14 @@
 {
     "translation": {
-        "specificKey": "Translated Value"
+        "navigation": {
+            "Home": "Home",
+            "About": "About",
+            "Products": "Products",
+            "Contact": "Contact",
+            "Shop": "Shop",
+            "Blog": "Blog",
+            "Login": "Login",
+            "Wishlist": "Wishlist"
+        }
     }
 }

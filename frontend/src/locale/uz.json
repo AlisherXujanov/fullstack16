@@ -1,5 +1,14 @@
 {
     "translation": {
-        "specificKey": "Переведенное Значение"
+        "navigation": {
+            "Home": "Bosh sahifa",
+            "About": "Biz haqimizda",
+            "Products": "Mahsulotlar",
+            "Contact": "Aloqa",
+            "Shop": "Do'kon",
+            "Blog": "Blog",
+            "Login": "Kirish",
+            "Wishlist": "Tanlanganlar"
+        }
     }
 }

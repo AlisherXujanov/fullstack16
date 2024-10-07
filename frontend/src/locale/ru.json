@@ -1,5 +1,14 @@
 {
     "translation": {
-        "specificKey": "Переведенное Значение"
+        "navigation": {
+            "Home": "Главная",
+            "About": "О нас",
+            "Products": "Продукты",
+            "Contact": "Контакты",
+            "Shop": "Магазин",
+            "Blog": "Блог",
+            "Login": "Войти",
+            "Wishlist": "Избранное"
+        }
     }
 }
