@@ -4,6 +4,7 @@ import { FaHome } from "react-icons/fa";
 import FeaturedProducts from "./FeaturedProducts"
 import LatestProducts from "./LatestProducts"
 import ShopexProducts from "./ShopexProducts"
+import Trending from "./TrendingP";
 import { context } from "../../store";
 import { useContext } from "react";
 
@@ -18,7 +19,7 @@ function Home() {
             <FeaturedProducts />
             <LatestProducts />
             <ShopexProducts />
-
+            <Trending />
         </div>
     );
 }
