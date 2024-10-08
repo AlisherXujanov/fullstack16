@@ -1,21 +1,46 @@
 @import "../../assets/styles/setting";
 
 .cart-page-wrapper {
-    padding: 100px 200px;
+    padding: 100px;
     text-align: center;
-
-    @include grid(2, 1fr, 20px);
+    @include grid(2, $gap: 50px);
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
 
     .products-content {
+        width: 100%;
+
         .product-item-component-wrapper {
             margin-bottom: 50px;
-            @include flex(column);
+            @include flex(row);
+            width: 100%;
+            padding: 20px 40px;
+            box-shadow: 5px 5px 15px $violet-dark,
+                -5px -5px 15px $violet-dark,
+                -5px 5px 15px $violet-dark,
+                5px -5px 15px $violet-dark;
+            border-radius: 10px;
 
             button {
-                font-size: 1.5em;
+                font-size: 1em;
 
                 &:active {
                     transform: scale(0.6);
+                }
+            }
+
+
+
+            .product-item {
+                @include flex(row,$gap:20px);
+
+            }
+
+            .info-wrapper {
+                .products-count {
+                    padding: 5px 10px;
+                    width: 200px;
+                    margin-left: 20px
                 }
             }
 
@@ -37,5 +62,31 @@
         }
     }
 
-    .prices-wrapper {}
+    .prices-wrapper {
+        @include flex(column, center, center, 20px);
+        padding: 20px 0;
+        background-color: $violet-dark;
+        width: 100%;
+        height: 40vh;
+        padding: 40px 100px;
+        border-radius: 10px;
+
+        h2 {
+            font-size: 2em;
+
+            mark {
+                background-color: $violet;
+                color: $light;
+            }
+        }
+
+        h4 {
+            font-size: 1.2em;
+
+            mark {
+                background-color: $violet;
+                color: $light;
+            }
+        }
+    }
 }

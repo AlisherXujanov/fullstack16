@@ -29,6 +29,14 @@ function Cart() {
         return total
     }
 
+    function getTotalItems() {
+        let total = 0
+        state.basket.forEach(p => {
+            total += p.count
+        })
+        return total
+    }
+
     function handleCountChange(e, p_id) {
         let updatedBasket = [...state.basket]
         if (e.target.name == "inc") {
@@ -57,6 +65,7 @@ function Cart() {
                 <FaCartArrowDown />
             </Heading>
             <div className="cart-page-wrapper">
+
                 <div className="products-content">
                     {
                         FProductsJSON.filter(p =>
@@ -73,6 +82,7 @@ function Cart() {
                                             price={product.price}
                                         />
                                     </div>
+
                                     <div className="info-wrapper">
 
                                         <div className="products-count">
@@ -84,9 +94,11 @@ function Cart() {
                                                 onClick={(e) => handleCountChange(e, product.id)}
                                             >➕</button>
                                         </div>
+
                                         <div className="product-item-total-price">
                                             <span>${getProductPrice(product.id).toFixed(2)}</span>
                                         </div>
+
                                     </div>
                                 </div>
                             )
@@ -96,9 +108,13 @@ function Cart() {
                 {
                     getTotalPrice() > 0 &&
                     <div className="prices-wrapper">
-                        <h2><mark>In total: ${getTotalPrice()}</mark></h2>
+                        <h2>In total: <mark>${getTotalPrice()}</mark></h2>
+                        <h4>Veriety of items: <mark>{getAllIDs().length}</mark></h4>
+                        <h4>Total items: <mark>{getTotalItems()}</mark></h4>
                     </div>
                 }
+
+
             </div>
         </>
     );
