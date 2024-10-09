@@ -9,6 +9,7 @@ import "./productDetails.scss"
 import Img from "../../assets/images/logo.png"
 
 function ProductDetails() {
+
     const [product, setProduct] = useState({})
     const [showAlert, setShowAlert] = useState(false)
     const navigate = useNavigate()

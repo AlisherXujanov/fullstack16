@@ -9,10 +9,12 @@ import { range } from "../../../store/helpers"
 import { Link } from "react-router-dom"
 import { BASE_URL } from "../../../store"
 import "./style.scss"
+import { useTranslation } from "react-i18next"
 
 
 
 function LatestProducts() {
+    const { t } = useTranslation();
     let imgs = [Img1, Img2, Img3, Img4, Img5, Img6];
     const [products, setProducts] = useState([])
     const [numberOfItems, setNumberOfItems] = useState(0)
@@ -42,7 +44,7 @@ function LatestProducts() {
 
     return (
         <div className="latest-products-wrapper">
-            <h1>Latest Products</h1>
+            <h1>{t('latest.title')}</h1>
             <div className="products-wrapper-container">
 
                 {products?.length > 0 ?
@@ -69,7 +71,7 @@ function LatestProducts() {
                             </div>
                         )
                     })
-                    : <h4><i>No products found</i></h4>
+                    : <h4><i>{t('latest.err')}</i></h4>
                 }
             </div>
 

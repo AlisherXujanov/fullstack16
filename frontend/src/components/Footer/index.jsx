@@ -1,68 +1,57 @@
-import Img1 from "../../assets/FooterImg/footer-img-1.png"
-import Img2 from "../../assets/FooterImg/footer-img-2.png"
-import Img3 from "../../assets/FooterImg/footer-img-3.png"
-import "./style.scss"
-
+import Img1 from "../../assets/FooterImg/footer-img-1.png";
+import Img2 from "../../assets/FooterImg/footer-img-2.png";
+import Img3 from "../../assets/FooterImg/footer-img-3.png";
+import "./style.scss";
+import { useTranslation } from "react-i18next"; // Импортируем хук для перевода
 
 function Footer() {
+    const { t } = useTranslation(); // Используем хук
+
     return (
         <div>
             <div className="footer">
                 <div className="description">
-
                     <div id="first-column">
-                        <h1>Shopex</h1>
-                        <input className="email" type="text" placeholder="Enter your email" />
-                        <button className="sign-up">Sign up</button>
+                        <h1>{t("footer.brand")}</h1>
+                        <input className="email" type="text" placeholder={t("footer.emailPlaceholder")} />
+                        <button className="sign-up">{t("footer.signUp")}</button>
                         <p>
-                            <span style={{ margin: "10px 0", display:'block' }}>Contact Info</span>
-                            17 Princess Road, London, Greater London NW1 8JR, UK
+                            <span style={{ margin: "10px 0", display: 'block' }}>{t("footer.contactInfo")}</span>
+                            {t("footer.address")}
                         </p>
                     </div>
 
-
                     <div id="second-column">
-
                         <div className="footer-section">
-                            <h4>Categories</h4>
+                            <h4>{t("footer.categories")}</h4>
                             <ul>
-                                <li><a href="#">Laptops & Computers</a></li>
-                                <li><a href="#">Cameras & Photography</a></li>
-                                <li><a href="#">Smart Phones & Tablets</a></li>
-                                <li><a href="#">Video Games & Consoles</a></li>
-                                <li><a href="#">Waterproof Headphones</a></li>
+                                {t("footer.categoryList", { returnObjects: true }).map((category, index) => (
+                                    <li key={index}><a href="#">{category}</a></li>
+                                ))}
                             </ul>
                         </div>
                         <div className="footer-section">
-                            <h4>Customer Care</h4>
+                            <h4>{t("footer.customerCare")}</h4>
                             <ul>
-                                <li><a href="#">My Account</a></li>
-                                <li><a href="#">Discount</a></li>
-                                <li><a href="#">Returns</a></li>
-                                <li><a href="#">Orders History</a></li>
-                                <li><a href="#">Order Tracking</a></li>
+                                {t("footer.customerCareList", { returnObjects: true }).map((care, index) => (
+                                    <li key={index}><a href="#">{care}</a></li>
+                                ))}
                             </ul>
                         </div>
                         <div className="footer-section">
-                            <h4>Pages</h4>
+                            <h4>{t("footer.pages")}</h4>
                             <ul>
-                                <li><a href="#">Blog</a></li>
-                                <li><a href="#">Browse the Shop</a></li>
-                                <li><a href="#">Category</a></li>
-                                <li><a href="#">Pre-Built Pages</a></li>
-                                <li><a href="#">Visual Composer Elements</a></li>
-                                <li><a href="#">WooCommerce Pages</a></li>
+                                {t("footer.pagesList", { returnObjects: true }).map((page, index) => (
+                                    <li key={index}><a href="#">{page}</a></li>
+                                ))}
                             </ul>
                         </div>
-
                     </div>
                 </div>
-
-
             </div>
             <div className="social">
                 <div>
-                    ©Webecy - All Rights Reserved
+                    {t("footer.rights")}
                 </div>
                 <div>
                     <img src={Img1} alt="" />

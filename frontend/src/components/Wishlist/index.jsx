@@ -6,8 +6,10 @@ import { useContext } from 'react'
 import FProductsJSON from "../../db/featured_products.json"
 import Item from "../Home/FeaturedProducts/Item.jsx"
 import Img from "../../assets/FeaturesImg/image2.png"
+import { useTranslation } from "react-i18next";
 
 function Wishlist() {
+    const { t } = useTranslation();
     const { state, dispatch } = useContext(context)
 
     // state.selectedProducts = [1, 2, 3, 4 ....]
@@ -15,7 +17,7 @@ function Wishlist() {
 
     return (
         <>
-            <Heading title="Wishlist" path="wishlist">
+            <Heading title={t("heading.wishlist")} path={t("heading.path.wishlist")}>
                 <MdFavoriteBorder />
             </Heading>
             <div className="wishlist-page-wrapper">

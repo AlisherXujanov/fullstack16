@@ -1,9 +1,12 @@
 import "./style.scss"
 import { context } from "../../../store";
 import { useContext } from "react";
+import { useTranslation } from "react-i18next";
+
 
 function Heading(props) {
     const { state, setState } = useContext(context)
+    const { t } = useTranslation();
 
     return (
         <div className="heading-wrapper">
@@ -12,7 +15,7 @@ function Heading(props) {
                 <span>{props.title}</span>
             </h1>
             <p>
-                Home.Pages<span className="path">.{props.path}</span>
+                {t("heading.title")}<span className="path">.{props.path}</span>
             </p>
         </div>
     );

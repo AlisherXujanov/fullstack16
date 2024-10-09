@@ -4,8 +4,11 @@ import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import LatestProducts from "../Home/LatestProducts"
 import { useState, useEffect } from "react";
 import CreateForm from "./Create.jsx"
+import { useTranslation } from "react-i18next"
+
 
 function Products(props) {
+    const { t } = useTranslation()
     const [sectionName, setSectionName] = useState("products")
 
     function activateSection(e=null, item_created=false) {
@@ -29,7 +32,7 @@ function Products(props) {
 
     return (
         <div className="products-page-wrapper">
-            <Heading title="Products" path="Products">
+            <Heading title={t("heading.products")} path={t("heading.path.products")}>
                 <MdOutlineShoppingCartCheckout />
             </Heading>
 
