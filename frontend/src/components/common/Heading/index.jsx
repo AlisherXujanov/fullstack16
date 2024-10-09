@@ -9,13 +9,13 @@ function Heading(props) {
     const { t } = useTranslation();
 
     return (
-        <div className="heading-wrapper">
+        <div className="heading-wrapper" >
             <h1>
                 {props.children}
-                <span>{props.title}</span>
+                <span data-testid="page-title">{props.title}</span>
             </h1>
             <p>
-                {t("heading.title")}<span className="path">.{props.path}</span>
+                {t("heading.title")}<span className="path" data-testid='heading-path'>.{props.path}</span>
             </p>
         </div>
     );
