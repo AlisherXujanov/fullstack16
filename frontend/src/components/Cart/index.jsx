@@ -6,10 +6,8 @@ import { useContext } from "react";
 import { context } from "../../store";
 import FProductsJSON from "../../db/featured_products.json"
 import Img from "../../assets/FeaturesImg/image2.png"
-import { useTranslation } from "react-i18next";
 
 function Cart() {
-    const { t } = useTranslation();
     const { state, dispatch } = useContext(context)
 
     function getAllIDs() {
@@ -27,6 +25,14 @@ function Cart() {
         let total = 0
         state.basket.forEach(p => {
             total += p.price * p.count
+        })
+        return total
+    }
+
+    function getTotalItems() {
+        let total = 0
+        state.basket.forEach(p => {
+            total += p.count
         })
         return total
     }
@@ -55,10 +61,11 @@ function Cart() {
 
     return (
         <>
-            <Heading title={t("heading.cart")} path={t("heading.path.cart")}>
+            <Heading title="Cart" path="Cart">
                 <FaCartArrowDown />
             </Heading>
             <div className="cart-page-wrapper">
+
                 <div className="products-content">
                     {
                         FProductsJSON.filter(p =>
@@ -75,6 +82,7 @@ function Cart() {
                                             price={product.price}
                                         />
                                     </div>
+
                                     <div className="info-wrapper">
 
                                         <div className="products-count">
@@ -86,9 +94,11 @@ function Cart() {
                                                 onClick={(e) => handleCountChange(e, product.id)}
                                             >➕</button>
                                         </div>
+
                                         <div className="product-item-total-price">
                                             <span>${getProductPrice(product.id).toFixed(2)}</span>
                                         </div>
+
                                     </div>
                                 </div>
                             )
@@ -98,9 +108,13 @@ function Cart() {
                 {
                     getTotalPrice() > 0 &&
                     <div className="prices-wrapper">
-                        <h2><mark>In total: ${getTotalPrice()}</mark></h2>
+                        <h2>In total: <mark>${getTotalPrice()}</mark></h2>
+                        <h4>Veriety of items: <mark>{getAllIDs().length}</mark></h4>
+                        <h4>Total items: <mark>{getTotalItems()}</mark></h4>
                     </div>
                 }
+
+
             </div>
         </>
     );
