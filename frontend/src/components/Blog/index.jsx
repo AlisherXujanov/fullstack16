@@ -28,7 +28,7 @@ function Blog() {
 
     return (
         <div align='center'>
-            <h1>Blog</h1>
+            <h1 className="h1">Blog</h1>
 
             <hr />
             <div className="container">
