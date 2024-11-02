@@ -21,15 +21,26 @@
       "image": ""
     },
     {
-      "id": 1727097263506,
-      "name": "This is next menu",
-      "price": "222",
+      "id": "1727097263506",
+      "name": "Comfort Handy Craft",
+      "price": "2222",
       "material": "Metallic Silver",
-      "color": "",
-      "description": "qweqw",
-      "discount": "2",
-      "image": ""
+      "color": "red",
+      "description": "Comfortable",
+      "discount": "50",
+      "image": "/"
+    },
+    {
+      "id": "1727097263507",
+      "name": "Comfort Handy Craft",
+      "price": "3333",
+      "material": "Metallic Silver",
+      "color": "Black",
+      "description": "Amazing chair",
+      "discount": "50",
+      "image": "/"
     }
+    
   ],
   "users": [
     {

@@ -55,6 +55,8 @@ function LatestProducts() {
                                     <Link to={"/products/" + product.id}>
                                         {/* <img src={product.image} /> */}
                                         <img src={imgs[(parseInt(product.id) % imgs.length) || 1]} />
+                                    </Link>
+                                </div>
                                         <div className="row">
                                             <p>{product.name}</p>
                                             <div className="price-wrapper">
@@ -66,8 +68,6 @@ function LatestProducts() {
                                                 </del>
                                             </div>
                                         </div>
-                                    </Link>
-                                </div>
                             </div>
                         )
                     })
