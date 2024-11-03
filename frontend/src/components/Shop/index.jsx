@@ -92,12 +92,6 @@ const Shop = () => {
                             <p>(32 отзыва)</p>
                             <p>Описание продукта</p>
                         </div>
-                        <div className="product-card">
-                            <h2>Coaster Furniture</h2>
-                            <p>$26.00 <span className="original-price">$52.00</span></p>
-                            <p>(32 отзыва)</p>
-                            <p>Описание продукта</p>
-                        </div>
                         <PAGE1 />
                         <PAGE2 />
                         <PAGE3 />

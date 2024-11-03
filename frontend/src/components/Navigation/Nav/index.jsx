@@ -105,7 +105,6 @@ function Nav(props) {
                         <NavLink to="/" activeclassname="active">{t("navigation.home")}</NavLink>
                         <NavLink to="about" activeclassname="active">{t("navigation.about")}</NavLink>
                         <NavLink to="products" activeclassname="active">{t("navigation.products")}</NavLink>
-                        <NavLink to="blog" activeclassname="active">{t("navigation.blog")}</NavLink>
                         <NavLink to="shop" activeclassname="active">{t("navigation.shop")}</NavLink>
                         <NavLink to="contact" activeclassname="active">{t("navigation.contact")}</NavLink>
                     </div>
