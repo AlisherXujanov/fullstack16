@@ -103,7 +103,7 @@
             "wishlist": "Wishlist",
             "cart": "Cart",
             "login": "Login",
-            "shop":"Shop",
+            "shop": "Shop",
             "path": {
                 "cart": "Cart",
                 "login": "Login",
@@ -159,6 +159,31 @@
             "username": "Username",
             "passwordConfirmation": "Password confirmation",
             "signUp": "Sign up"
+        },
+        "shop": {
+            "title": "Ecommerce Accessories & Fashion Items",
+            "resultsInfo": "About 9,620 results",
+            "productDescription": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        "sidebar": {
+            "categories": "Categories",
+            "category": {
+                "ecommerce": "Ecommerce Accessories",
+                "fashion": "Fashion Items",
+                "bags": "Bags",
+                "jewellery": "Jewellery",
+                "watches": "Watches"
+            },
+            "priceFilter": "Price Filter",
+            "colorFilter": "Filter By Color",
+            "color": {
+                "blue": "Blue",
+                "orange": "Orange",
+                "brown": "Brown",
+                "green": "Green",
+                "purple": "Purple",
+                "sky": "Sky"
+            }
         }
     }
 }

@@ -47,6 +47,7 @@
         }
 
         .side-products {
+
             flex-basis: 200px;
             display: flex;
             flex-direction: column;
@@ -54,6 +55,7 @@
             .side-product-item {
                 display: flex;
                 gap: 10px;
+                height: 100%;
                 align-items: center;
                 border: 1px solid #e0e0e0;
                 padding: 21px;
