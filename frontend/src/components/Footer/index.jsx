@@ -55,7 +55,7 @@ function Footer() {
                 </div>
                 <div>
                     <img src={Img1} alt="" />
-                    <img src={Img2} alt="" />
+                    <a href="https://www.instagram.com/olimxon__313/" target="_blank"><img src={Img2} alt="" /></a>
                     <img src={Img3} alt="" />
                 </div>
             </div>
