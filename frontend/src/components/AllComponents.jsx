@@ -9,6 +9,7 @@ import Blog from './Blog'
 import Wishlist from './Wishlist'
 import Cart from './Cart'
 import Contact from './Contact'
+import Shop from './Shop'
 import ProductDetails from './Products/ProductDetails.jsx'
 
 
@@ -44,6 +45,7 @@ function AllComponents() {
 
                 {/* http://localhost:5173/contact */}
                 <Route path="contact" element={<Contact />} />
+                <Route path="shop" element={<Shop />} />
 
                 <Route path="*" element={<PageNotFound />} />
             </Route>

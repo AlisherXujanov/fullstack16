@@ -103,6 +103,7 @@
             "wishlist": "Savatcha",
             "cart": "Korzina",
             "login": "Kirish",
+            "shop":"Do'kon",
             "path": {
                 "login": "Kirish",
                 "cart": "Korzina",
@@ -111,7 +112,8 @@
                 "home": "Bosh",
                 "products": "Mahsulotlar",
                 "blog": "Blog",
-                "contact": "Biz bilan bog'laning"
+                "contact": "Biz bilan bog'laning",
+                "shop":"Do'kon"
             }
         },
         "contact": {

@@ -103,6 +103,7 @@
             "wishlist": "Wishlist",
             "cart": "Cart",
             "login": "Login",
+            "shop":"Shop",
             "path": {
                 "cart": "Cart",
                 "login": "Login",
@@ -111,7 +112,8 @@
                 "home": "Home",
                 "products": "Products",
                 "blog": "Blog",
-                "contact": "Contact Us"
+                "contact": "Contact Us",
+                "shop": "Shop"
             }
         },
         "contact": {
