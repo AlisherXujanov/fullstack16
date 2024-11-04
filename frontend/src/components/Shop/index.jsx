@@ -50,6 +50,7 @@ const Shop = () => {
                     <p>Цена: от {priceRange[0]} до {priceRange[1]}</p>
 
                     <h3>Фильтр по цвету</h3>
+                    <br />
                     <ul>
                         {['blue', 'orange', 'brown', 'green', 'purple', 'sky'].map(color => (
                             <li key={color}>
@@ -92,10 +93,12 @@ const Shop = () => {
                             <p>(32 отзыва)</p>
                             <p>Описание продукта</p>
                         </div>
+                        <div className="Pages">
                         <PAGE1 />
                         <PAGE2 />
                         <PAGE3 />
                         <PAGE4 />
+                        </div>
                     </section>
                 </main>
             </div>

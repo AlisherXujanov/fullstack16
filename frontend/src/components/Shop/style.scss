@@ -1,15 +1,14 @@
 .shop-container {
-    display: flex;
-    margin: 20px;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    padding: 20px;
     font-family: Arial, sans-serif;
     width: 100%;
-
     .sidebar {
-        flex: 1;
         background-color: #f9f9f9;
         padding: 20px;
         border-right: 1px solid #ddd;
-
+        width: 100%;
         h2 {
             margin-bottom: 15px;
             font-size: 1.5em;
@@ -76,7 +75,6 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-
             .product-card {
                 width: 350px;
                 background-color: #fff;
@@ -106,4 +104,8 @@
             }
         }
     }
+}
+
+.Pages{
+    width: 100%;
 }
