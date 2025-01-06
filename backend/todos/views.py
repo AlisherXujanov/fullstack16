@@ -1,7 +1,11 @@
 from django.shortcuts import render
-
+from .models import Todos
 # Create your views here.
 
 
 def home_page(request):
-    return render(request, 'home.html')
+    context = {
+        "todos": Todos.objects.all()
+    }
+    
+    return render(request, 'home.html', context)

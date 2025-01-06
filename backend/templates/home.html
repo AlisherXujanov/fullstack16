@@ -8,6 +8,13 @@
 <body>
 
     <h1>Hello world</h1>
+
+
+    <ul>
+        {% for item in todos %}
+            <li>{{ item.title }}</li>
+        {% endfor %}
+    </ul>
     
 </body>
 </html>
