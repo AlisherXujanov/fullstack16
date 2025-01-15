@@ -1,9 +1,15 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    {% block style %}
+    {% endblock style %}
+
     <title>Django application</title>
 </head>
 
@@ -38,27 +44,31 @@
         box-sizing: border-box;
         transition: 0.2s;
     }
+
     body {
         padding: 20px;
     }
+
     .success {
         background-color: darkgreen;
         color: snow;
         padding: 20px;
         margin: 20px;
     }
+
     .error {
         background-color: darkred;
         color: snow;
         padding: 20px;
         margin: 20px;
     }
+
     .info {
         background-color: darkcyan;
         color: snow;
         padding: 20px;
         margin: 20px;
     }
-
 </style>
+
 </html>

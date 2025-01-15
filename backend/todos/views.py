@@ -3,6 +3,7 @@ from .models import Todos
 from .forms import TodoForm
 from django.contrib import messages
 from django.contrib.auth.models import User
+import datetime
 
 
 # HTTP methods of request  =>  HTTP-методы запроса
@@ -13,7 +14,7 @@ from django.contrib.auth.models import User
 # DELETE => удаление данных
 
 
-def home_page(request):
+def home_page(request): # запрос 
     # for now, the view works in only GET method requests
     # RU: пока что, view работает только с GET-запросами
     if request.method == "POST":
@@ -27,8 +28,9 @@ def home_page(request):
             return redirect('home')
     
     context = {
-        "todos": Todos.objects.last(),
-        "form": TodoForm()
+        "todos": Todos.objects.all(),
+        "form": TodoForm(),
+        'date': datetime.datetime.now()
     }
     return render(request, 'home.html', context)
 

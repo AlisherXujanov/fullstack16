@@ -1,13 +1,22 @@
 {% extends 'base.html' %}
+{% load static %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{% static '/styles/main.css' %}" />
+{% endblock style %}
+
+
+
 
 {% block content %}
-  <h1>Todos app</h1>
-  <ul>
-    {% for item in todos %}
-      <li>{{ item.title }}</li>
-    {% endfor %}
-  </ul>
-  <hr />
+<h1>Todos app</h1>
+<ul>
+  {% for item in todos %}
+  <li>{{ item.title|striptags }}</li>
+  {% endfor %}
+</ul>
+<hr />
 
-  {% include 'form_snippets.html' with form=form %}
+{% include 'form_snippets.html' with form=form %}
 {% endblock %}

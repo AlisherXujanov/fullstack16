@@ -103,12 +103,12 @@ def create_webpage(request):
 # -----------------------
 
 # modal_name.object.filter()    => returns a list of objects that match the query
-#   ex: modal_name.object.filter(id=1)  => returns a list of objects with id=1
+#   ex: modal_name.object.filter(username__startswith='a')  => returns a list of objects with starting letter a
 
 # -----------------------
 
 # modal_name.object.order_by()  => returns a list of objects that are ordered by the query
-#   ex: modal_name.object.order_by('date')  => returns a list of objects that are ordered by the date
+#   ex: modal_name.object.order_by('age')  => returns a list of objects that are ordered by the age
 
 # -----------------------
 
@@ -143,8 +143,7 @@ def create_webpage(request):
 # modal_name.object.distinct()  => returns a list of objects that are distinct
 
 # -----------------------
-
-# modal_name.object.values()    => returns a list of dictionaries with the values of the objects
+# modal_name.object.all().values()    => returns a list of dictionaries with the values of the objects
 
 # -----------------------
 
@@ -239,7 +238,7 @@ https://jinja.palletsprojects.com/en/3.1.x/templates/
 <!-- ----------------------------- -->
 <!-- ----------------------------- -->
 <!-- Creating variables -->
-{% with  variable_name = 'value' | filter-name %}
+{% with  variable_name = 'value' %}
     <p>{{ variable_name }}</p>
 {% endwith %}
 
