@@ -37,4 +37,8 @@ def home_page(request): # запрос
 # API  => Application Programming Interface
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
 

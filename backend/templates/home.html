@@ -1,22 +1,17 @@
 {% extends 'base.html' %}
 {% load static %}
-
-
-{% block style %}
-<link rel="stylesheet" href="{% static '/styles/main.css' %}" />
-{% endblock style %}
-
-
+{% load django_bootstrap5 %}
 
 
 {% block content %}
-<h1>Todos app</h1>
-<ul>
-  {% for item in todos %}
-  <li>{{ item.title|striptags }}</li>
-  {% endfor %}
-</ul>
-<hr />
+<div class="container bg-success text-white p-3 rounded">
+  <h1>Todos app</h1>
+  <ul >
+    {% for item in todos %}
+    <li>{{ item.title|striptags }}</li>
+    {% endfor %}
+  </ul>
+</div>
 
 {% include 'form_snippets.html' with form=form %}
 {% endblock %}

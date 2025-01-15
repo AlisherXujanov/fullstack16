@@ -1,5 +1,10 @@
+{% load django_bootstrap5 %}
+
 <form method="POST" enctype="multipart/form-data">
   {% csrf_token %}
-  {{ form.as_p }}
-  <input type="submit" value="Submit" />
+  {% bootstrap_form form %}
+
+  <div class="d-grid">
+    <input class="col btn btn-outline-success" type="submit" value="Submit" />
+  </div>
 </form>

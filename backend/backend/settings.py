@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'todos', # Добавляем наше приложение todos
+    'django_bootstrap5'
 ]
 
 MIDDLEWARE = [
