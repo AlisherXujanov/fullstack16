@@ -21,16 +21,6 @@
 
     {% include 'navbar.html' %}
 
-    {% if messages %}
-    <ul class="messages">
-        {% for message in messages %}
-        <li class="{% if message.tags %}{{ message.tags }}{% else %}info{% endif %}">
-            {{ message }}
-        </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
-
 
     {% block content %}
     {% endblock content %}
@@ -38,7 +28,7 @@
 
     <script>
         setTimeout(() => {
-            document.querySelector('.messages').style.display = 'none'
+            document.querySelector('.alert').style.display = 'none'
         }, 3000)
     </script>
 

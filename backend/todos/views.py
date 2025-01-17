@@ -17,20 +17,8 @@ import datetime
 def home_page(request):  # запрос
     # for now, the view works in only GET method requests
     # RU: пока что, view работает только с GET-запросами
-    if request.method == "POST":
-        form = TodoForm(request.POST)
-        if form.is_valid():
-            obj = form.save(commit=False)
-            admin = User.objects.first()
-            obj.author = admin
-            obj.save()
-            messages.success(request, "Todo added successfully")
-            return redirect('home')
-
     context = {
-        "todos": Todos.objects.all(),
-        "form": TodoForm(),
-        'date': datetime.datetime.now()
+        "todos": Todos.objects.all()
     }
     return render(request, 'home.html', context)
 
@@ -45,3 +33,18 @@ def todo_details(request, pk: int):
     # pk == id
     todo = Todos.objects.get(id=pk)
     return render(request, 'todo_details.html', {'todo': todo})
+
+
+def create_todo(request):
+    if request.method == "POST":
+        form = TodoForm(request.POST)
+        if form.is_valid():
+            obj = form.save(commit=False)
+            admin = User.objects.first()
+            obj.author = admin
+            obj.save()
+            messages.success(request, "Todo added successfully")
+            return redirect('home')
+
+    context = {"form": TodoForm()}
+    return render(request, 'create_todo.html', context=context)
