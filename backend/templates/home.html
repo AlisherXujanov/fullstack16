@@ -10,8 +10,9 @@
     {% for todo in todos %}
     <li>
       <a href="{% url 'todo-details' todo.id %}">{{ todo.title }}</a>
-      <a href="#" class="action update">✍️</a>
-      <span style="cursor:pointer;" class="action delete" onclick="deleteItem(event, '{{todo.id}}')">🗑️
+      <a href="{% url 'update-todo' todo.id %}" class="action update">✍️</a>
+      <span style="cursor:pointer;" class="action delete" 
+          onclick="deleteItem(event, '{{todo.id}}')">🗑️
       </span>
     </li>
     {% endfor %}

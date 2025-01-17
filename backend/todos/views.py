@@ -55,3 +55,17 @@ def delete_todo(request, pk):
     todo.delete()
     messages.success(request, "Todo deleted successfully")
     return redirect('home')
+
+
+def update_todo(request, pk):
+    todo = Todos.objects.get(id=pk)
+    form = TodoForm(instance=todo)
+    if request.method == "POST":
+        form = TodoForm(request.POST, instance=todo)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Todo updated successfully")
+            return redirect('home')
+
+    context = {"form": form}
+    return render(request, 'update_todo.html', context=context)
