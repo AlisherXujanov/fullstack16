@@ -14,7 +14,7 @@ import datetime
 # DELETE => удаление данных
 
 
-def home_page(request): # запрос 
+def home_page(request):  # запрос
     # for now, the view works in only GET method requests
     # RU: пока что, view работает только с GET-запросами
     if request.method == "POST":
@@ -26,7 +26,7 @@ def home_page(request): # запрос
             obj.save()
             messages.success(request, "Todo added successfully")
             return redirect('home')
-    
+
     context = {
         "todos": Todos.objects.all(),
         "form": TodoForm(),
@@ -41,4 +41,7 @@ def about(request):
     return render(request, 'about.html')
 
 
-
+def todo_details(request, pk: int):
+    # pk == id
+    todo = Todos.objects.get(id=pk)
+    return render(request, 'todo_details.html', {'todo': todo})
