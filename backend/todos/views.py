@@ -48,3 +48,10 @@ def create_todo(request):
 
     context = {"form": TodoForm()}
     return render(request, 'create_todo.html', context=context)
+
+
+def delete_todo(request, pk):
+    todo = Todos.objects.get(id=pk)
+    todo.delete()
+    messages.success(request, "Todo deleted successfully")
+    return redirect('home')
