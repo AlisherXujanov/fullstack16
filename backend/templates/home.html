@@ -3,12 +3,21 @@
 {% load django_bootstrap5 %}
 
 
+{% block style %}
+  <style>
+    li {
+      list-style: none;
+    }
+  </style>
+{% endblock style %}
+
 {% block content %}
 <div class="container bg-light text-dark p-3 rounded">
   <h1>Todos</h1>
   <ul>
     {% for todo in todos %}
     <li>
+      <img src="{{ request.user.profile.image.url }}" width="30" height="30">
       <a href="{% url 'todo-details' todo.id %}">{{ todo.title }}</a>
       <a href="{% url 'update-todo' todo.id %}" class="action update">✍️</a>
       <span style="cursor:pointer;" class="action delete" 
