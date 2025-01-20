@@ -17,6 +17,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from todos.views import *
+from users.views import *
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,4 +29,5 @@ urlpatterns = [
     path('create-todo/', create_todo, name='create-todo'),
     path('update-todo/<int:pk>', update_todo, name='update-todo'),
     path('delete-todo/<int:pk>', delete_todo, name='delete-todo'),
-]
+    path('profile', profile_page, name='profile'),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
