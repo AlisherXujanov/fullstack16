@@ -4,11 +4,19 @@
 
 
 {% block style %}
-  <style>
-    li {
-      list-style: none;
-    }
-  </style>
+<style>
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
 {% endblock style %}
 
 {% block content %}
@@ -17,11 +25,12 @@
   <ul>
     {% for todo in todos %}
     <li>
-      <img src="{{ request.user.profile.image.url }}" width="30" height="30">
-      <a href="{% url 'todo-details' todo.id %}">{{ todo.title }}</a>
+      <a href="{% url 'todo-details' todo.id %}">
+        <img src="{{ request.user.profile.image.url }}" width="30" height="30" class="rounded-circle">
+        {{ todo.title }}
+      </a>
       <a href="{% url 'update-todo' todo.id %}" class="action update">✍️</a>
-      <span style="cursor:pointer;" class="action delete" 
-          onclick="deleteItem(event, '{{todo.id}}')">🗑️
+      <span style="cursor:pointer;" class="action delete" onclick="deleteItem(event, '{{todo.id}}')">🗑️
       </span>
     </li>
     {% endfor %}
