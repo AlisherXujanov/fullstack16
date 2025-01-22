@@ -33,4 +33,5 @@ urlpatterns = [
     path('update-todo/<int:pk>', update_todo, name='update-todo'),
     path('delete-todo/<int:pk>', delete_todo, name='delete-todo'),
     path('profile', profile_page, name='profile'),
+    path('update-profile/<int:pk>', update_profile, name='update-profile'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
