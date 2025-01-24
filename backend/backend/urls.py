@@ -26,9 +26,9 @@ urlpatterns = [
     path('accounts/', include('allauth.urls')),
     
     
-    path('', home_page, name='home'),
+    path('', HomePageView.as_view(), name='home'),
     path('about/', about, name='about'),
-    path('todo-details/<int:pk>', todo_details, name='todo-details'),
+    path('todo-details/<int:pk>', TodoDetailsView.as_view(), name='todo-details'),
     path('create-todo/', create_todo, name='create-todo'),
     path('update-todo/<int:pk>', update_todo, name='update-todo'),
     path('delete-todo/<int:pk>', delete_todo, name='delete-todo'),

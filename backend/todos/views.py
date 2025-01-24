@@ -3,7 +3,7 @@ from .models import Todos
 from .forms import TodoForm
 from django.contrib import messages
 from django.contrib.auth.models import User
-import datetime
+from django.views.generic import TemplateView, ListView, DetailView
 
 
 # HTTP methods of request  =>  HTTP-методы запроса
@@ -14,13 +14,29 @@ import datetime
 # DELETE => удаление данных
 
 
-def home_page(request):  # запрос
-    # for now, the view works in only GET method requests
-    # RU: пока что, view работает только с GET-запросами
-    context = {
-        "todos": Todos.objects.all()
-    }
-    return render(request, 'home.html', context)
+# def home_page(request):  # запрос
+#     # for now, the view works in only GET method requests
+#     # RU: пока что, view работает только с GET-запросами
+#     context = {
+#         "todos": Todos.objects.all()
+#     }
+#     return render(request, 'home.html', context)
+
+
+# class HomePageView(TemplateView):
+#     template_name = 'home.html'
+
+#     def get_context_data(self, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['todos'] = Todos.objects.all()
+#         return context
+
+
+class HomePageView(ListView):
+    model = Todos
+    template_name = 'home.html'
+    context_object_name = 'todos'
+
 
 # API  => Application Programming Interface
 
@@ -29,10 +45,17 @@ def about(request):
     return render(request, 'about.html')
 
 
-def todo_details(request, pk: int):
-    # pk == id
-    todo = Todos.objects.get(id=pk)
-    return render(request, 'todo_details.html', {'todo': todo})
+# def todo_details(request, pk: int):
+#     # pk == id
+#     todo = Todos.objects.get(id=pk)
+#     return render(request, 'todo_details.html', {'todo': todo})
+
+
+class TodoDetailsView(DetailView):
+    model = Todos
+    template_name = 'todo_details.html'
+    context_object_name = 'todo'
+
 
 
 def create_todo(request):
