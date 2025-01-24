@@ -39,13 +39,6 @@ class CreateTodoView(CreateView):
         return super().form_valid(form)
 
 
-# def delete_todo(request, pk):
-#     todo = Todos.objects.get(id=pk)
-#     todo.delete()
-#     messages.success(request, "Todo deleted successfully")
-#     return redirect('home')
-
-
 class DeleteTodoView(DeleteView):
     model = Todos
     template_name = 'delete_todo.html'
