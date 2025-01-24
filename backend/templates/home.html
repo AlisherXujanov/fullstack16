@@ -30,25 +30,9 @@
         {{ todo.title }}
       </a>
       <a href="{% url 'update-todo' todo.id %}" class="action update">✍️</a>
-      <span style="cursor:pointer;" class="action delete" onclick="deleteItem(event, '{{todo.id}}')">🗑️
-      </span>
+      <a style="cursor:pointer;" class="action delete" href="{% url 'delete-todo' todo.id %}">🗑️</a>
     </li>
     {% endfor %}
   </ul>
 </div>
 {% endblock %}
-
-
-
-{% block script %}
-<script>
-  function deleteItem(e, pk) {
-    if (confirm("Are you sure to delete?") === false) return
-
-    e.preventDefault()
-    let URL = '{% url "delete-todo" 999999999 %}'
-    URL = URL.replace("999999999", pk)
-    location.href = URL
-  }
-</script>
-{% endblock script %}
