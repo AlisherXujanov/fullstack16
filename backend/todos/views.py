@@ -8,15 +8,49 @@ from django.views.generic import (
     ListView,
     DetailView,
     CreateView,
-    DeleteView )
+    DeleteView,
+    UpdateView)
+
+
+# request  =>  запрос нашего клиента
+# MIDDLEWARE
+# response =>  ответ сервера
+
+
 
 class HomePageView(ListView):
     model = Todos
     template_name = 'home.html'
     context_object_name = 'todos'
+    
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        favorite_todos = self.request.session.get('favorite_todos', [])
+        context["favorite_todos"] = favorite_todos
+        return context
+    
+
+
 
 def about(request):
     return render(request, 'about.html')
+
+
+def toggle_favorite(request, pk:int):
+    session_storage = request.session.get('favorite_todos', [])
+
+    if pk in session_storage:
+        session_storage.remove(pk)
+        messages.success(request, "Todo removed from favorites")
+    else:
+        session_storage.append(pk)
+        messages.success(request, "Todo added to favorites")
+
+    return redirect('home')
+
+
+
+
 
 
 class TodoDetailsView(DetailView):

@@ -34,4 +34,5 @@ urlpatterns = [
     path('delete-todo/<int:pk>', DeleteTodoView.as_view(), name='delete-todo'),
     path('profile', profile_page, name='profile'),
     path('update-profile/<int:pk>', update_profile, name='update-profile'),
+    path('toggle-favorite/<int:pk>', toggle_favorite, name='toggle-favorite'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
