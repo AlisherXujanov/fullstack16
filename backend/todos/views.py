@@ -38,6 +38,7 @@ def about(request):
 
 def toggle_favorite(request, pk:int):
     session_storage = request.session.get('favorite_todos', [])
+    print("session_storage: ", session_storage)
 
     if pk in session_storage:
         session_storage.remove(pk)
@@ -46,6 +47,7 @@ def toggle_favorite(request, pk:int):
         session_storage.append(pk)
         messages.success(request, "Todo added to favorites")
 
+    request.session['favorite_todos'] = session_storage
     return redirect('home')
 
 

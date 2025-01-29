@@ -21,8 +21,8 @@ class MyMiddleware:
         response = print_time_taken(request, response)
         # Do something after the view is called
 
-        view_name = request.resolver_match.view_name
-        if view_name is not None:
-            print(f'I am after the {view_name} view is called')
+        # view_name = request.resolver_match.view_name
+        # if view_name is not None:
+        #     print(f'I am after the {view_name} view is called')
 
         return response

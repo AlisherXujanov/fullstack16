@@ -25,6 +25,13 @@
   <ul>
     {% for todo in todos %}
     <li>
+      {% if todo.id in favorite_todos %}
+        <a href="{% url 'toggle-favorite' todo.id %}">⭐</a>
+      {% else %}
+        <a href="{% url 'toggle-favorite' todo.id %}" 
+          style="filter: grayscale(100%);">⭐</a>
+      {% endif %}
+
       <a href="{% url 'todo-details' todo.id %}">
         <img src="{{ todo.author.profile.image.url }}" width="30" height="30" class="rounded-circle">
         {{ todo.title }}

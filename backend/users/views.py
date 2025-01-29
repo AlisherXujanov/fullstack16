@@ -1,11 +1,19 @@
 from django.shortcuts import render, redirect
 from .models import Profile
 from .forms import ProfileForm
+from todos.models import Todos
 
 # Create your views here.
 def profile_page(request):
     profile = Profile.objects.get(user=request.user)
-    context = {"profile": profile}
+    ids = request.session.get('favorite_todos', [])
+    # ORM  ->  Object relational mapping
+    favorite_todos = Todos.objects.filter(id__in=ids)
+
+    context = {
+        "profile": profile,
+        "favorite_todos": favorite_todos
+    }
     return render(request, 'profile.html', context)
 
 
