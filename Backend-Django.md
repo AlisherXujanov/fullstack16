@@ -1711,6 +1711,8 @@ This is a type of attack where a malicious user tricks a user into submitting a 
 
 
 #### BeautifulSoup
+<!-- WEB Scraping -->
+
 To install BeautifulSoup, run the following command:
 ```bash
 pip install beautifulsoup4
@@ -1719,7 +1721,7 @@ pip install beautifulsoup4
 ```python
 from bs4 import BeautifulSoup
 
-html_doc = BeautifulSoup("<p>Some<b>bad<i>HTML", 'html.parser')
+html_doc = BeautifulSoup("<p>Some<b>bad<i>HTML", 'html.parser') #  ->> Some  bad  HTML
 
 print(html_doc.prettify())  # This will print the html in a nice format
 print(html_doc.title)       # This will print the title of the html
@@ -1801,6 +1803,8 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('GMAIL')
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+EMAIL_USE_SSL = True
+EMAIL_ACCOUNT_CONFIRMATION = True
 
 
 # EMAIL_HOST_PASSWORD is a sensitive information that should not be shared or stored in plain text. It is recommended to store it in a secure location such as an environment variable or a configuration file that is not tracked by version control.
@@ -1919,9 +1923,9 @@ urlpatterns += i18n_patterns(
 
 Then we can use this code in our templates
 ```html
- {% load i18n %}
+{% load i18n %}
 
-   {% get_available_languages as languages %}
+    {% get_available_languages as languages %}
     {% get_current_language as language %}
 
     {% for lang_code, lang_name in languages %}
