@@ -21,7 +21,16 @@ from users.views import *
 from django.conf import settings
 from django.conf.urls.static import static
 
+from rest_framework import routers
+from users.api_views import * 
+
+router = routers.DefaultRouter()
+router.register(r'users', UserViewSet)
+
+
 urlpatterns = [
+    path('apis/', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     
