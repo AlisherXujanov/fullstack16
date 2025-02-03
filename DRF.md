@@ -102,8 +102,11 @@ from rest_framework import generics, viewsets
 
 @api_view(['GET', 'POST'])
 def books_view(request):
-    data = modal_to_dict(Book.objects.all())
-    return Response({'message': 'Hello, world!'}, status=status.HTTP_200_OK)
+    if request.method == 'POST':
+        ...
+    else:
+       data = modal_to_dict(Book.objects.all())
+       return Response({'message': 'Hello, world!'}, status=status.HTTP_200_OK)
 
 class Books():
     @staticmethod
