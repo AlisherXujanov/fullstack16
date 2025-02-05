@@ -125,10 +125,24 @@ class BookView(APIView):
         return Response(books.data, status=status.HTTP_200_OK)
 
     def post(self, request):
-        data = BooksSerializer(data=request.data)
-        if data.is_valid():
-            data.save()
-            return Response(data.data, status=status.HTTP_201_CREATED)
+        # data  ==>  информация
+        serializer = BooksSerializer(data=request.data)
+        if serializer.is_valid(): # is it valid or not?
+            obj = serializer.save(commit=False)
+            # obj.--- = ....
+            obj.save()
+            # Before saving the information into the DB, we can do some extra things
+            # by using commit=False
+            # RU: До сохранения информации в базу данных, мы можем сделать некоторые дополнительные вещи (например: добавить автора)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    def patch(self, request): ...
+    def put(self, request): ...
+    def delete(self, request): ...
+    def update(self, request): ...
 ```
 
 ### ViewSets
@@ -137,8 +151,8 @@ class BookView(APIView):
 Here are some of them that are mostly used:
 1. **ViewSet** - does not provide any actions by default, and does not include the base set of generic view behavior.
 So, you need to provide the implementation for each action explicitly.
-2. **ModelViewSet** - provides CRUD functions with a single class. It accepts a queryset and a serializer class as required parameters. It also provides the following actions out of the box: list, retrieve, create, update, partial_update, destroy.
-3. **ReadOnlyModelViewSet** - provides the read-only actions list and retrieve.
+1. **ModelViewSet** - provides CRUD functions with a single class. It accepts a queryset and a serializer class as required parameters. It also provides the following actions out of the box: list, retrieve, create, update, partial_update, destroy.
+2. **ReadOnlyModelViewSet** - provides the read-only actions list and retrieve.
 
 ```python
 from rest_framework import viewsets
@@ -287,11 +301,20 @@ class BookSerializer(serializers.Serializer):
         instance.save()
         return instance
 ```
+Then we can use it like:
+```python
+serializer = BookSerializer(data=request.data)
+if serializer.is_valid():
+    serializer.save()
+    return Response(serializer.data, status=status.HTTP_201_CREATED)
+return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+```
+
+
 
 ### ModelSerializer
 - ModelSerializer is a shortcut to create a serializer class with fields that correspond to the Model fields. It will create a set of default fields for you, based on the model.
 
-```python
 
 ```python
 from rest_framework import serializers

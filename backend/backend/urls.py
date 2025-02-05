@@ -25,7 +25,14 @@ from todos.api_views import TodosApiView
 
 
 urlpatterns = [
-    path("apis/todos/", TodosApiView.as_view(), name="todos-api"),
+    path("apis/todos/",
+        TodosApiView.as_view({
+            'get': 'list',
+            'post': 'create',
+            'put':  'update',
+            'patch':  'partial_update',
+            'delete': 'destroy'
+        }), name="todos-api"),
 
 
     path('admin/', admin.site.urls),
