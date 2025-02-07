@@ -24,7 +24,11 @@ def login(request):
     if user:
         # Create or get a token for this user
         token, _ = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key})
+        data = {'token': token.key}
+        
+        if user.groups.filter(name='admin').exists():
+            data['msg'] = "Hello Admin"
+        return Response(data)
     else:
         return Response({'error': 'Wrong username or password'}, status=400)
 
