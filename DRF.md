@@ -578,109 +578,182 @@ Now you get these useful URLs for free:
 
 
 
-# JWT
-### JWT Authentication
-- JSON Web Token (JWT) is  a compact and self-contained way for securely transmitting information between parties as a JSON object. This information can be verified and trusted because it is digitally signed. (Digitally signed means that it is signed using a secret key that only the server knows.)
+# JWT (JSON Web Tokens)
 
-`poetry add djangorestframework_simplejwt`
+### What is JWT and why use it? 🤔
 
-[JWT-documentation](https://django-rest-framework-simplejwt.readthedocs.io/en/latest/settings.html?highlight=settings)
+Remember how we used tokens with Djoser? JWT is like a smarter version of those tokens! Here's why JWT is cool:
+
+1. It's self-contained - all user info is in the token
+2. It's more secure - it's digitally signed
+3. It's stateless - no need to store tokens in database
+4. It has built-in expiration
+
+Think of JWT like a special VIP pass that:
+- Contains your info (like your ID and permissions)
+- Can't be faked (because it's signed with a secret key)
+- Expires after some time (so if someone steals it, they can't use it forever)
+
+### Setting Up JWT 🛠️
+
+First, let's install the JWT package:
+```bash
+poetry add djangorestframework-simplejwt
+```
+
+Now let's configure it:
 
 ```python
+# settings.py
+
 INSTALLED_APPS = [
-    ...
+    # ... other apps ...
     'rest_framework',
-    'rest_framework_simplejwt',
-    ...
+    'rest_framework_simplejwt',  # Add this line
 ]
 
+# Replace the default token authentication with JWT
 REST_FRAMEWORK = {
-    ...
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # TokenAuthentication is replaced with JWTAuthentication
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    ...
 }
 
+# JWT settings
+from datetime import timedelta
+
+# JWT will create two tokens:
+# 1. Access token - for accessing protected routes (short-lived)
+# 2. Refresh token - for getting new access tokens (long-lived)
+
+SIMPLE_JWT = {
+    # Access token will expire after 2 hours
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+    
+    # Refresh token will expire after 30 days
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+    
+    # If True, a new refresh token will be created when users refresh their access token
+    'ROTATE_REFRESH_TOKENS': True,
+    
+    # The word that goes before the token in Authorization header
+    # Authorization: Bearer <your-token>
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+```
+
+### Setting Up JWT URLs 🌐
+
+```python
 # urls.py
 from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-    TokenVerifyView
+    TokenObtainPairView,    # For logging in
+    TokenRefreshView,       # For refreshing access token
+    TokenVerifyView         # For verifying tokens
 )
 
 urlpatterns = [
-    ...
-    path('api/token/create/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    # ... your other urls ...
+    
+    # Login endpoint - returns both access and refresh tokens
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    
+    # Use refresh token to get new access token
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    
+    # Verify if a token is valid
     path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
-    ...
 ]
+```
 
-# settings.py
-# JWT settings
-from datetime import timedelta
-REFRESH_TOKEN_LIFETIME_SIX_WEEKS = 42 # days
+### How to Use JWT in Your Project 🎯
 
-SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=REFRESH_TOKEN_LIFETIME_SIX_WEEKS),
-    'ROTATE_REFRESH_TOKENS': True, # If True, refresh tokens will be rotated
-    # That means that after each request we will get a new refresh token
-    # Это означает, что после каждого запроса мы получим новый токен обновления
-    'AUTH_HEADER_TYPES': ('Bearer',),
-    # In the client we need to send the token in the header like this:
-    # Authorization: bearer <token>
+1. **Logging In:**
+When a user logs in, they'll get two tokens:
+```json
+{
+    "access": "eyJ0eXAiOiJKV1QiLCJhbGc...",  // Use this for API requests
+    "refresh": "eyJ0eXAiOiJKV1QiLcGciOiJ..."  // Save this to get new access tokens
 }
 ```
-`NOTE`
-- access token expires and is not valid after settings.SIMPLE_JWT['ACCESS_TOKEN_LIFETIME']
-But, this does NOT mean that client has to login again. Client can use refresh token to get a new access token. 
 
----
----
-
-
-### Customizing JWT
-If we want to some extra validation in the token, we can do it like this:
+2. **Making Authenticated Requests:**
+Add the access token to your request headers:
 ```python
-# views.py
-from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
+headers = {
+    'Authorization': 'Bearer eyJ0eXAiOiJKV1QiLCJhbGc...'
+}
+```
 
-class MyTokenObtainPairView(TokenObtainPairView):
-    serializer_class = MyTokenObtainPairSerializer
+3. **When Access Token Expires:**
+Use your refresh token to get a new access token:
+```python
+# Send POST request to /api/token/refresh/ with:
+{
+    "refresh": "your-refresh-token"
+}
 
-class MyTokenRefreshView(TokenRefreshView):
-    serializer_class = MyTokenRefreshSerializer
+# You'll get back:
+{
+    "access": "new-access-token"
+}
+```
 
+### Adding Custom Data to Tokens 🎨
+
+Want to add extra user info to your tokens? Here's how:
+
+```python
 # serializers.py
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer, TokenRefreshSerializer
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.views import TokenObtainPairView
 
 class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
+        # Get the token with the default user ID
         token = super().get_token(user)
-        # Add custom claims
+        
+        # Add custom data
         token['username'] = user.username
+        token['email'] = user.email
+        token['is_staff'] = user.is_staff
+        
         return token
 
-class MyTokenRefreshSerializer(TokenRefreshSerializer):
-    @classmethod
-    def get_token(cls, user):
-        token = super().get_token(user)
-        # Add custom claims
-        token['username'] = user.username
-        return token
+# views.py
+class MyTokenObtainPairView(TokenObtainPairView):
+    serializer_class = MyTokenObtainPairSerializer
 
 # urls.py
 urlpatterns = [
-    ...
+    # Use your custom view instead of the default one
     path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', MyTokenRefreshView.as_view(), name='token_refresh'),
-    ...
+    # ... other urls ...
 ]
 ```
+
+### Security Tips 🔒
+
+1. Keep your access token lifetime short (few hours)
+2. Keep your refresh token lifetime reasonable (few weeks)
+3. Never store tokens in localStorage (use httpOnly cookies)
+<!-- Storing tokens in localStorage exposes them to JavaScript, which means that if your site ever suffers from a cross-site scripting (XSS) attack, an attacker could easily access your tokens. Using httpOnly cookies mitigates this risk because such cookies are inaccessible to JavaScript, thereby providing an extra layer of security. -->
+1. Always use HTTPS in production
+2. Rotate refresh tokens (already enabled in our settings)
+
+### Common JWT Flow 🔄
+
+1. User logs in → Gets access & refresh tokens
+2. User makes requests with access token
+3. When access token expires → Use refresh token to get new access token
+4. If refresh token expires → User must log in again
+
+Think of it like a hotel:
+- Access token = Room key (expires daily)
+- Refresh token = Booking confirmation (expires when your stay ends)
+- When room key expires, show booking confirmation to get new key
+- When booking ends, make new reservation (log in again)
 
 
 
