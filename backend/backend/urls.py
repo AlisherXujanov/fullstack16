@@ -22,6 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from todos.api_views import TodosApiView
+from todos.api_views import *
 
 
 urlpatterns = [
@@ -33,6 +34,7 @@ urlpatterns = [
             'patch':  'partial_update',
             'delete': 'destroy'
         }), name="todos-api"),
+    path('api/login', login, name='api_login'),
 
 
     path('admin/', admin.site.urls),
