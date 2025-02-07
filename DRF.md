@@ -1,4 +1,3 @@
-
 # Table of contents
 1. [Introduction to APIs](#introduction-to-apis)
 2. [API views](#api-views)
@@ -411,71 +410,84 @@ urlpatterns = [
 
 # Authentication and Authorization
 
-### General information
-- Authentication is the process of verifying the credentials of a user. Logging into websites with a username and password is a typical example of authentication. When the username and password match, the website recognizes the user and sets some cookies in the user’s browser. When the user visits another page on that website, the browser sends those cookies within the HTTP request header. The website recognizes the cookies as well as server-side session data and therefore doesn’t ask for credentials until the user logs out again.  
-- So, how does this work? Token-based authentication usually involves two steps in the API Architecture. First, the client identifies itself with a username and password. Then the API server gives it a bearer token. From there, the client includes the bearer token with every API call that it places. The API server verifies it and then allows the client to perform the action or not. This is where authorization comes in
+### What is Authentication? 🔑
+Think of authentication like showing your ID card at a club:
+- It's how a website/app knows who you are
+- Usually involves typing in your username and password
+- If correct, you get a special "token" (like a wristband at a club)
+- You show this token every time you want to do something in the app
 
+### What is Authorization? 🛡️
+Authorization is like having different VIP levels at a club:
+- Once you're in (authenticated), what are you allowed to do?
+- Some people can only view things
+- Others can edit or delete things
+- Admins can do everything
 
-- If the credentials are not valid, the client will receive a **`401 - Unauthorized`** HTTP status code.
+### How does it work? 🤔
+It's a 2-step process:
 
-- This is like coming to the office on the first day, submitting all your papers and documents, and then receiving your employee card. After that, only your employee card will be sufficient to get inside. Authentication works just like that!
-  
-- The two steps in the API authentication process can be represented by the following two diagrams.
+1. First Login (Authentication):
+   - You send your username and password
+   - If correct, the server gives you a token
+   - Think of it like showing your ID and getting a wristband
+
+2. Using the Token (Authorization):
+   - Every time you want to do something, you show your token
+   - The server checks what you're allowed to do
+   - Like showing your wristband to access different areas of a club
 
 ```markdown
-1. Authentication      2. Authorization
-+----------------+     +----------------+
-|    Client      |     |     Client     |
-|  +----------+  |     |  +----------+  |
-|  |          |  |     |  |  Token   |  |
-|  |  Login   |  |     |  |          |  |
-|  |          |  |     |  |  Group   |  |
-|  +----------+  |     |  +----------+  |
-|  +----------+  |     |  +----------+  |
-|  |          |  |     |  |          |  |
-|  |  Token   |  |     |  |  Action  |  |
-|  |          |  |     |  |          |  |
-|  +----------+  |     |  +----------+  |
-+----------------+     +----------------+
+Step 1: Getting Your Token    Step 2: Using Your Token
++----------------+           +----------------+
+|    You         |           |     You        |
+|  +----------+  |           |  +----------+  |
+|  | Username |  |           |  |  Token   |  |
+|  | Password |  |           |  |          |  |
+|  +----------+  |           |  +----------+  |
+|       ↓        |           |       ↓        |
+|  +----------+  |           |  +----------+  |
+|  |  Token   |  |           |  | Can you  |  |
+|  |          |  |           |  |  do it?  |  |
+|  +----------+  |           |  +----------+  |
++----------------+           +----------------+
 ```
 
-### Token based authentication
+### Setting Up Token Authentication 🛠️
 
+1. First, add this to your settings.py:
 ```python
 # settings.py
 INSTALLED_APPS = [
-    ...
-    'rest_framework.authtoken', # Allows us create a token for each user
-    ...
+    # ... your other apps ...
+    'rest_framework.authtoken',  # Add this line
 ]
+
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        # Allows us to use token authentication throughout the project
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+# This helps during development
 if DEBUG:
     REST_FRAMEWORK['DEFAULT_AUTHENTICATION_CLASSES'] += [
         'rest_framework.authentication.SessionAuthentication',
     ]
 ```
 
-- For allowing token authentication, we need to create a token for each user. 
-There, we would need obtain_auth_token
-  Там нам понадобится obtain_auth_token
-
+2. Add this to your urls.py:
 ```python
 # urls.py
 from rest_framework.authtoken.views import obtain_auth_token
+
 urlpatterns = [
-    ...
+    # ... your other urls ...
     path('api-token-auth/', obtain_auth_token, name='api_token_auth'),
-    ...
 ]
 ```
 
-- Then, we need to create a view for it.
-
+3. Create a simple login view:
 ```python
 # views.py
 from rest_framework.authtoken.models import Token
@@ -485,123 +497,84 @@ from django.contrib.auth import authenticate
 
 @api_view(['POST'])
 def login(request):
+    # Get username and password from the request
     username = request.data.get('username')
     password = request.data.get('password')
+    
+    # Check if username and password are correct
     user = authenticate(username=username, password=password)
-    if user is not None:
-        token, created = Token.objects.get_or_create(user=user)
-        return Response({'token': token.key}, status=200)
+    
+    if user:
+        # Create or get a token for this user
+        token, _ = Token.objects.get_or_create(user=user)
+        return Response({'token': token.key})
     else:
-        return Response({'error': 'Wrong credentials'}, status=400)
+        return Response({'error': 'Wrong username or password'}, status=400)
 ```
 
-### Authorization
-Authorization is the process of determining whether a user has access to a resource.
-For example, if the user can delete or update something or not.
-We can do this by adding certain user to a group and then check if the user is in that group or not. So, by doing this we authorize the user to do certain actions.
+### Checking User Permissions (Authorization) 🔒
+
+Here's a simple example of checking if a user is an admin:
 
 ```python
 # views.py
-@api_view()
-def is_admin(request):
+@api_view(['GET'])
+def check_if_admin(request):
+    # Check if user is in the 'admin' group
     if request.user.groups.filter(name='admin').exists():
-        return Response({'message': 'You are admin'}, status=200)
+        return Response({'message': 'You are an admin! 🎉'})
     else:
-        return Response({'message': 'You are not admin'}, status=400)
+        return Response({'message': 'Sorry, admin only area! 🚫'}, status=403)
 ```
 
-### Throttling
-- Throttling means that we can postpone the request for a certain amount of time.
-For example, we can allow only 5 requests per minute.
-We need this to prevent the server from overloading.
-Sometimes, a user can try to break in by trying to guess the password. So, we can prevent this by adding throttling. This way, that user will be able to make only 5 requests per minute.
+### Protecting Against Too Many Requests (Throttling) 🛡️
+
+Sometimes you want to limit how many times someone can try to login or use your API. This is called throttling:
 
 ```python
 # settings.py
-
 REST_FRAMEWORK = {
-    ...
     'DEFAULT_THROTTLE_CLASSES': [
-        'rest_framework.throttling.AnonRateThrottle', # for anonymous users
-        'rest_framework.throttling.UserRateThrottle', # for authenticated users
+        'rest_framework.throttling.AnonRateThrottle',  # For users who aren't logged in
+        'rest_framework.throttling.UserRateThrottle',  # For logged in users
     ],
     'DEFAULT_THROTTLE_RATES': {
-        'anon': '3/minute', # 3 requests per minute
-        'user': '5/minute', # 5 requests per minute
+        'anon': '3/minute',  # Anonymous users: 3 requests per minute
+        'user': '10/minute', # Logged in users: 10 requests per minute
     }
 }
 ```
-Then we need to add it to the view.
-```python
-# views.py
-from rest_framework.throttling import UserRateThrottle
 
-class MyView(APIView):
-    throttle_classes = [UserRateThrottle]
-    ...
+### Using Djoser for Easy Authentication 🔑
+Djoser gives you ready-made login, registration, and password reset features!
+
+1. Install it:
+```bash
+poetry add djoser
 ```
 
-If we want to create manual throttling for a specific view, we can do it like this:
+2. Set it up:
 ```python
-# views.py
-from rest_framework.throttling import UserRateThrottle
-
-class TenCallsPerMinute(UserRateThrottle):
-    scope = 'ten'
-
-class MyView(APIView):
-    throttle_classes = [TenCallsPerMinute]
-    ...
-
 # settings.py
-...
-DEFAULT_THROTTLE_RATES = {
-    ...
-    'ten': '10/minute',
-    ...
-}
-```
-
-
-### Djoser
-- Djoser is a REST implementation of Django authentication system. It provides a set of endpoints for authentication, registration, password reset, etc.
-
-`poetry add djoser`
-
-```python
 INSTALLED_APPS = [
-    ...
+    # ... other apps ...
     'rest_framework',
-    'djoser', # It is vital to add it after rest_framework
-    ...
+    'djoser',  # Make sure djoser comes after rest_framework
 ]
-
-DJOSER = {
-    "USER_ID_FIELD": "username", # We use username for login
-    # "LOGIN_FIELD": "email", # We can use email or username for login
-    # "USER_CREATE_PASSWORD_RETYPE": True, # We can use this to make user retype the password
-}
 
 # urls.py
 urlpatterns = [
-    ...
+    # ... other urls ...
     path('auth/', include('djoser.urls')),
     path('auth/', include('djoser.urls.authtoken')),
-    ...
-    # handy endpoints list
-    # --------------------------------
-    # /auth/users/ - list of all users
-    # /auth/users/me/ - current user
-    # /auth/users/confirm/ - confirm email
-    # /auth/users/resend_activation/ - resend activation email
-    # /auth/users/set_password/ - set new password
-    # /auth/users/reset_password/ - reset password
-    # /auth/users/reset_password_confirm/ - confirm reset password
-    # /auth/token/login/ - login
-    # /auth/token/logout/ - logout
 ]
-
 ```
+
+Now you get these useful URLs for free:
+- `/auth/users/` - Create a new user
+- `/auth/users/me/` - Get your user info
+- `/auth/token/login/` - Login and get token
+- `/auth/token/logout/` - Logout
 
 
 
