@@ -24,6 +24,13 @@ from django.conf.urls.static import static
 from todos.api_views import TodosApiView
 from todos.api_views import *
 
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,    # For logging in
+    TokenRefreshView,       # For refreshing access token
+    TokenVerifyView         # For verifying tokens
+)
+
+
 
 urlpatterns = [
     path("apis/todos/",
@@ -35,6 +42,15 @@ urlpatterns = [
             'delete': 'destroy'
         }), name="todos-api"),
     path('api/login', login, name='api_login'),
+    
+    # Login endpoint - returns both access and refresh tokens
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+
+    # Use refresh token to get new access token
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+    # Verify if a token is valid
+    path('api/token/verify/', TokenVerifyView.as_view(), name='token_verify'),
 
 
     path('admin/', admin.site.urls),

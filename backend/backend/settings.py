@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
+from datetime import timedelta
 from pathlib import Path
 import os
 
@@ -51,6 +52,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'rest_framework',
     'rest_framework.authtoken',
+    'rest_framework_simplejwt',
 ]
 SITE_ID = 1
 
@@ -63,7 +65,8 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware', # Cross Site Request Forgery Attack Protection
+    # Cross Site Request Forgery Attack Protection
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -161,6 +164,22 @@ ACCOUNT_EMAIL_VERIFICATION = "none"
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.TokenAuthentication',
+        # 'rest_framework.authentication.TokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
+}
+
+SIMPLE_JWT = {
+    # Access token will expire after 2 hours
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=2),
+
+    # Refresh token will expire after 30 days
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
+
+    # If True, a new refresh token will be created when users refresh their access token
+    'ROTATE_REFRESH_TOKENS': True,
+
+    # The word that goes before the token in Authorization header
+    # Authorization: Bearer <your-token>
+    'AUTH_HEADER_TYPES': ('Bearer',),
 }

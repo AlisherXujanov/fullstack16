@@ -3,7 +3,7 @@
 2. [API views](#api-views)
 3. [Serialization and Deserialization](#serialization-and-deserialization)
 4. [Authentication and Authorization](#authentication-and-authorization)
-5. [JWT](#jwt)
+5. [JWT (JSON Web Tokens)](#jwt-json-web-tokens)
 6. [Filtering & Ordering & Pagination & Caching](#filtering--ordering--pagination--caching)
 
 
@@ -575,7 +575,6 @@ Now you get these useful URLs for free:
 - `/auth/users/me/` - Get your user info
 - `/auth/token/login/` - Login and get token
 - `/auth/token/logout/` - Logout
-
 
 
 # JWT (JSON Web Tokens)
