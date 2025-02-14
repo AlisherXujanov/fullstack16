@@ -29,7 +29,7 @@ from rest_framework_simplejwt.views import (
     TokenRefreshView,       # For refreshing access token
     TokenVerifyView         # For verifying tokens
 )
-
+from users.api_views import MyTokenObtainPairView
 
 
 urlpatterns = [
@@ -44,7 +44,7 @@ urlpatterns = [
     path('api/login', login, name='api_login'),
     
     # Login endpoint - returns both access and refresh tokens
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/', MyTokenObtainPairView.as_view(), name='token_obtain_pair'),
 
     # Use refresh token to get new access token
     path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

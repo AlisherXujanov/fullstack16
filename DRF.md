@@ -759,8 +759,6 @@ Think of it like a hotel:
 
 
 
-
-
 # Filtering  &  Ordering  &  Pagination  &  Caching
 
 ### Filtering
@@ -771,7 +769,7 @@ For example, we can filter the books by author or by title.
 
 
 So, if the user asks books by author, we can do it like this:
-ex: `http://domain-name.com/api/books/?author=John`
+ex: `http://domain-name.com/api/books?author=John&...`
 
 ```python
 # views.py

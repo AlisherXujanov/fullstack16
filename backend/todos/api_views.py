@@ -11,6 +11,7 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from django.contrib.auth import authenticate
 
+from rest_framework.pagination import PageNumberPagination
 
 @api_view(['POST'])
 def login(request):
@@ -39,10 +40,32 @@ class TodosApiView(viewsets.ModelViewSet):
     serializer_class = TodoSerializer
     permission_classes = [permissions.IsAuthenticated]
     lookup_field = 'pk'
+    pagination_class = PageNumberPagination
+    # in order to get the next page,
+    # we just send a query parameter ?page=2
 
 
+    def get_queryset(self):
+        query = super().get_queryset()
+        # title = self.request.query_params.get('title')
+        # if title:
+        #     ...
+        if title := self.request.query_params.get('title'):
+            query = query.filter(title__icontains=title)
+            
+        if description := self.request.query_params.get('description'):
+            query = query.filter(description__icontains=description)
 
+        if ordering := self.request.query_params.get('ordering'):
+            if ordering == 'desc':
+                query = query.order_by('-id')
+            else:
+                query = query.order_by('id')
 
+        # if ... := self.request.query_params.get('...'):
+        #     query = query.filter(...__icontains=...)
+        return query
+    
 
 # class TodosApiView(APIView):
     
